@@ -1,8 +1,25 @@
 # Pokémon Yellow
 
 This is a disassembly of Pokémon Yellow.
+It has been modified to allow Hebrew language compatibility,
+and is in the process of being translated into Hebrew.
 
-It builds the following rom:
+Almost all of the code for Hebrew compatibility is from
+[**LIJI32**](https://github.com/LIJI32)'s old modification on top
+of pokered, called [pokeadom](https://github.com/LIJI32/pokeadom).
+
+Thanks so much to Eyal Seelig (link TBA) for porting LIJI32's
+6-year-old for the still-currently-updating pokered.
+
+If you'd like to contribute Hebrew translations, please do contact
+me either or on Discord (I'm Nog#4061) for a short style guide (style guide
+link TBA).
+
+
+# Pokémon Red and Blue
+
+This is a modified disassembly of Pokémon Red and Blue.
+It builds the following roms:
 
 * Pokemon Yellow (UE) [C][!].gbc  `md5: d9290db87b1f0a23b89f99ee4469e34b`
 
@@ -19,8 +36,7 @@ To set up the repository, see [**INSTALL.md**](INSTALL.md).
 * Disassembly of [**Pokémon Ruby**][pokeruby]
 * Disassembly of [**Pokémon Fire Red**][pokefirered]
 * Disassembly of [**Pokémon Emerald**][pokeemerald]
-* Discord: [**pret**][Discord]
-* irc: **irc.freenode.net** [**#pret**][irc]
+* The Pret Discord: [**pret**][Discord]
 
 [pokered]: https://github.com/pret/pokered
 [pokegold]: https://github.com/pret/pokegold
