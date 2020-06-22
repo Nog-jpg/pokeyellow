@@ -30,7 +30,7 @@ RedrawPartyMenu_:
 	jp z, .printMessage
 	call ErasePartyMenuCursors
 	callba InitPartyMenuBlkPacket
-	coord hl, 3, 0
+	coord hl, 18, 0
 	ld de, wPartySpecies
 	xor a
 	ld c, a
@@ -89,13 +89,13 @@ RedrawPartyMenu_:
 	cp EVO_STONE_PARTY_MENU
 	jr z, .evolutionStoneMenu
 	push hl
-	ld bc, 14 ; 14 columns to the right
+	ld bc, -14 ; 14 columns to the right
 	add hl, bc
 	ld de, wLoadedMonStatus
 	call PrintStatusCondition
 	pop hl
 	push hl
-	ld bc, SCREEN_WIDTH + 1 ; down 1 row and right 1 column
+	ld bc, 4 ; down 1 row and right 1 column
 	ld a, [hFlags_0xFFFA]
 	set 0, a
 	ld [hFlags_0xFFFA], a
@@ -118,12 +118,12 @@ RedrawPartyMenu_:
 	ld de, .notAbleToLearnMoveText
 .placeMoveLearnabilityString
 	push hl
-	ld bc, 20 + 9 ; down 1 row and right 9 columns
+	ld bc, 11 ; down 1 row and right 9 columns
 	add hl, bc
 	call PlaceString
 	pop hl
 .printLevel
-	ld bc, 10 ; move 10 columns to the right
+	ld bc, -10 ; move 10 columns to the right
 	add hl, bc
 	call PrintLevel
 	pop hl
@@ -135,9 +135,9 @@ RedrawPartyMenu_:
 	inc c
 	jp .loop
 .ableToLearnMoveText
-	db "ABLE@"
+	db "יכול@"
 .notAbleToLearnMoveText
-	db "NOT ABLE@"
+	db "לא יכול@"
 .evolutionStoneMenu
 	push hl
 	ld hl, EvosMovesPointerTable
@@ -186,15 +186,15 @@ RedrawPartyMenu_:
 .placeEvolutionStoneString
 	pop hl
 	push hl
-	ld bc, 20 + 9 ; down 1 row and right 9 columns
+	ld bc, 11 ; down 1 row and right 9 columns
 	add hl, bc
 	call PlaceString
 	pop hl
 	jr .printLevel
 .ableToEvolveText
-	db "ABLE@"
+	db "יכול@"
 .notAbleToEvolveText
-	db "NOT ABLE@"
+	db "לא יכול@"
 .afterDrawingMonEntries
 	ld b, SET_PAL_PARTY_MENU
 	call RunPaletteCommand
@@ -211,7 +211,7 @@ RedrawPartyMenu_:
 	ld hl, PartyMenuMessagePointers
 	ld b, 0
 	ld c, a
-	add hl, bc
+	add hl, bc ; TODO
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -230,7 +230,7 @@ RedrawPartyMenu_:
 	add a
 	ld c, a
 	ld b, 0
-	add hl, bc
+	add hl, bc ; TODO
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a

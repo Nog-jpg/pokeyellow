@@ -20,7 +20,7 @@ ShowPokedexMenu:
 	ld hl, wTopMenuItemY
 	ld a, 3
 	ld [hli], a ; top menu item Y
-	xor a
+	ld a, 19
 	ld [hli], a ; top menu item X
 	inc a
 	ld [wMenuWatchMovingOutOfBounds], a
@@ -85,7 +85,7 @@ HandlePokedexSideMenu:
 	ld hl, wTopMenuItemY
 	ld a, 8
 	ld [hli], a ; top menu item Y
-	ld a, 15
+	ld a, 4
 	ld [hli], a ; top menu item X
 	xor a
 	ld [hli], a ; current menu item ID
@@ -128,7 +128,7 @@ HandlePokedexSideMenu:
 	ld a, $1
 	ld [hJoy7], a
 	push bc
-	coord hl, 0, 3
+	coord hl, 19, 3
 	ld de, 20
 	lb bc, " ", 13
 	call DrawTileLine ; cover up the menu cursor in the pokemon list
@@ -137,7 +137,7 @@ HandlePokedexSideMenu:
 
 .buttonBPressed
 	push bc
-	coord hl, 15, 8
+	coord hl, 5, 8
 	ld de, 20
 	lb bc, " ", 9
 	call DrawTileLine ; cover up the menu cursor in the side menu
@@ -202,7 +202,7 @@ HandlePokedexListMenu:
 
 .checkIfDownPressed
 	bit BIT_D_DOWN, a ; was Down pressed?
-	jr z, .checkIfRightPressed
+	jr z, .checkIfLeftPressed
 .downPressed ; scroll down one row
 	ld a, [wDexMaxSeenMon]
 	cp a, 7
@@ -216,10 +216,10 @@ HandlePokedexListMenu:
 	ld [wListScrollOffset], a
 	jp .loop
 
-.checkIfRightPressed
-	bit BIT_D_RIGHT, a ; was Right pressed?
-	jr z, .checkIfLeftPressed
-.rightPressed ; scroll down 7 rows
+.checkIfLeftPressed
+	bit 5, a ; was Left pressed?
+	jr z, .checkIfRightPressed
+.leftPressed ; scroll down 7 rows
 	ld a, [wDexMaxSeenMon]
 	cp a, 7
 	jp c, .loop ; can't if the list is shorter than 7
@@ -235,10 +235,10 @@ HandlePokedexListMenu:
 	ld [wListScrollOffset], a
 	jp .loop
 
-.checkIfLeftPressed ; scroll up 7 rows
-	bit BIT_D_LEFT, a ; was Left pressed?
+.checkIfRightPressed ; scroll up 7 rows
+	bit 4, a ; was right pressed?
 	jr z, .buttonAPressed
-.leftPressed
+.rightPressed
 	ld a, [wListScrollOffset]
 	sub a, 7
 	ld [wListScrollOffset], a
@@ -259,43 +259,43 @@ Pokedex_DrawInterface:
 	xor a
 	ld [H_AUTOBGTRANSFERENABLED], a
 ; draw the horizontal line separating the seen and owned amounts from the menu
-	coord hl, 15, 6
+	coord hl, 0, 6
 	ld a, "─"
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
-	coord hl, 14, 0
+	coord hl, 5, 0
 	ld [hl], $71 ; vertical line tile
-	coord hl, 14, 1
+	coord hl, 5, 1
 	call DrawPokedexVerticalLine
-	coord hl, 14, 9
+	coord hl, 5, 9
 	call DrawPokedexVerticalLine
 	ld hl, wPokedexSeen
 	ld b, wPokedexSeenEnd - wPokedexSeen
 	call CountSetBits
 	ld de, wNumSetBits
-	coord hl, 16, 2
+	coord hl, 2, 2
 	lb bc, 1, 3
 	call PrintNumber ; print number of seen pokemon
 	ld hl, wPokedexOwned
 	ld b, wPokedexOwnedEnd - wPokedexOwned
 	call CountSetBits
 	ld de, wNumSetBits
-	coord hl, 16, 5
+	coord hl, 2, 5
 	lb bc, 1, 3
 	call PrintNumber ; print number of owned pokemon
-	coord hl, 16, 1
+	coord hl, 4, 1
 	ld de, PokedexSeenText
 	call PlaceString
-	coord hl, 16, 4
+	coord hl, 4, 4
 	ld de, PokedexOwnText
 	call PlaceString
-	coord hl, 1, 1
+	coord hl, 19, 1
 	ld de, PokedexContentsText
 	call PlaceString
-	coord hl, 16, 8
+	coord hl, 3, 8
 	ld de, PokedexMenuItemsText
 	call PlaceString
 ; find the highest pokedex number among the pokemon the player has seen
@@ -330,28 +330,28 @@ DrawPokedexVerticalLine:
 	ret
 
 PokedexSeenText:
-	db "SEEN@"
+	db "נראו@"
 
 PokedexOwnText:
-	db "OWN@"
+	db "נתפסו@"
 
 PokedexContentsText:
-	db "CONTENTS@"
+	db "תוכן העניינים@"
 
 PokedexMenuItemsText:
-	db   "DATA"
-	next "CRY"
-	next "AREA"
-	next "PRNT"
-	next "QUIT@"
+	db   "מידע"
+	next "צליל"
+	next "מקום"
+	next "הדפס"
+	next "בטל@"
 
 Pokedex_PlacePokemonList:
 	xor a
 	ld [H_AUTOBGTRANSFERENABLED], a
-	coord hl, 4, 2
+	coord hl, 6, 2
 	lb bc, 14, 10
 	call ClearScreenArea
-	coord hl, 1, 3
+	coord hl, 16, 3
 	ld a, [wListScrollOffset]
 	ld [wd11e], a
 	ld d, 7
@@ -378,6 +378,8 @@ Pokedex_PlacePokemonList:
 	ld de, SCREEN_WIDTH
 	add hl, de
 	dec hl
+	dec hl
+	dec hl
 	push hl
 	ld hl, wPokedexOwned
 	call IsPokemonBitSet
@@ -400,7 +402,7 @@ Pokedex_PlacePokemonList:
 	call GetMonName
 .skipGettingName
 	pop hl
-	inc hl
+	dec hl
 	call PlaceString
 	pop hl
 	ld bc, 2 * SCREEN_WIDTH
@@ -475,8 +477,8 @@ ShowPokedexDataInternal:
 	ret
 
 HeightWeightText:
-	db   "HT  ?", $60, "??", $61
-	next "WT   ???lb@"
+	db   "גובה ??.?",$60
+	next "משקל ??? ",$62,$61,"@"
 
 ; XXX does anything point to this?
 PokeText:
@@ -484,10 +486,10 @@ PokeText:
 
 ; horizontal line that divides the pokedex text description from the rest of the data
 PokedexDataDividerLine:
-	db $68, $69, $6B, $69, $6B
+	db $6A, $69, $6B, $69, $6B
 	db $69, $6B, $69, $6B, $6B
 	db $6B, $6B, $69, $6B, $69
-	db $6B, $69, $6B, $69, $6A
+	db $6B, $69, $6B, $69, $68
 	db "@"
 
 DrawDexEntryOnScreen:
@@ -520,16 +522,16 @@ DrawDexEntryOnScreen:
 	ld a, $6e ; lower right corner tile
 	Coorda 19, 17
 
-	coord hl, 0, 9
+	coord hl, 19, 9
 	ld de, PokedexDataDividerLine
 	call PlaceString ; draw horizontal divider line
 
-	coord hl, 9, 6
+	coord hl, 18, 6
 	ld de, HeightWeightText
 	call PlaceString
 
 	call GetMonName
-	coord hl, 9, 2
+	coord hl, 18, 2
 	call PlaceString
 
 	ld hl, PokedexEntryPointers
@@ -543,7 +545,7 @@ DrawDexEntryOnScreen:
 	ld e, a
 	ld d, [hl] ; de = address of pokedex entry
 
-	coord hl, 9, 4
+	coord hl, 18, 4
 	call PlaceString ; print species name
 
 	ld h, b
@@ -594,18 +596,14 @@ DrawDexEntryOnScreen:
 
 	inc de ; de = address of feet (height)
 	ld a, [de] ; reads feet, but a is overwritten without being used
-	coord hl, 12, 6
+	coord hl, 9, 6
 	lb bc, 1, 2
 	call PrintNumber ; print feet (height)
-	ld a, $60 ; feet symbol tile (one tick)
-	ld [hl], a
 	inc de
 	inc de ; de = address of inches (height)
-	coord hl, 15, 6
+	coord hl, 12, 6
 	lb bc, LEADING_ZEROES | 1, 2
 	call PrintNumber ; print inches (height)
-	ld a, $61 ; inches symbol tile (two ticks)
-	ld [hl], a
 ; now print the weight (note that weight is stored in tenths of pounds internally)
 	inc de
 	inc de
@@ -623,10 +621,10 @@ DrawDexEntryOnScreen:
 	ld a, [de] ; a = lower byte of weight
 	ld [hl], a ; store lower byte of weight in [hDexWeight + 1]
 	ld de, hDexWeight
-	coord hl, 11, 8
+	coord hl, 8, 8
 	lb bc, 2, 5 ; 2 bytes, 5 digits
 	call PrintNumber ; print weight
-	coord hl, 14, 8
+	coord hl, 11, 8
 	ld a, [hDexWeight + 1]
 	sub 10
 	ld a, [hDexWeight]
@@ -648,7 +646,7 @@ DrawDexEntryOnScreen:
 	ret
 
 Pokedex_PrintFlavorTextAtRow11:
-	coord bc, 1, 11
+	coord bc, 18, 11
 Pokedex_PrintFlavorTextAtBC:
 	ld a, 2
 	ld [$fff9], a
@@ -677,7 +675,7 @@ Pokedex_PrepareDexEntryForPrinting:
 	ld l, a
 	ld a, [wPrinterPokedexEntryTextPointer + 1]
 	ld h, a
-	coord bc, 1, 1
+	coord bc, 18, 1
 	ld a, [hFlags_0xFFFA]
 	set 3, a
 	ld [hFlags_0xFFFA], a

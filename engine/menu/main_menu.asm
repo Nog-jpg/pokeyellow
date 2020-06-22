@@ -36,7 +36,7 @@ MainMenu:
 	coord hl, 0, 0
 	lb bc, 6, 13
 	call TextBoxBorder
-	coord hl, 2, 2
+	coord hl, 12, 2
 	ld de, ContinueText
 	call PlaceString
 	jr .next2
@@ -44,7 +44,7 @@ MainMenu:
 	coord hl, 0, 0
 	lb bc, 4, 13
 	call TextBoxBorder
-	coord hl, 2, 2
+	coord hl, 12, 2
 	ld de, NewGameText
 	call PlaceString
 .next2
@@ -55,9 +55,9 @@ MainMenu:
 	ld [wCurrentMenuItem], a
 	ld [wLastMenuItem], a
 	ld [wMenuJoypadPollCount], a
-	inc a
+	ld a, $d
 	ld [wTopMenuItemX], a
-	inc a
+	ld a, 2
 	ld [wTopMenuItemY], a
 	ld a, A_BUTTON | B_BUTTON | START
 	ld [wMenuWatchedKeys], a
@@ -172,11 +172,11 @@ SpecialEnterMap:
 	jp EnterMap
 
 ContinueText:
-	db "CONTINUE", $4e
+	db "המשך משחק", $4e
 
 NewGameText:
-	db   "NEW GAME"
-	next "OPTION@"
+	db   "משחק חדש"
+	next "כלים@"
 
 DisplayContinueGameInfo:
 	xor a
@@ -184,17 +184,17 @@ DisplayContinueGameInfo:
 	coord hl, 4, 7
 	lb bc, 8, 14
 	call TextBoxBorder
-	coord hl, 5, 9
+	coord hl, 18, 9
 	ld de, SaveScreenInfoText
 	call PlaceString
-	coord hl, 12, 9
+	coord hl, 11, 9
 	ld de, wPlayerName
 	call PlaceString
-	coord hl, 17, 11
+	coord hl, 10, 11
 	call PrintNumBadges
-	coord hl, 16, 13
+	coord hl, 9, 13
 	call PrintNumOwnedMons
-	coord hl, 13, 15
+	coord hl, 6, 15
 	call PrintPlayTime
 	ld a, 1
 	ld [H_AUTOBGTRANSFERENABLED], a
@@ -209,17 +209,17 @@ PrintSaveScreenText:
 	call TextBoxBorder
 	call LoadTextBoxTilePatterns
 	call UpdateSprites
-	coord hl, 5, 2
+	coord hl, 18, 2
 	ld de, SaveScreenInfoText
 	call PlaceString
-	coord hl, 12, 2
+	coord hl, 11, 2
 	ld de, wPlayerName
 	call PlaceString
-	coord hl, 17, 4
+	coord hl, 10, 4
 	call PrintNumBadges
-	coord hl, 16, 6
+	coord hl, 9, 6
 	call PrintNumOwnedMons
-	coord hl, 13, 8
+	coord hl, 6, 8
 	call PrintPlayTime
 	ld a, $1
 	ld [H_AUTOBGTRANSFERENABLED], a
@@ -257,10 +257,10 @@ PrintPlayTime:
 	jp PrintNumber
 
 SaveScreenInfoText:
-	db   "PLAYER"
-	next "BADGES    "
-	next "#DEX    "
-	next "TIME@"
+	db   "שם"
+	next "תגים"
+	next "#ידע"
+	next "זמן@"
 
 DisplayOptionMenu:
 	callab DisplayOptionMenu_

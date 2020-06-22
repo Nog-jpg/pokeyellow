@@ -11,7 +11,7 @@ DisplayTownMap:
 	push af
 	ld b, $0
 	call DrawPlayerOrBirdSprite ; player sprite
-	coord hl, 1, 0
+	coord hl, 19, 0
 	ld de, wcd6d
 	call PlaceString
 	ld hl, wOAMBuffer
@@ -55,7 +55,7 @@ DisplayTownMap:
 	inc de
 	cp $50
 	jr nz, .copyMapName
-	coord hl, 1, 0
+	coord hl, 19, 0
 	ld de, wcd6d
 	call PlaceString
 	ld hl, wOAMBuffer + $10
@@ -124,12 +124,12 @@ LoadTownMap_Nest:
 	ld [hl], $ff
 	push hl
 	call DisplayWildLocations
-	call GetMonName
-	coord hl, 1, 0
+	ld de, MonsNestText
+	coord hl, 19, 0
 	call PlaceString
 	ld h, b
 	ld l, c
-	ld de, MonsNestText
+	call GetMonName
 	call PlaceString
 	call WaitForTextScrollButtonPress
 	call ExitTownMap
@@ -139,7 +139,7 @@ LoadTownMap_Nest:
 	ret
 
 MonsNestText:
-	db "'s NEST@"
+	db "הקן של @"
 
 LoadTownMap_Fly:
 	call ClearSprites
@@ -163,14 +163,14 @@ LoadTownMap_Fly:
 	push af
 	ld [hl], $ff
 	push hl
-	coord hl, 0, 0
+	coord hl, 19, 0
 	ld de, ToText
 	call PlaceString
 	ld a, [wCurMap]
 	ld b, $0
 	call DrawPlayerOrBirdSprite
 	ld hl, wFlyLocationsList
-	coord de, 18, 0
+	coord de, 3, 0
 .townMapFlyLoop
 	ld a, " "
 	ld [de], a
@@ -183,14 +183,14 @@ LoadTownMap_Fly:
 	ld a, [hl]
 	ld b, $4
 	call DrawPlayerOrBirdSprite ; draw bird sprite
-	coord hl, 3, 0
+	coord hl, 16, 0
 	ld de, wcd6d
 	call PlaceString
 	ld c, 15
 	call DelayFrames
-	coord hl, 18, 0
-	ld [hl], "▶"
-	coord hl, 19, 0
+	coord hl, 1, 0
+	ld [hl], "▶" ; TODO Shouldn't this be an up arrow? so confused. please test
+	coord hl, 2, 0
 	ld [hl], "▼"
 	pop hl
 .inputLoop
@@ -230,7 +230,7 @@ LoadTownMap_Fly:
 	ld [hl], a
 	ret
 .pressedUp
-	coord de, 18, 0
+	coord de, 3, 0
 	inc hl
 	ld a, [hl]
 	cp $ff
@@ -242,7 +242,7 @@ LoadTownMap_Fly:
 	ld hl, wFlyLocationsList
 	jp .townMapFlyLoop
 .pressedDown
-	coord de, 19, 0
+	coord de, 3, 0
 	dec hl
 	ld a, [hl]
 	cp $ff
@@ -255,7 +255,7 @@ LoadTownMap_Fly:
 	jr .pressedDown
 
 ToText:
-	db "To@"
+	db "אל@"
 
 BuildFlyLocationsList:
 	ld hl, wFlyLocationsList - 1
@@ -409,7 +409,7 @@ DisplayWildLocations:
 	coord hl, 1, 7
 	lb bc, 2, 15
 	call TextBoxBorder
-	coord hl, 2, 9
+	coord hl, 15, 9
 	ld de, AreaUnknownText
 	call PlaceString
 	jr .done
@@ -424,7 +424,7 @@ DisplayWildLocations:
 	jp CopyData
 
 AreaUnknownText:
-	db " AREA UNKNOWN@"
+	db "מקום לא ידוע @"
 
 TownMapCoordsToOAMCoords:
 ; in: lower nybble of a = x, upper nybble of a = y

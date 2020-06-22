@@ -1,3 +1,5 @@
+; TODO Seems a lot was added to the diploma since red.
+; some things here need to be aligned for Hebrew.
 _DisplayDiploma:
 	call GBPalWhiteOutWithDelay3
 	call ClearScreen
@@ -22,23 +24,23 @@ _DisplayDiploma:
 	ld [hl], a
 
 	ld de, String_e9a73
-	coord hl, 5, 2
+	coord hl, 12, 2
 	call PlaceString
 
 	ld de, String_e9a7d
-	coord hl, 3, 4
+	coord hl, 13, 4
 	call PlaceString
 
 	ld de, wPlayerName
-	coord hl, 10, 4
+	coord hl, 9, 6
 	call PlaceString
 
 	ld de, String_e9a84
-	coord hl, 2, 6
+	coord hl, 17, 6
 	call PlaceString
 
 	ld de, String_e9ac8
-	coord hl, 9, 16
+	coord hl, 15, 16
 	call PlaceString
 
 	ld b, SET_PAL_GENERIC
@@ -50,20 +52,20 @@ _DisplayDiploma:
 	ret
 
 String_e9a73:
-	db $10, "Diploma", $10, "@"
+	db $10, "תעודה", $10, "@"
 
 String_e9a7d:
-	db "Player@"
+	db "ברכותינו!@"
 
 String_e9a84:
-	db   "Congrats! This"
-	next "diploma certifies"
-	next "that you have"
-	next "completed your"
-	next "#DEX.@"
+	db   "  לשחקן"
+	next "וזאת לתעודה כי"
+	next "השלמת את ה#ידע"
+	next "שלך.@"
 
 String_e9ac8:
-	db "GAME FREAK@"
+	db "על החתום,"
+	next "    גיים פריק.@"
 
 Func_e9ad3:
 	call ClearScreen

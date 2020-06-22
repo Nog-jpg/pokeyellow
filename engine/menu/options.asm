@@ -1,3 +1,5 @@
+; TODO This is done very differently than red/blue. Need to adjust code from
+; red/blue to fit this. In red/blue, it's in the main_menu.asm file.
 DisplayOptionMenu_:
 	call InitOptionsMenu
 .optionMenuLoop

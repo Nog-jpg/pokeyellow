@@ -243,9 +243,8 @@ DrawHPBar::
 	; Right
 	ld a, [wHPBarType]
 	dec a
-	ld a, $6d ; status screen and battle
+	ld a, $6c ; status screen and battle
 	jr z, .ok
-	dec a ; pokemon menu
 .ok
 	ld [hl], a
 
@@ -389,10 +388,10 @@ GetCryData::
 	call BankswitchBack
 
 	; Cry headers have 3 channels,
-	; and start from index $14,
+	; and start from index CRY_SFX_START,
 	; so add 3 times the cry id.
 	ld a, b
-	ld c, $14
+	ld c, CRY_SFX_START
 	rlca ; * 2
 	add b
 	add c
@@ -430,7 +429,7 @@ PartyMenuInit::
 	ld hl, wTopMenuItemY
 	inc a
 	ld [hli], a ; top menu item Y
-	xor a
+	ld a, 19
 	ld [hli], a ; top menu item X
 	ld a, [wPartyAndBillsPCSavedMenuItem]
 	push af
@@ -563,11 +562,11 @@ PrintStatusCondition::
 	pop de
 	jr nz, PrintStatusConditionNotFainted
 ; if the pokemon's HP is 0, print "FNT"
-	ld a, "F"
-	ld [hli], a
-	ld a, "N"
-	ld [hli], a
-	ld [hl], "T"
+	ld a, "ע"
+	ld [hld], a
+	ld a, "ל"
+	ld [hld], a
+	ld [hl], "ף"
 	and a
 	ret
 
@@ -580,13 +579,13 @@ PrintStatusConditionNotFainted:
 ; [wLoadedMonLevel] = level
 PrintLevel::
 	ld a, $6e ; ":L" tile ID
-	ld [hli], a
+	ld [hld], a
+	dec hl
 	ld c, 2 ; number of digits
 	ld a, [wLoadedMonLevel] ; level
 	cp 100
 	jr c, PrintLevelCommon
 ; if level at least 100, write over the ":L" tile
-	dec hl
 	inc c ; increment number of digits to 3
 	jr PrintLevelCommon
 
@@ -596,14 +595,14 @@ PrintLevel::
 ; [wLoadedMonLevel] = level
 PrintLevelFull::
 	ld a, $6e ; ":L" tile ID
-	ld [hli], a
+	ld [hld], a
+	dec hl
 	ld c, 3 ; number of digits
 	ld a, [wLoadedMonLevel] ; level
 
 PrintLevelCommon::
-	ld [wd11e], a
 	ld de, wd11e
-	ld b, LEFT_ALIGN | 1 ; 1 byte
+	ld b, 1 ; 1 byte
 	jp PrintNumber
 
 GetwMoves::
@@ -1376,7 +1375,7 @@ CountSetBits::
 	ret
 
 ; subtracts the amount the player paid from their money
-; sets carry flag if there is enough money and unsets carry flag if not
+; OUTPUT: carry = 0(success) or 1(fail because there is not enough money)
 SubtractAmountPaidFromMoney::
 	jpba SubtractAmountPaidFromMoney_
 
@@ -1464,7 +1463,7 @@ DisplayListMenuID::
 	ld [wMaxMenuItem], a
 	ld a, 4
 	ld [wTopMenuItemY], a
-	ld a, 5
+	ld a, 18
 	ld [wTopMenuItemX], a
 	ld a, A_BUTTON | B_BUTTON | SELECT
 	ld [wMenuWatchedKeys], a
@@ -1483,12 +1482,12 @@ DisplayListMenuIDLoop::
 	jr z, .notOldManBattle
 .oldManBattle
 	ld a, "▶"
-	Coorda 5, 4 ; place menu cursor in front of first menu entry
+	Coorda 18, 4 ; place menu cursor in front of first menu entry
 	ld c, 20
 	call DelayFrames
 	xor a
 	ld [wCurrentMenuItem], a
-	coord hl, 5, 4
+	coord hl, 18, 4
 	ld a, l
 	ld [wMenuCursorLocation], a
 	ld a, h
@@ -1620,11 +1619,7 @@ DisplayChooseQuantityMenu::
 	lb bc, 1, 11  ; height and width
 .drawTextBox
 	call TextBoxBorder
-	coord hl, 16, 10
-	ld a, [wListMenuID]
-	cp PRICEDITEMLISTMENU
-	jr nz, .printInitialQuantity
-	coord hl, 8, 10
+	coord hl, 18, 10
 .printInitialQuantity
 	ld de, InitialQuantityText
 	call PlaceString
@@ -1703,13 +1698,14 @@ DisplayChooseQuantityMenu::
 	ld a, [hDivideBCDQuotient + 2]
 	ld [hMoney + 2], a
 .skipHalvingPrice
-	coord hl, 12, 10
+	coord hl, 15, 10
 	ld de, SpacesBetweenQuantityAndPriceText
 	call PlaceString
 	ld de, hMoney ; total price
-	ld c, $a3
+	ld c, $e3
+	coord hl, 8, 10
 	call PrintBCDNumber
-	coord hl, 9, 10
+	coord hl, 17, 10
 .printQuantity
 	ld de, wItemQuantity ; current quantity
 	lb bc, LEADING_ZEROES | 1, 2 ; 1 byte, 2 digits
@@ -1726,7 +1722,7 @@ DisplayChooseQuantityMenu::
 	ret
 
 InitialQuantityText::
-	db "×01@"
+	db "10×@"
 
 SpacesBetweenQuantityAndPriceText::
 	db "      @"
@@ -1772,7 +1768,7 @@ PrintListMenuEntries::
 	jr nc, .noCarry
 	inc d
 .noCarry
-	coord hl, 6, 4 ; coordinates of first list entry name
+	coord hl, 17, 4 ; coordinates of first list entry name
 	ld b, 4 ; print 4 names
 .loop
 	ld a, b
@@ -1829,9 +1825,9 @@ PrintListMenuEntries::
 	ld [wcf91], a
 	call GetItemPrice ; get price
 	pop hl
-	ld bc, SCREEN_WIDTH + 5 ; 1 row down and 5 columns right
+	ld bc, SCREEN_WIDTH - 11 ; 1 row down and 5 columns right
 	add hl, bc
-	ld c, $a3 ; no leading zeroes, right-aligned, print currency symbol, 3 bytes
+	ld c, $e3 ; no leading zeroes, left-aligned, print currency symbol, 3 bytes
 	call PrintBCDNumber
 .skipPrintingItemPrice
 	ld a, [wListMenuID]
@@ -1867,7 +1863,7 @@ PrintListMenuEntries::
 	ld [wLoadedMonLevel], a
 .skipCopyingLevel
 	pop hl
-	ld bc, $001c
+	ld bc, 12
 	add hl, bc
 	call PrintLevel
 	pop af
@@ -1887,7 +1883,7 @@ PrintListMenuEntries::
 	and a ; is the item unsellable?
 	jr nz, .skipPrintingItemQuantity ; if so, don't print the quantity
 	push hl
-	ld bc, SCREEN_WIDTH + 8 ; 1 row down and 8 columns right
+	ld bc, SCREEN_WIDTH - 11 ; 1 row down and 8 columns right
 	add hl, bc
 	ld a, "×"
 	ld [hli], a
@@ -1899,6 +1895,7 @@ PrintListMenuEntries::
 	ld de, wd11e
 	ld [de], a
 	lb bc, 1, 2
+	set 6, b
 	call PrintNumber
 	pop de
 	pop af
@@ -1926,7 +1923,7 @@ PrintListMenuEntries::
 	inc c
 	dec b
 	jp nz, .loop
-	ld bc, -8
+	ld bc, -32
 	add hl, bc
 	ld a, "▼"
 	ld [hl], a
@@ -1936,7 +1933,7 @@ PrintListMenuEntries::
 	jp PlaceString
 
 ListMenuCancelText::
-	db "CANCEL@"
+	db "ביטול@"
 
 GetMonName::
 	push hl
@@ -2042,9 +2039,9 @@ GetMachineName::
 	ret
 
 TechnicalPrefix::
-	db "TM"
+	db "MT"
 HiddenPrefix::
-	db "HM"
+	db "MH"
 
 ; sets carry if item is HM, clears carry if item is not HM
 ; Input: a = item ID
@@ -3196,6 +3193,7 @@ InitYesNoTextBoxParameters::
 	ld [wTwoOptionMenuID], a
 	coord hl, 14, 7
 	ld bc, $80f
+	ld c, 18
 	ret
 
 YesNoChoicePokeCenter::
@@ -3203,7 +3201,7 @@ YesNoChoicePokeCenter::
 	ld a, HEAL_CANCEL_MENU
 	ld [wTwoOptionMenuID], a
 	coord hl, 11, 6
-	lb bc, 8, 12
+	lb bc, 8, 18
 	jr DisplayYesNoChoice
 
 WideYesNoChoice:: ; unused
@@ -3633,7 +3631,7 @@ WaitForTextScrollButtonPress::
 	pop bc
 	pop de
 .skipAnimation
-	coord hl, 18, 16
+	coord hl, 1, 16
 	call HandleDownArrowBlinkTiming
 	pop hl
 	call JoypadLowSensitivity
@@ -3740,7 +3738,7 @@ PrintLetterDelay::
 	pop hl
 	ret
 
-; Copies [hl, bc) to [de, bc - hl).
+; Copies [hl, bc) to [de, de + bc - hl).
 ; In other words, the source data is from hl up to but not including bc,
 ; and the destination is de.
 CopyDataUntil::
@@ -4082,7 +4080,7 @@ HandleMenuInputPokemonSelection::
 	and a ; was a key pressed?
 	jr nz, .keyPressed
 	push hl
-	coord hl, 18, 11 ; coordinates of blinking down arrow in some menus
+	coord hl, 1, 11 ; coordinates of blinking down arrow in some menus
 	call HandleDownArrowBlinkTiming ; blink down arrow (if any)
 	pop hl
 	ld a, [wMenuJoypadPollCount]
@@ -4332,7 +4330,7 @@ AutoTextBoxDrawingCommon::
 	ret
 
 PrintText::
-; Print text hl at (1, 14).
+; Print text hl at (18, 14).
 	push hl
 	ld a, MESSAGE_BOX
 	ld [wTextBoxID], a
@@ -4341,8 +4339,9 @@ PrintText::
 	call Delay3
 	pop hl
 PrintText_NoCreatingTextBox::
-	coord bc, 1, 14
-	jp TextCommandProcessor
+	coord bc, 18, 14
+	call TextCommandProcessor
+	ret
 
 FarPrintText::
 ; print text b:hl at (1, 14)

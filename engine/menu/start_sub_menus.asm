@@ -50,7 +50,7 @@ StartMenu_Pokemon:
 	ld hl, wTopMenuItemY
 	ld a, c
 	ld [hli], a ; top menu item Y
-	ld a, [hFieldMoveMonMenuTopMenuItemX]
+	ld a, 18
 	ld [hli], a ; top menu item X
 	xor a
 	ld [hli], a ; current menu item ID
@@ -302,7 +302,7 @@ StartMenu_Pokemon:
 
 ; writes a blank tile to all possible menu cursor positions on the party menu
 ErasePartyMenuCursors:
-	coord hl, 0, 1
+	coord hl, 19, 1
 	ld bc, 2 * 20 ; menu cursor positions are 2 rows apart
 	ld a, 6 ; 6 menu cursor positions
 .loop
@@ -363,7 +363,7 @@ StartMenu_Item:
 	ld hl, wTopMenuItemY
 	ld a, 11
 	ld [hli], a ; top menu item Y
-	ld a, 14
+	ld a, 18
 	ld [hli], a ; top menu item X
 	xor a
 	ld [hli], a ; current menu item ID
@@ -563,7 +563,7 @@ DrawTrainerInfo:
 	call TrainerInfo_FarCopyData
 	pop bc
 	ld hl, BadgeNumbersTileGraphics  ; badge number tile patterns
-	ld de, vChars1 + $580
+	ld de, vChars1 + $200
 	call TrainerInfo_FarCopyData
 	ld hl, GymLeaderFaceAndBadgeTileGraphics  ; gym leader face and badge tile patterns
 	ld de, vChars2 + $200
@@ -573,14 +573,14 @@ DrawTrainerInfo:
 	ld hl, TextBoxGraphics
 	ld de, $00d0
 	add hl, de ; hl = colon tile pattern
-	ld de, vChars1 + $560
+	ld de, vChars1 + $280
 	ld bc, $0010
 	ld a, $04
 	push bc
 	call FarCopyData
 	pop bc
 	ld hl, TrainerInfoTextBoxTileGraphics + $80  ; background tile pattern
-	ld de, vChars1 + $570
+	ld de, vChars1 + $290
 	call TrainerInfo_FarCopyData
 	call EnableLCD
 	ld hl, wTrainerInfoTextBoxWidthPlus1
@@ -600,29 +600,30 @@ DrawTrainerInfo:
 	coord hl, 1, 10
 	call TrainerInfo_DrawTextBox
 	coord hl, 0, 10
-	ld a, $d7
+	ld a, $a9
 	call TrainerInfo_DrawVerticalLine
 	coord hl, 19, 10
 	call TrainerInfo_DrawVerticalLine
-	coord hl, 6, 9
+	coord hl, 13, 9
 	ld de, TrainerInfo_BadgesText
 	call PlaceString
-	coord hl, 2, 2
+	coord hl, 14, 2
 	ld de, TrainerInfo_NameMoneyTimeText
 	call PlaceString
-	coord hl, 7, 2
+	coord hl, 9, 2
 	ld de, wPlayerName
 	call PlaceString
-	coord hl, 8, 4
+	coord hl, 3, 4
 	ld de, wPlayerMoney
-	ld c, $e3
+	ld c, $a3 ; right-aligned, currency symbol, no leading zeroes
 	call PrintBCDNumber
-	coord hl, 9, 6
+	coord hl, 4, 6
 	ld de, wPlayTimeHours ; hours
-	lb bc, LEFT_ALIGN | 1, 3
+	lb bc, 1, 3
 	call PrintNumber
-	ld [hl], $d6 ; colon tile ID
-	inc hl
+	coord hl, 7, 6
+	ld [hl], $a8 ; colon tile ID
+	coord hl, 8, 6
 	ld de, wPlayTimeMinutes ; minutes
 	lb bc, LEADING_ZEROES | 1, 2
 	jp PrintNumber
@@ -632,13 +633,13 @@ TrainerInfo_FarCopyData:
 	jp FarCopyData
 
 TrainerInfo_NameMoneyTimeText:
-	db   "NAME/"
-	next "MONEY/"
-	next "TIME/@"
+	db   "שם/"
+	next "כסף/"
+	next "זמן/@"
 
 ; $76 is a circle tile
 TrainerInfo_BadgesText:
-	db $76,"BADGES",$76,"@"
+	db $76,"תגים",$76,"@"
 
 ; draws a text box on the trainer info screen
 ; height is always 6

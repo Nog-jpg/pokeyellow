@@ -136,6 +136,7 @@ DisplayTitleScreen:
 	call PlaySound
 
 ; scroll game version in from the right
+; TODO
 	callab TitleScreen_PlacePikaSpeechBubble
 	ld a, SCREEN_HEIGHT_PIXELS
 	ld [hWY], a
@@ -241,14 +242,14 @@ LoadCopyrightTiles:
 	ld hl, vChars2 + $600
 	lb bc, BANK(NintendoCopyrightLogoGraphics), (TextBoxGraphics + $10 - NintendoCopyrightLogoGraphics) / $10 ; bug: overflows into text box graphics and copies the "A" tile
 	call CopyVideoData
-	coord hl, 2, 7
+	coord hl, 17, 7
 	ld de, CopyrightTextString
 	jp PlaceString
 
 CopyrightTextString:
-	db   $60,$61,$62,$63,$61,$62,$7c,$7f,$65,$66,$67,$68,$69,$6a			 ; ©1995-1999  Nintendo
-	next $60,$61,$62,$63,$61,$62,$7c,$7f,$6b,$6c,$6d,$6e,$6f,$70,$71,$72	 ; ©1995-1999  Creatures inc.
-	next $60,$61,$62,$63,$61,$62,$7c,$7f,$73,$74,$75,$76,$77,$78,$79,$7a,$7b ; ©1995-1999  GAME FREAK inc.
+	db   $64, $61, $63, $61, $62, $61, $60, $7F, $6A, $69, $68, $67, $66, $65                ; ©'95.'96.'98 Nintendo
+	next $64, $61, $63, $61, $62, $61, $60, $7F, $72, $71, $70, $6F, $6E, $6D, $6C, $6B      ; ©'95.'96.'98 Creatures inc.
+	next $64, $61, $63, $61, $62, $61, $60, $7F, $7B, $7A, $79, $78, $77, $76, $75, $74, $73 ; ©'95.'96.'98 GAME FREAK inc.
 	db   "@"
 
 TitleScreen_PlayPikachuPCM:
@@ -337,8 +338,8 @@ CopyFixedLengthText:
 	ld bc, NAME_LENGTH
 	jp CopyData
 
-NintenText: db "NINTEN@"
-SonyText:   db "SONY@"
+NintenText: db "נינטן@"
+SonyText:   db "סוני@"
 
 IncrementResetCounter:
 	ld hl, wTitleScreenScene + 2

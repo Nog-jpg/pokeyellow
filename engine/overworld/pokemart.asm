@@ -20,6 +20,7 @@ DisplayPokemartDialogue_:
 
 ; This code is useless. It copies the address of the pokemart's inventory to hl,
 ; but the address is never used.
+; UNUSED
 	ld hl, wItemListPointer
 	ld a, [hli]
 	ld l, [hl]
@@ -38,6 +39,7 @@ DisplayPokemartDialogue_:
 .sellMenu
 
 ; the same variables are set again below, so this code has no effect
+; UNUSED
 	xor a
 	ld [wPrintItemPrices], a
 	ld a, INIT_BAG_ITEM_LIST
@@ -85,7 +87,7 @@ DisplayPokemartDialogue_:
 	lb bc, 14, 1 ; location that PrintText always prints to, this is useless
 	call PrintText
 	coord hl, 14, 7
-	lb bc, 8, 15
+	lb bc, 8, 18
 	ld a, TWO_OPTION_MENU
 	ld [wTextBoxID], a
 	call DisplayTextBoxID ; yes/no menu
@@ -122,6 +124,7 @@ DisplayPokemartDialogue_:
 .buyMenu
 
 ; the same variables are set again below, so this code has no effect
+; UNUSED
 	ld a, 1
 	ld [wPrintItemPrices], a
 	ld a, INIT_OTHER_ITEM_LIST
@@ -163,7 +166,7 @@ DisplayPokemartDialogue_:
 	ld hl, PokemartTellBuyPriceText
 	call PrintText
 	coord hl, 14, 7
-	lb bc, 8, 15
+	lb bc, 8, 18
 	ld a, TWO_OPTION_MENU
 	ld [wTextBoxID], a
 	call DisplayTextBoxID ; yes/no menu

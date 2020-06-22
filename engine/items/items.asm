@@ -1294,7 +1294,7 @@ ItemUseMedicine:
 	xor a
 	ld [wBattleMonStatus], a ; remove the status ailment in the in-battle pokemon data
 .calculateHPBarCoords
-	ld hl, wOAMBuffer + $90
+	ld hl, wOAMBuffer + $8e
 	ld bc, 2 * SCREEN_WIDTH
 	inc d
 .calculateHPBarCoordsLoop
@@ -1563,11 +1563,11 @@ VitaminNoEffectText:
 	db "@"
 
 VitaminText:
-	db "HEALTH@"
-	db "ATTACK@"
-	db "DEFENSE@"
-	db "SPEED@"
-	db "SPECIAL@"
+	db "בריאות@"
+	db "התקפה@"
+	db "הגנה@"
+	db "מהירות@"
+	db "מיוחדת@"
 
 ItemUseBait:
 	ld hl, ThrewBaitText
@@ -2467,7 +2467,7 @@ ItemUseTMHM:
 	ld hl, TeachMachineMoveText
 	call PrintText
 	coord hl, 14, 7
-	lb bc, 8, 15
+	lb bc, 8, 18
 	ld a, TWO_OPTION_MENU
 	ld [wTextBoxID], a
 	call DisplayTextBoxID ; yes/no menu
@@ -2890,7 +2890,7 @@ TossItem_:
 	ld hl, IsItOKToTossItemText
 	call PrintText
 	coord hl, 14, 7
-	lb bc, 8, 15
+	lb bc, 8, 18
 	ld a, TWO_OPTION_MENU
 	ld [wTextBoxID], a
 	call DisplayTextBoxID ; yes/no menu

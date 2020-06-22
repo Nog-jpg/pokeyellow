@@ -165,18 +165,19 @@ DisplayIntroNameTextBox:
 	coord hl, 0, 0
 	lb bc, 10, 9
 	call TextBoxBorder
-	coord hl, 3, 0
+	coord hl, 7, 0
 	ld de, .namestring
 	call PlaceString
 	pop de
-	coord hl, 2, 2
+	coord hl, 8, 2
 	call PlaceString
 	call UpdateSprites
 	xor a
 	ld [wCurrentMenuItem], a
 	ld [wLastMenuItem], a
-	inc a
+	ld a, 9
 	ld [wTopMenuItemX], a
+	ld a, 1
 	ld [wMenuWatchedKeys], a ; A_BUTTON
 	inc a
 	ld [wTopMenuItemY], a
@@ -185,20 +186,20 @@ DisplayIntroNameTextBox:
 	jp HandleMenuInput
 
 .namestring
-	db "NAME@"
+	db "שם@"
 
 DefaultNamesPlayer:
-	db   "NEW NAME"
-	next "YELLOW"
-	next "ASH"
-	next "JACK"
+	db   "שם חדש"
+	next "צהוב"
+	next "אש"
+	next "דוד"
 	db   "@"
 
 DefaultNamesRival:
-	db   "NEW NAME"
-	next "BLUE"
-	next "GARY"
-	next "JOHN"
+	db   "שם חדש"
+	next "כחול"
+	next "יוסי"
+	next "יובל"
 	db   "@"
 
 GetDefaultName:
@@ -226,16 +227,16 @@ GetDefaultName:
 	jp CopyData
 
 DefaultNamesPlayerList:
-	db "NEW NAME@"
-	db "YELLOW@"
-	db "ASH@"
-	db "JACK@"
+	db   "שם חדש"
+	next "צהוב"
+	next "אש"
+	next "דוד"
 
 DefaultNamesRivalList:
-	db "NEW NAME@"
-	db "BLUE@"
-	db "GARY@"
-	db "JOHN@"
+	db   "שם חדש"
+	next "כחול"
+	next "יוסי"
+	next "יובל"
 
 TextTerminator_6b20:
 	db "@"

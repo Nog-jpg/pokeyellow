@@ -12,7 +12,7 @@ CableClub_DoBattleOrTrade:
 	coord hl, 3, 8
 	lb bc, 2, 12
 	call CableClub_TextBoxBorder
-	coord hl, 4, 10
+	coord hl, 13, 10
 	ld de, PleaseWaitString
 	call PlaceString
 	ld hl, wPlayerNumHits
@@ -295,7 +295,7 @@ CableClub_DoBattleOrTradeAgain:
 	jr CallCurrentTradeCenterFunction
 
 PleaseWaitString:
-	db "PLEASE WAIT!@"
+	db "אנא המתן!@"
 
 CallCurrentTradeCenterFunction:
 	ld hl, TradeCenterPointerTable
@@ -343,7 +343,7 @@ TradeCenter_SelectMon:
 	ld [wMaxMenuItem], a
 	ld a, 9
 	ld [wTopMenuItemY], a
-	ld a, 1
+	ld a, 18
 	ld [wTopMenuItemX], a
 .enemyMonMenu_HandleInput
 	ld hl, hFlags_0xFFFA
@@ -405,7 +405,7 @@ TradeCenter_SelectMon:
 	ld [wMaxMenuItem], a
 	ld a, 1
 	ld [wTopMenuItemY], a
-	ld a, 1
+	ld a, 18
 	ld [wTopMenuItemX], a
 	coord hl, 1, 1
 	lb bc, 6, 1
@@ -424,6 +424,7 @@ TradeCenter_SelectMon:
 	jr z, .playerMonMenu_ANotPressed
 	jp .chosePlayerMon ; jump if A button pressed
 ; unreachable code
+; UNUSED
 	ld a, INIT_PLAYEROT_LIST
 	ld [wInitListType], a
 	callab InitList ; the list isn't used
@@ -475,7 +476,7 @@ TradeCenter_SelectMon:
 	coord hl, 0, 14
 	lb bc, 2, 18
 	call CableClub_TextBoxBorder
-	coord hl, 2, 16
+	coord hl, 17, 16
 	ld de, .statsTrade
 	call PlaceString
 	xor a
@@ -487,10 +488,10 @@ TradeCenter_SelectMon:
 	ld [wTopMenuItemY], a
 .selectStatsMenuItem
 	ld a, " "
-	Coorda 11, 16
+	Coorda 18, 16
 	ld a, D_RIGHT | B_BUTTON | A_BUTTON
 	ld [wMenuWatchedKeys], a
-	ld a, 1
+	ld a, 7
 	ld [wTopMenuItemX], a
 	call HandleMenuInput
 	bit 4, a ; Right pressed?
@@ -504,10 +505,10 @@ TradeCenter_SelectMon:
 	jp .playerMonMenu
 .selectTradeMenuItem
 	ld a, " "
-	Coorda 1, 16
+	Coorda 7, 16
 	ld a, D_LEFT | B_BUTTON | A_BUTTON
 	ld [wMenuWatchedKeys], a
-	ld a, 11
+	ld a, 18
 	ld [wTopMenuItemX], a
 	call HandleMenuInput
 	bit 5, a ; Left pressed?
@@ -540,7 +541,7 @@ TradeCenter_SelectMon:
 	ld [wTradeCenterPointerTableIndex], a
 	jp CallCurrentTradeCenterFunction
 .statsTrade
-	db "STATS     TRADE@"
+	db "החלף       נתונים@"
 .selectedCancelMenuItem
 	ld a, [wCurrentMenuItem]
 	ld b, a
@@ -555,7 +556,7 @@ TradeCenter_SelectMon:
 	ld [hl], a
 .cancelMenuItem_Loop
 	ld a, "▶" ; filled arrow cursor
-	Coorda 1, 16
+	Coorda 18, 16
 .cancelMenuItem_JoypadLoop
 	call JoypadLowSensitivity
 	ld a, [hJoy5]
@@ -567,14 +568,14 @@ TradeCenter_SelectMon:
 	jr z, .cancelMenuItem_JoypadLoop
 ; if Up pressed
 	ld a, " "
-	Coorda 1, 16
+	Coorda 18, 16
 	ld a, [wPartyCount]
 	dec a
 	ld [wCurrentMenuItem], a
 	jp .playerMonMenu
 .cancelMenuItem_APressed
 	ld a, "▷" ; unfilled arrow cursor
-	Coorda 1, 16
+	Coorda 18, 16
 	ld a, $f
 	ld [wSerialExchangeNybbleSendData], a
 	call Serial_PrintWaitingTextAndSyncAndExchangeNybble
@@ -603,23 +604,23 @@ ReturnToCableClubRoom:
 	ret
 
 TradeCenter_DrawCancelBox:
-	coord hl, 11, 15
+	coord hl, 0, 15
 	ld a, $7e
 	ld bc, 2 * SCREEN_WIDTH + 9
 	call FillMemory
-	coord hl, 0, 15
+	coord hl, 9, 15
 	lb bc, 1, 9
 	call CableClub_TextBoxBorder
-	coord hl, 2, 16
+	coord hl, 17, 16
 	ld de, CancelTextString
 	jp PlaceString
 
 CancelTextString:
-	db "CANCEL@"
+	db "ביטול@"
 
 TradeCenter_PlaceSelectedEnemyMonMenuCursor:
 	ld a, [wSerialSyncAndExchangeNybbleReceiveData]
-	coord hl, 1, 9
+	coord hl, 18, 9
 	ld bc, SCREEN_WIDTH
 	call AddNTimes
 	ld [hl], "▷" ; cursor
@@ -645,16 +646,16 @@ TradeCenter_DrawPartyLists:
 	coord hl, 0, 8
 	lb bc, 6, 18
 	call CableClub_TextBoxBorder
-	coord hl, 5, 0
+	coord hl, 15, 0
 	ld de, wPlayerName
 	call PlaceString
-	coord hl, 5, 8
+	coord hl, 15, 8
 	ld de, wLinkEnemyTrainerName
 	call PlaceString
-	coord hl, 2, 1
+	coord hl, 17, 1
 	ld de, wPartySpecies
 	call TradeCenter_PrintPartyListNames
-	coord hl, 2, 9
+	coord hl, 17, 9
 	ld de, wEnemyPartyMons
 	; fall through
 
@@ -715,11 +716,11 @@ TradeCenter_Trade:
 	ld [wd11e], a
 	call GetMonName
 	ld hl, WillBeTradedText
-	coord bc, 1, 14
+	coord bc, 18, 14
 	call TextCommandProcessor
 	call SaveScreenTilesToBuffer1
 	coord hl, 10, 7
-	lb bc, 8, 11
+	lb bc, 8, 18
 	ld a, TRADE_CANCEL_MENU
 	ld [wTwoOptionMenuID], a
 	ld a, TWO_OPTION_MENU
@@ -735,7 +736,7 @@ TradeCenter_Trade:
 	coord hl, 0, 12
 	lb bc, 4, 18
 	call CableClub_TextBoxBorder
-	coord hl, 1, 14
+	coord hl, 18, 14
 	ld de, TradeCanceled
 	call PlaceString
 	call Serial_PrintWaitingTextAndSyncAndExchangeNybble
@@ -751,7 +752,7 @@ TradeCenter_Trade:
 	coord hl, 0, 12
 	lb bc, 4, 18
 	call CableClub_TextBoxBorder
-	coord hl, 1, 14
+	coord hl, 18, 14
 	ld de, TradeCanceled
 	call PlaceString
 	jp .tradeCancelled
@@ -862,7 +863,7 @@ TradeCenter_Trade:
 	coord hl, 0, 12
 	lb bc, 4, 18
 	call CableClub_TextBoxBorder
-	coord hl, 1, 14
+	coord hl, 18, 14
 	ld de, TradeCompleted
 	call PlaceString
 	predef SaveSAVtoSRAM2
@@ -883,11 +884,11 @@ WillBeTradedText:
 	db "@"
 
 TradeCompleted:
-	db "Trade completed!@"
+	db "ההחלפה בוצעה!@"
 
 TradeCanceled:
-	db   "Too bad! The trade"
-	next "was canceled!@"
+	db   "חבל! ההחלפה"
+	next "בוטלה!@"
 
 TradeCenterPointerTable:
 	dw TradeCenter_SelectMon
