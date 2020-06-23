@@ -96,12 +96,6 @@ BenchGuyTextPointers:
 	db_tx_pre MtMoonPokecenterBenchGuyText
 	db ROCK_TUNNEL_POKECENTER,  SPRITE_FACING_LEFT
 	db_tx_pre RockTunnelPokecenterBenchGuyText
-	db SAFARI_ZONE_WEST_REST_HOUSE,SPRITE_FACING_LEFT
-	db_tx_pre UnusedBenchGuyText1
-	db SAFARI_ZONE_EAST_REST_HOUSE,SPRITE_FACING_LEFT
-	db_tx_pre UnusedBenchGuyText2
-	db SAFARI_ZONE_NORTH_REST_HOUSE,SPRITE_FACING_LEFT
-	db_tx_pre UnusedBenchGuyText3
 	db $FF
 
 ViridianCityPokecenterBenchGuyText:
@@ -126,18 +120,6 @@ MtMoonPokecenterBenchGuyText:
 
 RockTunnelPokecenterBenchGuyText:
 	TX_FAR _RockTunnelPokecenterGuyText
-	db "@"
-
-UnusedBenchGuyText1:
-	TX_FAR _UnusedBenchGuyText1
-	db "@"
-
-UnusedBenchGuyText2:
-	TX_FAR _UnusedBenchGuyText2
-	db "@"
-
-UnusedBenchGuyText3:
-	TX_FAR _UnusedBenchGuyText3
 	db "@"
 
 VermilionCityPokecenterBenchGuyText:
@@ -179,9 +161,6 @@ CeladonCityHotelText:
 	db "@"
 
 	ret
-
-UnusedPredefText:
-	db "@"
 
 PrintBookcaseText:
 	call EnableAutoTextBoxDrawing

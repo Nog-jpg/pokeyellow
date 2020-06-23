@@ -3588,6 +3588,11 @@ wBoxMon2:: ds box_struct_length * (MONS_PER_BOX + -1) ; dab6
 wBoxMonOT::    ds NAME_LENGTH * MONS_PER_BOX ; dd29
 wBoxMonNicks:: ds NAME_LENGTH * MONS_PER_BOX ; de05
 wBoxMonNicksEnd:: ; dee1
+
+wReversedText:: ds 16
+wReversedTextEnd:: ds 1
+wBCDReverseTemp:: ds 16
+
 wBoxDataEnd::
 
 wGBCBasePalPointers:: ds NUM_ACTIVE_PALS * 2 ; dee1

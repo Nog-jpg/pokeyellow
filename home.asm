@@ -81,7 +81,6 @@ HideSprites::
 
 INCLUDE "home/copy.asm"
 
-
 SECTION "Entry", ROM0
 
 	nop
@@ -299,16 +298,6 @@ DrawHPBar::
 ; wMonHeader = base address of base stats
 LoadMonData::
 	jpab LoadMonData_
-
-OverwritewMoves::
-; Write c to [wMoves + b]. Unused.
-	ld hl, wMoves
-	ld e, b
-	ld d, 0
-	add hl, de
-	ld a, c
-	ld [hl], a
-	ret
 
 LoadFlippedFrontSpriteByMonIndex::
 	ld a, 1
@@ -605,15 +594,6 @@ PrintLevelCommon::
 	ld b, 1 ; 1 byte
 	jp PrintNumber
 
-GetwMoves::
-; Unused. Returns the move at index a from wMoves in a
-	ld hl, wMoves
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	ret
-
 ; copies the base stat data of a pokemon to wMonHeader
 ; INPUT:
 ; [wd0b5] = pokemon ID
@@ -688,6 +668,13 @@ GetPartyMonName::
 	pop bc
 	pop hl
 	ret
+
+PrintBCDNumberWrapper::
+    ; Set flag to indicate this is the function being called, and not the none-BCD one.
+    ; Using wSlotMachineFlags here to store the flag.
+    ld a, 1
+    ld [wSlotMachineFlags], a
+    jp PrintNumberWrapperCommon
 
 ; function to print a BCD (Binary-coded decimal) number
 ; de = address of BCD number
@@ -1504,11 +1491,6 @@ DisplayListMenuIDLoop::
 .buttonAPressed
 	ld a, [wCurrentMenuItem]
 	call PlaceUnfilledArrowMenuCursor
-
-; pointless because both values are overwritten before they are read
-	ld a, $01
-	ld [wMenuExitMethod], a
-	ld [wChosenMenuItem], a
 
 	xor a
 	ld [wMenuWatchMovingOutOfBounds], a
@@ -2336,9 +2318,6 @@ RunNPCMovementScript::
 EndNPCMovementScript::
 	jpba _EndNPCMovementScript
 
-EmptyFunc2::
-	ret
-
 ; stores hl in [wTrainerHeaderPtr]
 StoreTrainerHeaderPointer::
 	ld a, h
@@ -2414,7 +2393,6 @@ ReadTrainerHeaderInfo::
 	jr nz, .done
 	ld a, [hli]        ; read end battle text (2) but override the result afterwards (XXX why, bug?)
 	ld d, [hl]
-	ld e, a
 	jr .done
 .readPointer
 	ld a, [hli]
@@ -2596,7 +2574,6 @@ SpritePositionBankswitch::
 
 CheckForEngagingTrainers::
 	xor a
-	call ReadTrainerHeaderInfo       ; read trainer flag's bit (unused)
 	ld d, h                          ; store trainer header address in de
 	ld e, l
 .trainerLoop
@@ -3203,13 +3180,6 @@ YesNoChoicePokeCenter::
 	coord hl, 11, 6
 	lb bc, 8, 18
 	jr DisplayYesNoChoice
-
-WideYesNoChoice:: ; unused
-	call SaveScreenTilesToBuffer1
-	ld a, WIDE_YES_NO_MENU
-	ld [wTwoOptionMenuID], a
-	coord hl, 12, 7
-	lb bc, 8, 13
 
 DisplayYesNoChoice::
 	ld a, TWO_OPTION_MENU
@@ -4354,6 +4324,13 @@ FarPrintText::
 	call BankswitchCommon
 	ret
 
+PrintNumberWrapper::
+    ; Set flag to indicate this is the function being called, and not the BCD one.
+    ; Using wSlotMachineFlags here to store the flag.
+    xor a
+    ld [wSlotMachineFlags], a
+    jp PrintNumberWrapperCommon
+
 PrintNumber::
 ; Print the c-digit, b-byte value at de.
 ; Allows 2 to 7 digits. For 1-digit numbers, add
@@ -4858,6 +4835,56 @@ SetMapTextPointer::
 	ld [wMapTextPtr + 1], a
 	ret
 
+PrintNumberWrapperCommon::
+	; Save hl
+	push hl
+	; Set dest to the temp buffer
+	ld hl, wBCDReverseTemp
+	; Turn delay off
+	ld a,[wd730]
+	push af
+	set 6, a
+	ld [wd730], a
+    ; See which number printing function should be called
+    ld a, [wSlotMachineFlags]
+    cp a, 1
+    jp nc, .BCD
+    ; Print to the temp buffer
+    call PrintNumber
+    jp AfterPrintBCDNumberWrapper
+.BCD
+    ; Print to the temp buffer
+    call PrintBCDNumber
+    ; fall through
+
+AfterPrintBCDNumberWrapper::
+	; Restore flags
+	pop af
+	ld [wd730], a
+	; Put a null terminator after the string
+	ld a, "@"
+	ld [hl], a
+	; Reverse and print the text
+	ld de, wBCDReverseTemp
+; Reverse text
+	ld hl, wReversedTextEnd
+	ld a, "@"
+	ld [hld], a
+.reverseLoop
+	ld [hld], a
+	ld a, [de]
+	inc de
+	cp a, "@"
+	jr nz, .reverseLoop
+	inc hl
+	ld d, h
+	ld e, l
+	pop hl
+	call PlaceString
+	ld h,b
+	ld l,c
+	ret
+
 TextPredefs::
 const_value = 1
 
@@ -4889,10 +4916,6 @@ const_value = 1
 	add_tx_pre SaffronCityPokecenterBenchGuyText    ; 1A
 	add_tx_pre MtMoonPokecenterBenchGuyText         ; 1B
 	add_tx_pre RockTunnelPokecenterBenchGuyText     ; 1C
-	add_tx_pre UnusedBenchGuyText1                  ; 1D
-	add_tx_pre UnusedBenchGuyText2                  ; 1E
-	add_tx_pre UnusedBenchGuyText3                  ; 1F
-	add_tx_pre UnusedPredefText                     ; 20
 	add_tx_pre PokemonCenterPCText                  ; 21
 	add_tx_pre ViridianSchoolNotebook               ; 22
 	add_tx_pre ViridianSchoolBlackboard             ; 23
