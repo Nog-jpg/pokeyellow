@@ -222,11 +222,9 @@ DrawHPBar::
 
 	push hl
 	push de
-	;push bc
+	push bc
 
 	; Left
-	ld a, $71 ; "HP:"
-	ld [hli], a
 	ld a, $62
 	ld [hli], a
 
@@ -240,11 +238,9 @@ DrawHPBar::
 	jr nz, .draw
 
 	; Right
-	ld a, [wHPBarType]
-	dec a
-	ld a, $6c ; status screen and battle
-	jr z, .ok
-.ok
+	ld a, $6c ; "HP:" left half
+	ld [hli], a
+	ld a, $71 ; "HP:" right half
 	ld [hl], a
 
 	pop hl
@@ -277,7 +273,7 @@ DrawHPBar::
 	add e
 	ld [hl], a
 .done
-	;pop bc
+	pop bc
 	pop de
 	pop hl
 	ret
@@ -416,7 +412,6 @@ PartyMenuInit::
 	ld [wMonDataLocation], a
 	ld [wMenuWatchMovingOutOfBounds], a
 	ld hl, wTopMenuItemY
-	inc a
 	ld [hli], a ; top menu item Y
 	ld a, 19
 	ld [hli], a ; top menu item X
@@ -668,13 +663,6 @@ GetPartyMonName::
 	pop bc
 	pop hl
 	ret
-
-PrintBCDNumberWrapper::
-    ; Set flag to indicate this is the function being called, and not the none-BCD one.
-    ; Using wSlotMachineFlags here to store the flag.
-    ld a, 1
-    ld [wSlotMachineFlags], a
-    jp PrintNumberWrapperCommon
 
 ; function to print a BCD (Binary-coded decimal) number
 ; de = address of BCD number
@@ -999,14 +987,6 @@ TextScriptEnd::
 	ld hl, TextScriptEndingChar
 	ret
 
-ExclamationText::
-	TX_FAR _ExclamationText
-	db "@"
-
-GroundRoseText::
-	TX_FAR _GroundRoseText
-	db "@"
-
 BoulderText::
 	TX_FAR _BoulderText
 	db "@"
@@ -1096,10 +1076,6 @@ FadeOutAudio::
 	ld a, b
 	ld [wNewSoundID], a
 	jp PlaySound
-
-UnknownText_2812::
-	TX_FAR _PokemonText
-	db "@"
 
 ; this function is used to display sign messages, sprite dialog, etc.
 ; INPUT: [hSpriteIndexOrTextID] = sprite ID or text ID
@@ -1468,7 +1444,7 @@ DisplayListMenuIDLoop::
 	and a ; is it the Old Man battle?
 	jr z, .notOldManBattle
 .oldManBattle
-	ld a, "▶"
+	ld a, "◀"
 	Coorda 18, 4 ; place menu cursor in front of first menu entry
 	ld c, 20
 	call DelayFrames
@@ -1896,7 +1872,7 @@ PrintListMenuEntries::
 	cp c ; is it this item?
 	jr nz, .nextListEntry
 	dec hl
-	ld a, $ec ; unfilled right arrow menu cursor to indicate an item being swapped
+	ld a, "◁" ; unfilled right arrow menu cursor to indicate an item being swapped
 	ld [hli], a
 .nextListEntry
 	ld bc, 2 * SCREEN_WIDTH ; 2 rows
@@ -1921,21 +1897,38 @@ GetMonName::
 	push hl
 	ld a, [H_LOADEDROMBANK]
 	push af
-	ld a, BANK(MonsterNames)
+	ld a, BANK(MonsterNamesPointers)
 	ld [H_LOADEDROMBANK], a
 	ld [MBC1RomBank], a
-	ld a, [wd11e]
-	dec a
-	ld hl, MonsterNames
-	ld c, 10
-	ld b, 0
-	call AddNTimes
+
+  	ld a, [wd11e]
+  	ld l, a
+  	ld h, 0
+  	ld bc, MonsterNamesPointers - 2 ; Account for 1-based indexing
+	ld a, [wNikudFlag]
+	bit 5, a
+	jr z, .notNikud
+	ld bc, MonsterNamesNikud - 2 ; Account for 1-based indexing
+	.notNikud
+  	add hl, hl
+  	add hl, bc
+  	ld a, [hli]
+  	ld h, [hl]
+  	ld l, a
+
 	ld de, wcd6d
 	push de
 	ld bc, 10
+	ld a, [wNikudFlag]
+	bit 5, a
+	jr z, .notNikud2
+	res 5, a
+	ld [wNikudFlag], a ; Resetting the nikud flag. This prevents functions accidentally getting nikud names.
+	ld bc, 20
+	.notNikud2
 	call CopyData
-	ld hl, wcd6d + 10
-	ld [hl], "@"
+	;ld hl, wcd6d + 10
+	;ld [hl], "@"
 	pop de
 	pop af
 	ld [H_LOADEDROMBANK], a
@@ -2392,7 +2385,6 @@ ReadTrainerHeaderInfo::
 	cp $a
 	jr nz, .done
 	ld a, [hli]        ; read end battle text (2) but override the result afterwards (XXX why, bug?)
-	ld d, [hl]
 	jr .done
 .readPointer
 	ld a, [hli]
@@ -2425,8 +2417,6 @@ TalkToTrainer::
 	ld a, $4
 	call ReadTrainerHeaderInfo     ; print before battle text
 	call PrintText
-	ld a, $a
-	call ReadTrainerHeaderInfo     ; (?) does nothing apparently (maybe bug in ReadTrainerHeaderInfo)
 	push de
 	ld a, $8
 	call ReadTrainerHeaderInfo     ; read end battle text
@@ -3116,6 +3106,26 @@ IsFightingJessieJames::
 	ld [hl], d
 	ret
 
+TrainerListLoop::
+; Input:
+; hl = list to loop on
+; b = item to compare
+; Output:
+; a = is 1 if found, is 0 if not found.
+.loop
+	ld a, [hli]
+	cp $ff
+	jr z, .notFound
+	cp b
+	jr nz, .loop
+	ld a, %00010000 ; Gendered pronouns check uses this bit.
+	jr .done
+.notFound
+	xor a
+.done
+	and a ; Music checks only use the zero flag.
+	ret
+
 GetTrainerName::
 	jpba GetTrainerName_
 
@@ -3382,13 +3392,14 @@ WaitForSoundToFinish::
 	ret
 
 NamePointers::
-	dw MonsterNames
+	dw MonsterNamesPointers
 	dw MoveNames
 	dw UnusedNames
 	dw ItemNames
 	dw wPartyMonOT ; player's OT names list
 	dw wEnemyMonOT ; enemy's OT names list
 	dw TrainerNames
+	dw MonsterNamesNikud
 
 GetName::
 ; arguments:
@@ -4140,10 +4151,10 @@ HandleMenuInputPokemonSelection::
 	jr .checkIfAButtonOrBButtonPressed
 
 PlaceMenuCursor::
+	coord hl, 0, 0
 	ld a, [wTopMenuItemY]
 	and a ; is the y coordinate 0?
 	jr z, .adjustForXCoord
-	coord hl, 0, 0
 	ld bc, SCREEN_WIDTH
 .topMenuItemLoop
 	add hl, bc
@@ -4172,7 +4183,7 @@ PlaceMenuCursor::
 	jr nz, .oldMenuItemLoop
 .checkForArrow1
 	ld a, [hl]
-	cp "▶" ; was an arrow next to the previously selected menu item?
+	cp "◀" ; was an arrow next to the previously selected menu item?
 	jr nz, .skipClearingArrow
 .clearArrow
 	ld a, [wTileBehindCursor]
@@ -4196,11 +4207,11 @@ PlaceMenuCursor::
 	jr nz, .currentMenuItemLoop
 .checkForArrow2
 	ld a, [hl]
-	cp "▶" ; has the right arrow already been placed?
+	cp "◀" ; has the right arrow already been placed?
 	jr z, .skipSavingTile ; if so, don't lose the saved tile
 	ld [wTileBehindCursor], a ; save tile before overwriting with right arrow
 .skipSavingTile
-	ld a, "▶" ; place right arrow
+	ld a, "◀" ; place right arrow
 	ld [hl], a
 	ld a, l
 	ld [wMenuCursorLocation], a
@@ -4220,7 +4231,7 @@ PlaceUnfilledArrowMenuCursor::
 	ld l, a
 	ld a, [wMenuCursorLocation + 1]
 	ld h, a
-	ld [hl], $ec ; outline of right arrow
+	ld [hl], "◁" ; outline of right arrow
 	ld a, b
 	ret
 
@@ -4323,13 +4334,6 @@ FarPrintText::
 	pop af
 	call BankswitchCommon
 	ret
-
-PrintNumberWrapper::
-    ; Set flag to indicate this is the function being called, and not the BCD one.
-    ; Using wSlotMachineFlags here to store the flag.
-    xor a
-    ld [wSlotMachineFlags], a
-    jp PrintNumberWrapperCommon
 
 PrintNumber::
 ; Print the c-digit, b-byte value at de.
@@ -4833,56 +4837,6 @@ SetMapTextPointer::
 	ld [wMapTextPtr], a
 	ld a, h
 	ld [wMapTextPtr + 1], a
-	ret
-
-PrintNumberWrapperCommon::
-	; Save hl
-	push hl
-	; Set dest to the temp buffer
-	ld hl, wBCDReverseTemp
-	; Turn delay off
-	ld a,[wd730]
-	push af
-	set 6, a
-	ld [wd730], a
-    ; See which number printing function should be called
-    ld a, [wSlotMachineFlags]
-    cp a, 1
-    jp nc, .BCD
-    ; Print to the temp buffer
-    call PrintNumber
-    jp AfterPrintBCDNumberWrapper
-.BCD
-    ; Print to the temp buffer
-    call PrintBCDNumber
-    ; fall through
-
-AfterPrintBCDNumberWrapper::
-	; Restore flags
-	pop af
-	ld [wd730], a
-	; Put a null terminator after the string
-	ld a, "@"
-	ld [hl], a
-	; Reverse and print the text
-	ld de, wBCDReverseTemp
-; Reverse text
-	ld hl, wReversedTextEnd
-	ld a, "@"
-	ld [hld], a
-.reverseLoop
-	ld [hld], a
-	ld a, [de]
-	inc de
-	cp a, "@"
-	jr nz, .reverseLoop
-	inc hl
-	ld d, h
-	ld e, l
-	pop hl
-	call PlaceString
-	ld h,b
-	ld l,c
 	ret
 
 TextPredefs::

@@ -1,29 +1,30 @@
 _Lab1Text1::
-	text "We study #MON"
-	line "extensively here."
+	text "אנחנו חוקרים פה"
+	line "#ימונים באופן"
+	cont "נרחב."
 
-	para "People often bring"
-	line "us rare #MON"
-	cont "for examination."
+	para "לעתים קרובות אנשים"
+	line "מביאים אלינו"
+	cont "#ימונים נדירים"
+	cont "לבחינה."
 	done
 
 _Lab1Text2::
-	text "A photo of the"
-	line "LAB's founder,"
-	cont "DR.FUJI!"
+	text "תמונה של מייסד"
+	line "המעבדה, ד”ר דרדר!" 
 	done
 
 _Lab1Text3::
-	text "#MON LAB"
-	line "Meeting Room"
+	text "מעבדת ה#ימון"
+	line "חדר ישיבות"
 	done
 
 _Lab1Text4::
-	text "#MON LAB"
-	line "R-and-D Room"
+	text "מעבדת ה#ימון"
+	line "חדר מו”פ"
 	done
 
 _Lab1Text5::
-	text "#MON LAB"
-	line "Testing Room"
+	text "מעבדת ה#ימון"
+	line "חדר בדיקות"
 	done

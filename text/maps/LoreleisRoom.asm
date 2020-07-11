@@ -1,42 +1,42 @@
 _LoreleiBeforeBattleText::
-	text "Welcome to"
-	line "#MON LEAGUE!"
+	text "ברוך הבא לליגת"
+	line "ה#ימון!"
 
-	para "I am LORELEI of"
-	line "the ELITE FOUR!"
+	para "אני אירנה"
+	line "מהרביעיה העילית!"
 
-	para "No one can best"
-	line "me when it comes"
-	cont "to icy #MON!"
+	para "אין טוב ממני"
+	line "כשזה נוגע לאימון"
+	cont "לאימון #ימוני"
+	cont "קרח!"
 
-	para "Freezing moves"
-	line "are powerful!"
+	para "מתקפות הקפאה"
+	line "הן עוצמתיות!"
 
-	para "Your #MON will"
-	line "be at my mercy"
-	cont "when they are"
-	cont "frozen solid!"
+	para "ה#ימונים שלך"
+	line "יהיו נתונים"
+	cont "לחסדיי ברגע"
+	cont "שאקפיא אותם!"
 
-	para "Hahaha!"
-	line "Are you ready?"
+	para "חה חה חה!"
+	line "אתה מוכן?"
 	done
 
 _LoreleiEndBattleText::
-	text "How"
-	line "dare you!"
+	text "חוצפה"
+	line "שכזו!"
 	prompt
 
 _LoreleiAfterBattleText::
-	text "You're better"
-	line "than I thought!"
-	cont "Go on ahead!"
+	text "אתה טוב משחשבתי!"
+	line "המשך לחדר הבא!"
 
-	para "You only got a"
-	line "taste of #MON"
-	cont "LEAGUE power!"
+	para "עוד לא ראית את כל"
+	line "מה שיש לליגת"
+	cont "ה#ימון להציע!"
 	done
 
 _LoreleiDontRunAwayText::
-	text "Someone's voice:"
-	line "Don't run away!"
+	text "קול מוכר קורא:"
+	line "אל תיסוג!"
 	done

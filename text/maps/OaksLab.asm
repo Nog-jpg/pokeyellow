@@ -1,7 +1,7 @@
 _OaksLabGaryText1::
-	text "<RIVAL>: Yo"
-	line "<PLAYER>! Gramps"
-	cont "isn't around!"
+	text "<RIVAL>: יו,"
+	line "<PLAYER>!"
+	cont "סבאל'ה לא כאן!"
 
 	para "I ran here 'cos"
 	line "he said he had a"
@@ -15,15 +15,14 @@ _OaksLabText40::
 	done
 
 _OaksLabText41::
-	text "<RIVAL>: Heh, my"
-	line "#MON looks a"
-	cont "lot stronger."
+	text "<RIVAL>: ה#ימון"
+	line "שלי נראה הרבה"
+	cont "יותר חזק."
 	done
 
 _OaksLabText39::
-	text "That's a #"
-	line "BALL. There's a"
-	cont "#MON inside!"
+	text "זה פוכדור."
+	line "יש בתוכו #ימון!"
 	done
 
 _OaksLabPikachuText::
@@ -32,10 +31,11 @@ _OaksLabPikachuText::
 	done
 
 _OaksLabText_1d2f5::
-	text "OAK: If a wild"
-	line "#MON appears,"
-	cont "your #MON can"
-	cont "fight against it!"
+	text "אלון: אם #ימון"
+	line "פראי מופיע,"
+	cont "אתה יכול להשתמש"
+	cont "ב#ימון שלך כדי"
+	cont "להילחם בו!"
 
 	para "Afterward, go on"
 	line "to the next town."
@@ -48,30 +48,30 @@ _OaksLabText_1d2fa::
 	done
 
 _OaksLabDeliverParcelText1::
-	text "OAK: Oh, <PLAYER>!"
+	text "אלון: אה, <PLAYER>!"
 
-	para "How is my old"
-	line "#MON?"
+	para "מה שלום ה#ימון"
+	line "שנתתי לך?"
 
-	para "Well, it seems to"
-	line "like you a lot."
+	para "טוב, נראה שהוא"
+	line "אוהב אותך מאוד."
 
-	para "You must be"
-	line "talented as a"
-	cont "#MON trainer!"
+	para "כנראה שאתה מאמן"
+	line "#ימונים מוכשר!"
 
-	para "What? You have"
-	line "something for me?"
+	para "מה? הבאת לי"
+	line "משהו?"
 
-	para "<PLAYER> delivered"
-	line "OAK's PARCEL.@@"
+	para "<PLAYER> מסר"
+	line "את החבילה של"
+	cont "אלון.@@"
 
 _OaksLabDeliverParcelText2::
 	text ""
-	para "Ah! This is the"
-	line "custom # BALL"
-	cont "I ordered!"
-	cont "Thanks, <PLAYER>!"
+	para "אה! זה הפוכדור"
+	line "המיוחד שהזמנתי!"
+	cont "תודה לך!"
+	done
 
 	para "By the way, I must"
 	line "ask you to do"
@@ -79,65 +79,68 @@ _OaksLabDeliverParcelText2::
 	done
 
 _OaksLabAroundWorldText::
-	text "#MON around the"
-	line "world wait for"
-	cont "you, <PLAYER>!"
+	text "#ימונים בכל"
+	line "העולם ממתינים לך,"
+	cont "<PLAYER>!"
 	done
 
 _OaksLabGivePokeballsText1::
-	text "OAK: You can't get"
-	line "detailed data on"
-	cont "#MON by just"
-	cont "seeing them."
+	text "אלון: אם אתה רוצה"
+	line "לדעת פרטים"
+	cont "מדויקים על"
+	cont "#ימון, עליך"
+	cont "לעשות יותר מרק"
+	cont "לראות אותו."
 
-	para "You must catch"
-	line "them! Use these"
-	cont "to capture wild"
-	cont "#MON."
+	para "עליך לתפוס אותו!"
+	line "השתמש באלה כדי"
+	cont "לתפוס #ימונים"
+	cont "פראיים."
 
-	para "<PLAYER> got 5"
-	line "# BALLs!@@"
+	para "<PLAYER> קיבל 5"
+	line "פוכדורים!@"
 
 _OaksLabGivePokeballsText2::
 	text ""
-	para "When a wild"
-	line "#MON appears,"
-	cont "it's fair game."
+	para "כש#ימונים פראי"
+	line "מופיע, הוא"
+	cont "נחלת הכלל."
 
-	para "Just like I showed"
-	line "you, throw a #"
-	cont "BALL at it and try"
-	cont "to catch it!"
+	para "כל מה שצריך הוא"
+	line "לזרוק עליו פוכדור"
+	cont "ולנסות לתפוס"
+	cont "אותו!"
 
-	para "This won't always"
-	line "work, though."
+	para "לא תמיד תצליח"
+	line "לתפוס את"
+	cont "ה#ימון."
 
-	para "A healthy #MON"
-	line "could escape. You"
-	cont "have to be lucky!"
+	para "#ימון בריא יכול"
+	line "להימלט מהכדור."
+	cont "צריך לקוות למזל!"
 	done
 
 _OaksLabPleaseVisitText::
-	text "OAK: Come see me"
-	line "sometimes."
+	text "אלון: בוא לבקר"
+	line "מדי פעם."
 
-	para "I want to know how"
-	line "your #DEX is"
-	cont "coming along."
+	para "אשמח לראות את"
+	line "ההתקדמות שלך"
+	cont "בהשלמת ה#ידע."
 	done
 
 _OaksLabText_1d31d::
-	text "OAK: Good to see "
-	line "you! How is your "
-	cont "#DEX coming? "
-	cont "Here, let me take"
-	cont "a look!"
+	text "אלון: טוב לראות"
+	line "אותך! איך מתקדם"
+	cont "ה#ידע שלך?"
+	cont "אפשר להעיף מבט?"
 	prompt
 
 _OaksLabText_1d32c::
-	text "It's encyclopedia-"
-	line "like, but the"
-	cont "pages are blank!"
+	text "זה נראה כמו"
+	line "אנציקלופדיה,"
+	cont "אבל כל הדפים"
+	cont "ריקים!"
 	done
 
 _OaksLabText8::
@@ -145,19 +148,19 @@ _OaksLabText8::
 	done
 
 _OaksLabText_1d340::
-	text "PROF.OAK is the"
-	line "authority on"
-	cont "#MON!"
+	text "פרופ' אלון הוא"
+	line "ה-מומחה בכל מה"
+	cont "שנוגע ל#ימון!"
 
-	para "Many #MON"
-	line "trainers hold him"
-	cont "in high regard!"
+	para "מאמני #ימון"
+	line "רבים רוחשים כלפיו"
+	cont "כבוד רב!"
 	done
 
 _OaksLabRivalWaitingText::
-	text "<RIVAL>: Gramps!"
-	line "I'm fed up with"
-	cont "waiting!"
+	text "<RIVAL>: סבאל'ה!"
+	line "נו, נמאס לי כבר"
+	cont "לחכות!"
 	done
 
 _OaksLabChooseMonText::
@@ -184,15 +187,14 @@ _OaksLabChooseMonText::
 	done
 
 _OaksLabRivalInterjectionText::
-	text "<RIVAL>: Hey!"
-	line "Gramps! What"
-	cont "about me?"
+	text "<RIVAL>: היי!"
+	line "סבאל'ה! מה איתי?"
 	done
 
 _OaksLabBePatientText::
-	text "OAK: Be patient,"
-	line "<RIVAL>, I'll give"
-	cont "you one later."
+	text "אלון: סבלנות,"
+	line "<RIVAL>! אתן לך"
+	cont "אחד אחר-כך."
 	done
 
 _OaksLabRivalTakesText1::
@@ -241,7 +243,7 @@ _OaksLabOakGivesText::
 	prompt
 
 _OaksLabReceivedText::
-	text "<PLAYER> received"
+	text "<PLAYER> קיבל"
 	line "a @"
 	TX_RAM wcd6d
 	text "!@@"
@@ -252,35 +254,37 @@ _OaksLabLeavingText::
 	done
 
 _OaksLabRivalChallengeText::
-	text "<RIVAL>: Wait"
-	line "<PLAYER>!"
-	cont "Let's check out"
-	cont "our #MON!"
+	text "<RIVAL>: חכה"
+	line "רגע, <PLAYER>!"
+	cont "בוא ננסה קצת"
+	cont "את ה#ימונים"
+	cont "החדשים שלנו!"
 
-	para "Come on, I'll take"
-	line "you on!"
+	para "קדימה, אני מאתגר"
+	line "אותך לקרב!"
 	done
 
 _OaksLabText_1d3be::
-	text "WHAT?"
-	line "Unbelievable!"
-	cont "I picked the"
-	cont "wrong #MON!"
+	text "מה???"
+	line "אני לא מאמין!"
+	cont "בחרתי את ה#ימון"
+	cont "הלא נכון!"
 	prompt
 
 _OaksLabText_1d3c3::
-	text "<RIVAL>: Yeah! Am"
-	line "I great or what?"
+	text "<RIVAL>: כן! אני"
+	line "מדהים או מה?"
 	prompt
 
 _OaksLabRivalToughenUpText::
-	text "<RIVAL>: Okay!"
-	line "I'll make my"
-	cont "#MON fight to"
-	cont "toughen it up!"
+	text "<RIVAL>: בסדר!"
+	line "אני הולך לגרום"
+	cont "ל#ימון שלי"
+	cont "להילחם כדי שיהיה"
+	cont "קצת יותר קשוח!"
 
-	para "<PLAYER>! Gramps!"
-	line "Smell you later!"
+	para "<PLAYER>! סבאל'ה!"
+	line "נתרחרח אחר-כך!"
 	done
 
 _OaksLabPikachuDislikesPokeballsText1::
@@ -308,7 +312,7 @@ _OaksLabPikachuDislikesPokeballsText2::
 	done
 
 _OaksLabText21::
-	text "<RIVAL>: Gramps!"
+	text "<RIVAL>: סבאל'ה!"
 	done
 
 _OaksLabText22::
@@ -328,69 +332,74 @@ _OaksLabText23::
 	done
 
 _OaksLabText24::
-	text "On the desk there"
-	line "is my invention,"
-	cont "#DEX!"
+	text "על השולחן נמצאת"
+	line "ההמצאה החדשה שלי,"
+	cont "ה#ידע!"
 
-	para "It automatically"
-	line "records data on"
-	cont "#MON you've"
-	cont "seen or caught!"
+	para "ה#ידע מתעד מידע"
+	line "לגבי #ימונים"
+	cont "שתפסתם או ראיתם!"
+	cont "הוא אוטומטי"
+	cont "לחלוטין!"
 
-	para "It's a hi-tech"
-	line "encyclopedia!"
+	para "זה כמו"
+	line "אנציקלופדיה"
+	cont "מתקדמת!"
 	done
 
 _OaksLabText25::
-	text "OAK: <PLAYER> and"
-	line "<RIVAL>! Take"
-	cont "these with you!"
+	text "אלון: <PLAYER>"
+	line "ו<RIVAL>! קחו"
+	cont "לכם אחד!"
 
-	para "<PLAYER> got"
-	line "#DEX from OAK!@@"
+	para "<PLAYER> קיבל"
+	line "מאלון את ה#ידע!@"
 
 _OaksLabText26::
-	text "To make a complete"
-	line "guide on all the"
-	cont "#MON in the"
-	cont "world..."
+	text "החלום שלי תמיד"
+	line "היה..."
 
-	para "That was my dream!"
+	para "לכתוב מדריך מפורט"
+	line "על כל סוגי"
+	cont "ה#ימון שיש!"
 
-	para "But, I'm too old!"
-	line "I can't do it!"
+	para "אבל אני כבר לא"
+	line "צעיר כמו שהייתי."
+	cont "זה כבר לא בשבילי."
 
-	para "So, I want you two"
-	line "to fulfill my"
-	cont "dream for me!"
+	para "אז אני רוצה שאתם"
+	line "תגשימו את החלום"
+	cont "שלי!"
 
-	para "Get moving, you"
-	line "two!"
+	para "קדימה, צאו"
+	line "לדרך!"
 
-	para "This is a great"
-	line "undertaking in"
-	cont "#MON history!"
+	para "זה רגע משמעותי"
+	line "בהיסטוריה של"
+	cont "#ימון!"
 	done
 
 _OaksLabText27::
-	text "<RIVAL>: Alright"
-	line "Gramps! Leave it"
-	cont "all to me!"
+	text "<RIVAL>: אין בעיה,"
+	line "סבאל'ה! תשאיר"
+	cont "את זה לי!"
 
-	para "<PLAYER>, I hate to"
-	line "say it, but I"
-	cont "don't need you!"
+	para "<PLAYER>, לא נעים"
+	line "לי לומר, אבל אני"
+	cont "לא צריך את עזרתך!"
 
-	para "I know! I'll"
-	line "borrow a TOWN MAP"
-	cont "from my sis!"
+	para "יש לי רעיון!"
+	line "אני אבקש מאחותי"
+	cont "לשאול ממנה מפה!"
 
-	para "I'll tell her not"
-	line "to lend you one,"
-	cont "<PLAYER>! Hahaha!"
+	para "אני אומר לה שלא"
+	line "תשאיל לך מפה,"
+	cont "<PLAYER>! חה חה!"
 	done
 
 _OaksLabText_1d405::
-	text "I study #MON as"
-	line "PROF.OAK's AIDE."
+	text "אני העוזר של"
+	line "פרופ' אלון."
+	cont "אני חוקר"
+	cont "#ימונים."
 	done

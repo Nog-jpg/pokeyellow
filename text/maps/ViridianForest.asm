@@ -1,65 +1,63 @@
 _ViridianForestText1::
-	text "I came here with"
-	line "some friends!"
+	text "הגעתי לכאן עם"
+	line "כמה חברים!"
 
-	para "They're out for"
-	line "#MON fights!"
+	para "הם יצאו לכמה"
+	line "קרבות #ימונים!"
 	done
 
 _ViridianForestBattleText1::
-	text "Hey! You have"
-	line "#MON! Come on!"
-	cont "Let's battle 'em!"
+	text "הי! יש לך"
+	line "#ימון! קדימה!"
+	cont "בוא נילחם!"
 	done
 
 _ViridianForestEndBattleText1::
-	text "No!"
-	line "CATERPIE can't"
-	cont "cut it!"
+	text "לא!"
+	line "זחי לא טוב"
+	cont "מספיק!"
 	prompt
 
 _ViridianFrstAfterBattleText1::
-	text "Ssh! You'll scare"
-	line "the bugs away!"
+	text "ששש! אתה תבריח"
+	line "את החרקים מכאן!"
 	done
 
 _ViridianForestBattleText2::
-	text "Yo! You can't jam"
-	line "out if you're a"
-	cont "#MON trainer!"
+	text "יו! אתה לא יכול"
+	line "סתם לנוח כשאתה"
+	cont "מאמן #ימון!"
 	done
 
 _ViridianForestEndBattleText2::
-	text "Huh?"
-	line "I ran out of"
-	cont "#MON!"
+	text "אע?"
+	line "נגמרו לי"
+	cont "ה#ימונים!"
 	prompt
 
 _ViridianFrstAfterBattleText2::
-	text "Darn! I'm going"
-	line "to catch some"
-	cont "stronger ones!"
+	text "לעזאזל! אני הולך"
+	line "לתפוס #ימונים"
+	cont "חזקים יותר!"
 	done
 
 _ViridianForestBattleText3::
-	text "Hey, wait up!"
-	line "What's the hurry?"
+	text "הי, חכה!"
+	line "לאן אתה ממהר?"
 	done
 
 _ViridianForestEndBattleText3::
-	text "I"
-	line "give! You're good"
-	cont "at this!"
+	text "ויתרתי!"
+	line "אתה טוב!"
 	prompt
 
 _ViridianFrstAfterBattleText3::
-	text "Sometimes, you"
-	line "can find stuff on"
-	cont "the ground!"
+	text "לפעמים אתה יכול"
+	line "למצוא חפצים"
+	cont "על האדמה!"
 
-	para "I'm looking for"
-	line "the stuff I"
-	cont "dropped!"
+	para "אני מחפש"
+	line "חפץ שהפלתי!"
 	done
 
 _ViridianForestBattleTextPikaGirl::
@@ -97,61 +95,64 @@ _ViridianForestAfterBattleTextSamurai::
 	done
 
 _ViridianForestText8::
-	text "I ran out of #"
-	line "BALLs to catch"
-	cont "#MON with!"
+	text "נגמרו לי"
+	line "הפוכדורים לתפוס"
+	cont "איתם #ימונים!"
 
-	para "You should carry"
-	line "extras!"
+	para "כדאי שתמיד יהיו"
+	line "לך כמה ספיירים!"
 	done
 
 _ViridianForestText9::
-	text "TRAINER TIPS"
+	text "טיפים למאמנים"
 
-	para "If you want to"
-	line "avoid battles,"
-	cont "stay away from"
-	cont "grassy areas!"
+	para "אם אתה רוצה"
+	line "להימנע מקרבות,"
+	cont "תתרחק מהדשא!"
 	done
 
 _ViridianForestText10::
-	text "For poison, use"
-	line "ANTIDOTE! Get it"
-	cont "at #MON MARTs!"
+	text "השתמש בנוגדן כדי"
+	line "לרפא הרעלה!"
+	cont "אפשר לקנות אותם"
+	cont "ב#יוסק!"
 	done
 
 _ViridianForestText11::
-	text "TRAINER TIPS"
-
-	para "Contact PROF.OAK"
-	line "via PC to get"
-	cont "your #DEX"
-	cont "evaluated!"
+	text "טיפים למאמנים"
+	
+	para "אם תיצור קשר דרך"
+	line "המחשב עם פרופ'"
+	cont "אלון, הוא ייתן לך"
+	cont "ציון על ה#ידע"
+	cont "שלך!"
 	done
 
 _ViridianForestText12::
-	text "TRAINER TIPS"
+	text "טיפים למאמנים"
 
-	para "No stealing of"
-	line "#MON from"
-	cont "other trainers!"
-	cont "Catch only wild"
-	cont "#MON!"
+	para "אסור לגנוב"
+	line "#ימונים ממאמנים"
+	cont "אחרים! תפוס"
+	cont "#ימונים רק"
+	cont "בטבע!"
 	done
 
 _ViridianForestText13::
-	text "TRAINER TIPS"
+	text "טיפים למאמנים"
 
-	para "Weaken #MON"
-	line "before attempting"
-	cont "capture!"
+	para "החלש את ה#ימונים"
+	line "לפני שתנסה"
+	cont "לתפוס אותם!"
 
-	para "When healthy,"
-	line "they may escape!"
+	para "אם הם בריאים,"
+	line "הם עלולים לברוח!"
 	done
 
 _ViridianForestText14::
-	text "LEAVING"
-	line "VIRIDIAN FOREST"
-	cont "PEWTER CITY AHEAD"
+	text "יציאה"
+	line "מיער ירוק-העד"
+	cont "בהמשך הדרך:"
+	cont "עיר הכספית"
 	done
+

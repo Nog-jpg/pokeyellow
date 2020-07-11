@@ -1,39 +1,40 @@
 _VictoryRoadGuardText1::
-	text "You can pass here"
-	line "only if you have"
-	cont "the @"
+	text "אתה יכול לעבור"
+	line "פה רק אם יש לך"
+	cont "את @"
 	TX_RAM wcd6d
 	text "!"
 
-	para "You don't have the"
+	para " עדיין אין לך את"
 	line "@"
 	TX_RAM wcd6d
-	text " yet!"
 
-	para "You have to have"
-	line "it to get to"
-	cont "#MON LEAGUE!@@"
+	para "אתה חייב אותו"
+	line "כדי להגיע"
+	cont "לליגת ה#ימונים!@"
+	db "@"
 
 _VictoryRoadGuardText2::
-	text "You can pass here"
-	line "only if you have"
-	cont "the @"
+	text "אתה יכול לעבור"
+	line "פה רק אם יש לך"
+	cont "את @"
 	TX_RAM wcd6d
 	text "!"
 
-	para "Oh! That is the"
+	para "אה! זה "
 	line "@"
 	TX_RAM wcd6d
-	text "!@@"
+	text "!@"
+	db "@"
 
 _VictoryRoadGuardText_513a3::
 	text ""
 
-	para "OK then! Please,"
-	line "go right ahead!"
+	para "בסדר גמור!"
+	line "בבקשה, התקדם!"
 	done
 
 _Route23Text8::
-	text "VICTORY ROAD GATE"
-	line "- #MON LEAGUE"
+	text "שער דרך הניצחון"
+	line "- ליגת ה#ימונים"
 	done

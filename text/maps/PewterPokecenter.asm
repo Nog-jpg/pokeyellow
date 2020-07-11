@@ -1,11 +1,11 @@
 _PewterPokecenterText2::
-	text "What!?"
+	text "מה!?"
 
-	para "TEAM ROCKET is"
-	line "at MT.MOON? Huh?"
-	cont "I'm on the phone!"
+	para "צוות רוקט בהר"
+	line "הירח? מה?"
+	cont "אני בשיחת טלפון!"
 
-	para "Scram!"
+	para "קישטה! לך!"
 	done
 
 _PewterPokecenterText3::
@@ -22,6 +22,6 @@ _PewterPokecenterText3::
 	done
 
 _PewterJigglypuffText::
-	text "JIGGLYPUFF: Puu"
-	line "pupuu!"
+	text "ניענפוח: פיו!"
+	line "פיופיוו!"
 	done

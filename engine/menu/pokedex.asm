@@ -349,7 +349,7 @@ Pokedex_PlacePokemonList:
 	xor a
 	ld [H_AUTOBGTRANSFERENABLED], a
 	coord hl, 6, 2
-	lb bc, 14, 10
+	lb bc, 15, 10
 	call ClearScreenArea
 	coord hl, 16, 3
 	ld a, [wListScrollOffset]
@@ -396,13 +396,22 @@ Pokedex_PlacePokemonList:
 	ld de, .dashedLine ; print a dashed line in place of the name if the player hasn't seen the pokemon
 	jr .skipGettingName
 .dashedLine ; for unseen pokemon in the list
-	db "----------@"
+	db "----------@@"
 .getPokemonName
 	call PokedexToIndex
+	ld a, %00100000
+	ld [wNikudFlag], a
 	call GetMonName
 .skipGettingName
 	pop hl
 	dec hl
+	push hl
+	call PlaceString
+	call NextNikudLine
+	pop hl
+	ld b, 0
+	ld c, 20
+	add hl, bc
 	call PlaceString
 	pop hl
 	ld bc, 2 * SCREEN_WIDTH
@@ -477,8 +486,8 @@ ShowPokedexDataInternal:
 	ret
 
 HeightWeightText:
-	db   "גובה ??.?",$60
-	next "משקל ??? ",$62,$61,"@"
+	db   "onm  ??.?",$60
+	next "lkj   ???",$62,$61,"@"
 
 ; XXX does anything point to this?
 PokeText:
@@ -530,8 +539,15 @@ DrawDexEntryOnScreen:
 	ld de, HeightWeightText
 	call PlaceString
 
+	ld a, %00100000 ; Nikud stuff
+	ld [wNikudFlag], a
 	call GetMonName
+	push de
 	coord hl, 18, 2
+	call PlaceString
+	pop de
+	call NextNikudLine
+	coord hl, 18, 3
 	call PlaceString
 
 	ld hl, PokedexEntryPointers
@@ -555,11 +571,12 @@ DrawDexEntryOnScreen:
 	push af
 	call IndexToPokedex
 
-	coord hl, 2, 8
+	coord hl, 6, 8
 	ld a, "№"
-	ld [hli], a
-	ld a, "⠄"
-	ld [hli], a
+	ld [hld], a
+	ld a, "<DOT>"
+	ld [hl], a
+	coord hl, 2, 8
 	ld de, wd11e
 	lb bc, LEADING_ZEROES | 1, 3
 	call PrintNumber ; print pokedex number
@@ -602,7 +619,7 @@ DrawDexEntryOnScreen:
 	inc de
 	inc de ; de = address of inches (height)
 	coord hl, 12, 6
-	lb bc, LEADING_ZEROES | 1, 2
+	lb bc, LEADING_ZEROES | LEFT_ALIGN | 1, 2
 	call PrintNumber ; print inches (height)
 ; now print the weight (note that weight is stored in tenths of pounds internally)
 	inc de
@@ -621,10 +638,9 @@ DrawDexEntryOnScreen:
 	ld a, [de] ; a = lower byte of weight
 	ld [hl], a ; store lower byte of weight in [hDexWeight + 1]
 	ld de, hDexWeight
-	coord hl, 8, 8
-	lb bc, 2, 5 ; 2 bytes, 5 digits
+	coord hl, 10, 8
+	lb bc, LEFT_ALIGN | 2, 5 ; 2 bytes, 5 digits
 	call PrintNumber ; print weight
-	coord hl, 11, 8
 	ld a, [hDexWeight + 1]
 	sub 10
 	ld a, [hDexWeight]
@@ -632,10 +648,10 @@ DrawDexEntryOnScreen:
 	jr nc, .next
 	ld [hl], "0" ; if the weight is less than 10, put a 0 before the decimal point
 .next
-	inc hl
+	dec hl
 	ld a, [hli]
 	ld [hld], a ; make space for the decimal point by moving the last digit forward one tile
-	ld [hl], "⠄" ; decimal point tile
+	ld [hl], "." ; decimal point tile
 	pop af
 	ld [hDexWeight + 1], a ; restore original value of [hDexWeight + 1]
 	pop af
@@ -740,6 +756,23 @@ IndexToPokedex:
 	ld [wd11e], a
 	pop hl
 	pop bc
+	ret
+
+NextNikudLine:
+	; Brings de to next line in nikud names.
+	; Input: de - first line of nikud name
+	; Output: de - second line of nikud name
+	; Note: hl also updates to equal de.
+	ld h, d
+	ld l, e
+	.loop
+	ld a, [hli]
+	cp "@"
+	jr z, .done
+	jr .loop
+	.done
+	ld d, h
+	ld e, l
 	ret
 
 INCLUDE "data/pokedex_order.asm"

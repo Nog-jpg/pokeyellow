@@ -1,21 +1,25 @@
 _VermilionHouse1Text1::
-	text "I'm getting my"
-	line "PIDGEY to fly a"
-	cont "letter to SAFFRON"
-	cont "in the north!"
+	text "אני מכין את"
+	line "היונדי שלי להעביר"
+	cont "עבורי מכתב לעיר"
+	cont "הזעפרן, צפונה"
+	cont "מכאן!"
 	done
 
 _VermilionHouse1Text2::
-	text "PIDGEY: Kurukkoo!@@"
+	text "יונדי: קורוקווו!@"
+	db "@"
 
 _VermilionHouse1Text3::
-	text "Dear PIPPI, I hope"
-	line "to see you soon."
+	text "בילבי היקרה, אני"
+	line "מקווה לראות אותך"
+	cont "בקרוב."
 
-	para "I heard SAFFRON"
-	line "has problems with"
-	cont "TEAM ROCKET."
+	para "שמעתי שבעיר הזעפרן"
+	line "יש בעיות עם"
+	cont "צוות רוקט."
 
-	para "VERMILION appears"
-	line "to be safe."
+	para "עיר הארגמן נראית"
+	line "כמו עיר בטוחה."
 	done
+

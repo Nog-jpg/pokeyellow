@@ -733,7 +733,7 @@ LinkMenu:
 	ld b, " "
 	ld c, " "
 	ld d, " "
-	ld e, "▷"
+	ld e, "◁"
 	ld a, [wLinkMenuSelectionSendBuffer]
 	and (B_BUTTON << 2) ; was B button pressed?
 	jr nz, .updateCursorPosition
@@ -805,7 +805,7 @@ LinkMenu:
 	jr nz,.asm_f5974
 	ld b," "
 	ld c," "
-	ld d,"▷"
+	ld d,"◁"
 	ld e," "
 	call Func_f59ec
 .asm_f5974
@@ -851,7 +851,7 @@ LinkMenu:
 	ld b," "
 	ld c," "
 	ld d," "
-	ld e,"▷"
+	ld e,"◁"
 	call Func_f59ec
 	jp .choseCancel
 
@@ -863,7 +863,7 @@ LinkMenu:
 .asm_f59d6
 	ld b," "
 	ld c," "
-	ld d,"▷"
+	ld d,"◁"
 	ld e," "
 	call Func_f59ec
 	call Func_f531b

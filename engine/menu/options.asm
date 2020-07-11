@@ -81,7 +81,7 @@ OptionsMenu_TextSpeed:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	coord hl, 14, 2
+	coord hl, 5, 2
 	call PlaceString
 	and a
 	ret
@@ -92,11 +92,11 @@ TextSpeedStringsPointerTable:
 	dw SlowText
 
 FastText:
-	db "FAST@"
+	db "מהר @"
 MidText:
-	db "MID @"
+	db "רגיל@"
 SlowText:
-	db "SLOW@"
+	db "לאט @"
 
 GetTextSpeed:
 	ld a, [wOptions]
@@ -139,7 +139,7 @@ OptionsMenu_BattleAnimations:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	coord hl, 14, 4
+	coord hl, 5, 4
 	call PlaceString
 	and a
 	ret
@@ -149,9 +149,9 @@ AnimationOptionStringsPointerTable:
 	dw AnimationOffText
 
 AnimationOnText:
-	db "ON @"
+	db "דולק@"
 AnimationOffText:
-	db "OFF@"
+	db "כבוי@"
 
 OptionsMenu_BattleStyle:
 	ld a, [hJoy5]
@@ -175,7 +175,7 @@ OptionsMenu_BattleStyle:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	coord hl, 14, 6
+	coord hl, 5, 6
 	call PlaceString
 	and a
 	ret
@@ -185,9 +185,9 @@ BattleStyleOptionStringsPointerTable:
 	dw BattleStyleSetText
 
 BattleStyleShiftText:
-	db "SHIFT@"
+	db "משתנה@"
 BattleStyleSetText:
-	db "SET  @"
+	db "קבוע @"
 
 OptionsMenu_SpeakerSettings:
 	ld a, [wOptions]
@@ -227,7 +227,7 @@ OptionsMenu_SpeakerSettings:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	coord hl, 8, 8
+	coord hl, 13, 8
 	call PlaceString
 	and a
 	ret
@@ -239,13 +239,13 @@ SpeakerOptionStringsPointerTable:
 	dw Earphone3SoundText
 
 MonoSoundText:
-	db "MONO     @"
+	db "חד-ערוצי@"
 Earphone1SoundText:
-	db "EARPHONE1@"
+	db "אוזניה 1@"
 Earphone2SoundText:
-	db "EARPHONE2@"
+	db "אוזניה 2@"
 Earphone3SoundText:
-	db "EARPHONE3@"
+	db "אוזניה 3@"
 
 OptionsMenu_GBPrinterBrightness:
 	call Func_41e7b
@@ -283,7 +283,7 @@ OptionsMenu_GBPrinterBrightness:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	coord hl, 8, 10
+	coord hl, 11, 10
 	call PlaceString
 	and a
 	ret
@@ -296,15 +296,15 @@ GBPrinterOptionStringsPointerTable:
 	dw DarkestPrintText
 
 LightestPrintText:
-	db "LIGHTEST@"
+	db "הכי בהיר@"
 LighterPrintText:
-	db "LIGHTER @"
+	db "בהיר    @"
 NormalPrintText:
-	db "NORMAL  @"
+	db "רגיל    @"
 DarkerPrintText:
-	db "DARKER  @"
+	db "כהה     @"
 DarkestPrintText:
-	db "DARKEST @"
+	db "הכי כהה @"
 
 Func_41e7b:
 	ld a, [wPrinterSettings]
@@ -391,7 +391,7 @@ OptionsControl:
 	ret
 
 OptionsMenu_UpdateCursorPosition:
-	coord hl, 1, 1
+	coord hl, 18, 1
 	ld de, SCREEN_WIDTH
 	ld c, 16
 .loop
@@ -399,21 +399,21 @@ OptionsMenu_UpdateCursorPosition:
 	add hl, de
 	dec c
 	jr nz, .loop
-	coord hl, 1, 2
+	coord hl, 18, 2
 	ld bc, SCREEN_WIDTH * 2
 	ld a, [wOptionsCursorLocation]
 	call AddNTimes
-	ld [hl], "▶"
+	ld [hl], "◀"
 	ret
 
 InitOptionsMenu:
 	coord hl, 0, 0
 	lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
 	call TextBoxBorder
-	coord hl, 2, 2
+	coord hl, 17, 2
 	ld de, AllOptionsText
 	call PlaceString
-	coord hl, 2, 16
+	coord hl, 17, 16
 	ld de, OptionMenuCancelText
 	call PlaceString
 	xor a
@@ -435,11 +435,11 @@ InitOptionsMenu:
 	ret
 
 AllOptionsText:
-	db "TEXT SPEED :"
-	next "ANIMATION  :"
-	next "BATTLESTYLE:"
-	next "SOUND:"
-	next "PRINT:@"
+	db   "מהירות טקסט:"
+	next "הנפשות קרב :"
+	next "סגנון קרב  :"
+	next "שמע:"
+	next "הדפסה:@"
 
 OptionMenuCancelText:
-	db "CANCEL@"
+	db "ביטול@"

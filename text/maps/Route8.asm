@@ -1,154 +1,159 @@
 _Route8BattleText1::
-	text "You look good at"
-	line "#MON, but"
-	cont "how's your chem?"
+	text "נראה שאתה לא רע ב"
+	line "#ימון, אבל מה"
+	cont "הציון שלך בכימיה?"
 	done
 
 _Route8EndBattleText1::
-	text "Ow!"
-	line "Meltdown!"
+	text "אוי לא!"
+	line "אני לא מאמין!"
 	prompt
 
 _Route8AfterBattleText1::
-	text "I am better at"
-	line "school than this!"
+	text "אני טוב יותר"
+	line "בלימודים מאשר"
+	cont "בקרבות!"
 	done
 
 _Route8BattleText2::
-	text "All right! Let's"
-	line "roll the dice!"
+	text "קדימה!"
+	line "גלגל את הקוביות!"
 	done
 
 _Route8EndBattleText2::
-	text "Drat!"
-	line "Came up short!"
+	text "לא!"
+	line "הוא לא הספיק!"
 	prompt
 
 _Route8AfterBattleText2::
-	text "Lady Luck's not"
-	line "with me today!"
+	text "נראה כי המזל"
+	line "לא מאיר לי פנים!"
 	done
 
 _Route8BattleText3::
-	text "You need strategy"
-	line "to win at this!"
+	text "אתה צריך אסטרטגיה"
+	line "כדי לנצח בקרב!"
 	done
 
 _Route8EndBattleText3::
-	text "It's"
-	line "not logical!"
+	text "אתה לא"
+	line "השתמשת בשכל!"
 	prompt
 
 _Route8AfterBattleText3::
-	text "Go with GRIMER"
-	line "first...and..."
-	cont "...and...then..."
+	text "שלח את טנפאי"
+	line "ראשון.. ואז.."
+	cont "ו.. ואז.."
 	done
 
 _Route8BattleText4::
-	text "I like NIDORAN, so"
-	line "I collect them!"
+	text "אני אוהבת את"
+	line "ה#ימון מחטן,"
+	line "אז אני אוספת"
+	cont "כאלה!"
 	done
 
 _Route8EndBattleText4::
-	text "Why? Why??"
+	text "למה? למה???"
 	prompt
 
 _Route8AfterBattleText4::
-	text "When #MON grow"
-	line "up they get ugly!"
-	cont "They shouldn't"
-	cont "evolve!"
+	text "כש#ימונים גדלים"
+	line "הם נהיים מכוערים!"
+	cont "אסור לתת להם"
+	cont "להתפתח!"
 	done
 
 _Route8BattleText5::
-	text "School is fun, but"
-	line "so are #MON."
+	text "אני אוהב את בית"
+	line "הספר, אבל אני גם"
+	cont "אוהב #ימון!"
 	done
 
 _Route8EndBattleText5::
-	text "I'll"
-	line "stay with school."
+	text "אני חושב שאשאר"
+	line "עם בית הספר."
 	prompt
 
 _Route8AfterBattleText5::
-	text "We're stuck here"
-	line "because of the"
-	cont "gates at SAFFRON."
+	text "אנחנו תקועים כאן"
+	line "בגלל שערי הכניסה"
+	cont "של עיר הזעפרן."
 	done
 
 _Route8BattleText6::
-	text "MEOWTH is so cute,"
-	line "meow, meow, meow!"
+	text "מיצי כל כך מתוק!"
+	line "מיאו, מיאו, מיאו!"
 	done
 
 _Route8EndBattleText6::
-	text "Meow!"
+	text "מיאו!"
 	prompt
 
 _Route8AfterBattleText6::
-	text "I think PIDGEY"
-	line "and RATTATA"
-	cont "are cute too!"
+	text "אני חושבת שיונדי"
+	line "ועכברסס גם"
+	cont "חמודים!"
 	done
 
 _Route8BattleText7::
-	text "We must look"
-	line "silly standing"
-	cont "here like this!"
+	text "אנחנו בוודאי נראות"
+	line "כמו טיפשות, סתם"
+	cont "עומדות כאן כך!"
 	done
 
 _Route8EndBattleText7::
-	text "Look what"
-	line "you did!"
+	text "היי! תראה"
+	line "מה עשית!"
 	prompt
 
 _Route8AfterBattleText7::
-	text "SAFFRON's gate-"
-	line "keeper won't let"
-	cont "us through."
-	cont "He's so mean!"
+	text "שומר הסף של עיר"
+	line "הזעפרן לא מרשה"
+	cont "לא מרשה לנו"
+	cont "להיכנס. הוא כזה"
+	cont "לא נחמד!"
 	done
 
 _Route8BattleText8::
-	text "I'm a rambling,"
-	line "gambling dude!"
+	text "אני בחור שאוהב"
+	line "להמר ולמלמל!"
 	done
 
 _Route8EndBattleText8::
-	text "Missed"
-	line "the big score!"
+	text "הפסדתי!"
+	line "פספסתי את כל"
+	cont "הקופה!"
 	prompt
 
 _Route8AfterBattleText8::
-	text "Gambling and"
-	line "#MON are like"
-	cont "eating peanuts!"
-	cont "Just can't stop!"
+	text "משחקי הימורים"
+	line "ו#ימון הם כמו"
+	cont "הם כמו בוטנים!"
+	cont "אני מכור לגמרי!"
 	done
 
 _Route8BattleText9::
-	text "What's a cute,"
-	line "round and fluffy"
-	cont "#MON?"
+	text "איזה #ימון הוא"
+	line "חמוד, עגול, ורך?"
 	done
 
 _Route8EndBattleText9::
-	text "Stop!"
+	text "דיי!"
 
-	para "Don't be so mean"
-	line "to my CLEFAIRY!"
+	para "אל תהיה כזה מרושע"
+	line "לחמשדון שלי!"
 	prompt
 
 _Route8AfterBattleText9::
-	text "I heard that"
-	line "CLEFAIRY evolves"
-	cont "when it's exposed"
-	cont "to a MOON STONE."
+	text "שמעתי שחמשדון"
+	line "מתפתחת כשהיא"
+	cont "נחשפת לאבן ירח!"
 	done
 
 _Route8Text10::
-	text "UNDERGROUND PATH"
-	line "CELADON CITY -"
-	cont "LAVENDER TOWN"
+	text "דרך תת קרקעית"
+	line "עיר האביב -"
+	cont "עיר הלבנדר"
 	done
+

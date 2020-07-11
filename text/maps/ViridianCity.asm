@@ -1,16 +1,108 @@
-_ViridianCityText_19219::
-	text "First, you need"
-	line "to weaken the"
-	cont "target #MON."
+_ViridianCityText1::
+	text "אלו פוכדורים"
+	line "שתלויים על"
+	cont "חגורתך! אם כן,"
+	cont "יש לך #ימונים."
+
+	para "זה נהדר שאתה"
+	line "יכול לסחוב אותם"
+	cont "איתך ולהשתמש בהם"
+	cont "בכל זמן ומקום!"
+	done
+
+_ViridianCityText_19122::
+	text "מכון ה#ימון הזה"
+	line "תמיד סגור."
+
+	para "מעניין מי המנהיג"
+	line "במכון הזה?"
+	done
+
+_ViridianCityText_19127::
+	text "המנהיג של מכון"
+	line "הארגמן חזר!"
+	done
+
+_ViridianCityText_1914d::
+	text "רוצה ללמוד"
+	line "על 2 סוגי"
+	cont "#ימוני הזחלים?"
+	done
+
+_ViridianCityText_19152::
+	text "אה, בסדר!"
+	done
+
+_ViridianCityText_19157::
+	text "לזחי אין עוקץ,"
+	line "אבל לתולחט יש."
+
+	para "כדאי להיזהר ממתקפת"
+	line "עקיצת הרעל שלו!"
+	done
+
+_ViridianCityText_19175::
+	text "נו באמת, סבא!"
+	line "אל תדבר ככה!"
+	cont "הוא עדיין לא שתה"
+	cont "את הקפה של הבוקר."
+	done
+
+_ViridianCityText_1917a::
+	text "כשאני הולכת לקניות"
+	line "בעיר הכספית, אני"
+	cont "חייבת לעבור דרך"
+	cont "השביל המתפתל"
+	cont "ביער ירוק-עד."
+	done
+
+_ViridianCityText_19191::
+	text "אתה לא יכול לעבור"
+	line "פה!"
+
+	para "זה שטח פרטי!"
+	done
+
+_ViridianCityText_191ca::
+	text "הא!"
+	line "כנראה שנרדמתי קצת"
+	cont "בשמש."
+
+	para "היה לי חלום"
+	line "על ישנום שאוכל"
+	cont "את החלום שלי."
+	cont "מה זה?"
+	cont "מאיפה הגיע המ”מ"
+	cont "הזה?"
+
+	para "זה מפחיד!"
+	line "הנה, אתה יכול"
+	cont "לקבל את המ”מ הזה."
+	prompt
+
+_ReceivedTM42Text::
+	text "<PLAYER> קיבל"
+	line "מ”מ24!@"
+	db "@"
+
+_TM42Explanation::
+	text "מ”מ24 מכיל את מתקפת"
+	line "זלילתחלום..."
+	cont "...נחירה..."
+	done
+
+_TM42NoRoomText::
+	text "הגעת למכסת החפצים"
+	line "שאפשר לסחוב בתיק."
 	done
 
 _ViridianCityText_1920a::
-	text "Ahh, I've had my"
-	line "coffee now and I"
-	cont "feel great!"
+	text "הה, סוף סוף שתיתי"
+	line "את הקפה שלי, ואני"
+	cont "מרגיש מצוין!"
 
-	para "Sure, you can go"
-	line "through!"
+	para "כמובן שאתה יכול"
+	line "לעבור כאן!"
 
 	para "I'm sorry I was"
 	line "so rude to you!"
@@ -35,105 +127,6 @@ _OldManTextAfterBattle::
 	line "at #MON MART."
 	done
 
-_ViridianCityText1::
-	text "Those # BALLs"
-	line "at your waist!"
-	cont "You have #MON!"
-
-	para "It's great that"
-	line "you can carry and"
-	cont "use #MON any-"
-	cont "time, anywhere!"
-	done
-
-_ViridianCityText_19122::
-	text "This #MON GYM"
-	line "is always closed."
-
-	para "I wonder who the"
-	line "LEADER is?"
-	done
-
-_ViridianCityText_19127::
-	text "VIRIDIAN GYM's"
-	line "LEADER returned!"
-	done
-
-_ViridianCityText_1914d::
-	text "You want to know"
-	line "about the 2 kinds"
-	cont "of caterpillar"
-	cont "#MON?"
-	done
-
-_ViridianCityText_19152::
-	text "Oh, OK then!"
-	done
-
-_ViridianCityText_19157::
-	text "CATERPIE has no"
-	line "poison, but"
-	cont "WEEDLE does."
-
-	para "Watch out for its"
-	line "POISON STING!"
-	done
-
-_ViridianCityText_19175::
-	text "Oh Grandpa! Don't"
-	line "be so mean!"
-	cont "He hasn't had his"
-	cont "coffee yet."
-	done
-
-_ViridianCityText_1917a::
-	text "When I go shop in"
-	line "PEWTER CITY, I"
-	cont "have to take the"
-	cont "winding trail in"
-	cont "VIRIDIAN FOREST."
-	done
-
-_ViridianCityText_19191::
-	text "You can't go"
-	line "through here!"
-
-	para "This is private"
-	line "property!"
-	done
-
-_ViridianCityText_191ca::
-	text "Yawn!"
-	line "I must have dozed"
-	cont "off in the sun."
-
-	para "I had this dream"
-	line "about a DROWZEE"
-	cont "eating my dream."
-	cont "What's this?"
-	cont "Where did this TM"
-	cont "come from?"
-
-	para "This is spooky!"
-	line "Here, you can"
-	cont "have this TM."
-	prompt
-
-_ReceivedTM42Text::
-	text "<PLAYER> received"
-	line "TM42!@@"
-
-_TM42Explanation::
-	text "TM42 contains"
-	line "DREAM EATER..."
-	cont "...Snore..."
-	done
-
-_TM42NoRoomText::
-	text "You have too much"
-	line "stuff already."
-	done
-
 _OldManAgainText1::
 	text "Hmm? You want me"
 	line "to show you how"
@@ -151,44 +144,73 @@ _OldManAgainText3::
 	line "enough for you."
 	done
 
+_ViridianCityText_1920f::
+	text "אני רואה שאתה עושה"
+	line "שימוש ב#ידע."
+
+	para "כשאתה תופס"
+	line "#ימון, ה#ידע"
+	cont "מתעדכן אוטומטית."
+
+	para "מה? אתה לא יודע"
+	line "איך תופסים"
+	cont "#ימון?"
+
+	para "אם כך, אני אראה"
+	line "לך איך."
+	done
+
+_ViridianCityText_19214::
+	text "זמן זה כסף..."
+	line "תמשיך ללכת."
+	done
+
+_ViridianCityText_19219::
+	text "בהתחלה, אתה צריך"
+	line "להחליש את"
+	cont "ה#ימון שאתה"
+	cont "מנסה לתפוס."
+	done
+
 _ViridianCityText8::
-	text "VIRIDIAN CITY "
-	line "The Eternally"
-	cont "Green Paradise"
+	text "עיר הברקת"
+	line "גן העדן ירוק-"
+	cont "העד"
 	done
 
 _ViridianCityText9::
-	text "TRAINER TIPS"
+	text "טיפים למאמנים"
 
-	para "Catch #MON"
-	line "and expand your"
-	cont "collection!"
+	para "תפוס #ימונים"
+	line "והרחב את האוסף"
+	cont "שלך!"
 
-	para "The more you have,"
-	line "the easier it is"
-	cont "to fight!"
+	para "ככל שיהיו לך יותר,"
+	line "כך יהיה לך קל"
+	cont "להילחם בקרבות!"
 	done
 
 _ViridianCityText10::
-	text "TRAINER TIPS"
+	text "טיפים למאמנים"
 
-	para "The battle moves"
-	line "of #MON are"
-	cont "limited by their"
-	cont "POWER POINTs, PP."
+	para "המהלכים של"
+	line "#ימונים מוגבלים"
+	cont "בנקודות הכוח"
+	cont "שלהם, או בקיצור"
+	cont "נ”כ."
 
-	para "To replenish PP,"
-	line "rest your tired"
-	cont "#MON at a"
-	cont "#MON CENTER!"
+	para "כדי לשחזר נ”כ,"
+	line "רפא את ה#ימון"
+	cont "במרכז ה#ימונים!"
 	done
 
 _ViridianCityText13::
-	text "VIRIDIAN CITY"
-	line "#MON GYM"
+	text "עיר הברקת"
+	line "מכון ה#ימון"
 	done
 
 _ViridianCityText14::
-	text "The GYM's doors"
-	line "are locked..."
+	text "דלתות המכון"
+	line "סגורות..."
 	done
+

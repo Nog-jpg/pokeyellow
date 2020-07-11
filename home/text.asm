@@ -475,9 +475,10 @@ TextCommand02::
 	ld h, b
 	ld l, c
 	ld c, a
-	call PrintBCDNumber
-	ld b, h
-	ld c, l
+    ld a, [wReverseNumberFlags]
+	set 3, a
+    ld [wReverseNumberFlags], a
+    call PrintNumberToTempBuffer
 	pop hl
 	jr NextTextCommand
 
@@ -563,7 +564,10 @@ TextCommand09::
 	swap a
 	res BIT_LEFT_ALIGN, a ; TODO figure out how to left-align this ??
 	ld b, a
-	call PrintNumber
+	ld a, [wReverseNumberFlags]
+	res 3, a
+    ld [wReverseNumberFlags], a
+    call PrintNumberToTempBuffer
 	ld b, h
 	ld c, l
 	pop hl
@@ -700,6 +704,63 @@ TextCommand17::
 	ld [H_LOADEDROMBANK], a
 	ld [MBC1RomBank], a
 	jp NextTextCommand
+
+; Prints number from de to a temporary buffer at wReversedNumberTempBuffer.
+; Then, reverses the string from the buffer, and prints it on hl with PlaceString.
+; The number always prints right-aligned.
+; input: de = number, hl = dest
+; wReverseNumberFlags = whether the number is binary-coded or not. 1 means binary-coded, 0 means not.
+; output: hl advances to new end. bc also advances to new end.
+PrintNumberToTempBuffer::
+	; Save dest
+	push hl
+	; Set dest to the temp buffer
+	ld hl, wReversedNumberTempBuffer
+	; Turn delay off
+	ld a, [wd730]
+	push af
+	set 6, a
+	ld [wd730], a
+    ; See which number printing function should be called
+    ld a, [wReverseNumberFlags]
+    bit 3, a
+    jr nz, .BCD
+    ; Print to the temp buffer
+    call PrintNumber
+    jr ReverseTempBufferAndPrint
+.BCD
+    ; Print to the temp buffer
+    call PrintBCDNumber
+    ; fall through
+
+ReverseTempBufferAndPrint::
+	; Restore printing delay flags
+	pop af
+	ld [wd730], a
+	; Put a null terminator after the string
+	ld a, "@"
+	ld [hl], a
+	; Reverse and print the text
+	ld de, wReversedNumberTempBuffer
+    ; Reverse text
+	ld hl, wReversedNumberEnd
+	ld [hld], a
+.reverseLoop
+	ld [hld], a
+	ld a, [de]
+	inc de
+	cp a, "@"
+	jr nz, .reverseLoop
+	inc hl
+	ld d, h
+	ld e, l
+    ; Restore original dest
+	pop hl
+	; Print the reversed string on original dest
+	call PlaceString
+	ld h,b
+	ld l,c
+	ret
 
 TextCommandJumpTable::
 	dw TextCommand00

@@ -85,180 +85,228 @@ CreditsTextPointers:
 	dw CreditsText_Nakamichi
 	dw CreditsText_Yoshimura
 	dw CreditsText_Yamazaki
+	dw CredILStaff
+	dw CredILProduction
+	dw CredILTrans
+	dw CredNoga
+	dw CregEyal
+	dw CredMaayan
+	dw CredSharon
+	dw CredNoam
+	dw CredElboim
+	dw CredLiji
+	dw CredNitzan
+	dw CredPret
+	dw CredFindUsAt
+	dw CredFindUsAt2
+	dw CredGitHubLink
+	dw CredGitHubLink2
 
 CreditsText_Version:
-	db -6, "YELLOW VERSION"
-	next   "    STAFF@"
+	db -11, "צוות הגרסה הצהובה@"
 CreditsText_Tajiri:
-	db -6, "SATOSHI TAJIRI@"
+	db -13, "IRIJAT IHSOTAS@"
 CreditsText_Oota:
-	db -6, "TAKENORI OOTA@"
+	db -14, "ATOO IRONEKAT@"
 CreditsText_Morimoto:
-	db -7, "SHIGEKI MORIMOTO@"
+	db -12, "OTOMIROM IKEGIHS@"
 CreditsText_Watanabe:
-	db -7, "TETSUYA WATANABE@"
+	db -12, "EBANATAW AYUSTET@"
 CreditsText_Masuda:
-	db -6, "JUNICHI MASUDA@"
+	db -13, "ADUSAM IHCINUJ@"
 CreditsText_Nishino:
-	db -5, "KOHJI NISHINO@"
+	db -14, "ONIHSIN IJHOK@"
 CreditsText_Sugimori:
-	db -5, "KEN SUGIMORI@"
+	db -14, "IROMIGUS NEK@"
 CreditsText_Nishida:
-	db -6, "ATSUKO NISHIDA@"
+	db -13, "ADIHSIN OKUSTA@"
 CreditsText_Miyamoto:
-	db -7, "SHIGERU MIYAMOTO@"
+	db -12, "OTOMAYIM UREGIHS@"
 CreditsText_Kawaguchi:
-	db -8, "TAKASHI KAWAGUCHI@"
+	db -11, "IHCUGAWAK IHSAKAT@"
 CreditsText_Ishihara:
-	db -8, "TSUNEKAZU ISHIHARA@"
+	db -11, "ARAHIHSI UZAKENUST@"
 CreditsText_Yamauchi:
-	db -7, "HIROSHI YAMAUCHI@"
+	db -12, "IHCUAMAY IHSORIH@"
 CreditsText_Zinnai:
-	db -7, "HIROYUKI ZINNAI@"
+	db -13, "IANNIZ IKUYORIH@"
 CreditsText_Hishida:
-	db -7, "TATSUYA HISHIDA@"
+	db -13, "ADIHSIH AYUSTAT@"
 CreditsText_Sakai:
-	db -6, "YASUHIRO SAKAI@"
+	db -13, "IAKAS ORIHUSAY@"
 CreditsText_Yamaguchi:
-	db -7, "WATARU YAMAGUCHI@"
+	db -12, "IHCUGAMAY URATAW@"
 CreditsText_Yamamoto:
-	db -8, "KAZUYUKI YAMAMOTO@"
+	db -11, "OTOMAMAY IKUYUZAK@"
 CreditsText_Taniguchi:
-	db -8, "RYOHSUKE TANIGUCHI@"
+	db -11, "IHCUGINAT EKUSHOYR@"
 CreditsText_Nonomura:
-	db -8, "FUMIHIRO NONOMURA@"
+	db -12, "ARUMONON ORIHIMUF@"
 CreditsText_Fuziwara:
-	db -7, "MOTOFUMI FUZIWARA@"
+	db -12, "ARAWIZUF IMUFOTOM@"
 CreditsText_Matsusima:
-	db -7, "KENJI MATSUSIMA@"
+	db -13, "AMISUSTAM IJNEK@"
 CreditsText_Tomisawa:
-	db -7, "AKIHITO TOMISAWA@"
+	db -12, "AWASIMOT OTIHIKA@"
 CreditsText_Kawamoto:
-	db -7, "HIROSHI KAWAMOTO@"
+	db -12, "OTOMAWAK IHSORIH@"
 CreditsText_Kakei:
-	db -6, "AKIYOSHI KAKEI@"
+	db -13, "IEKAK IHSOYIKA@"
 CreditsText_Tsuchiya:
-	db -7, "KAZUKI TSUCHIYA@"
+	db -12, "AYIHCUST IKUZAK@"
 CreditsText_Nakamura:
-	db -6, "TAKEO NAKAMURA@"
+	db -13, "ARUMAKAN OEKAT@"
 CreditsText_Yuda:
-	db -6, "MASAMITSU YUDA@"
+	db -13, "ADUY USTIMASAM@"
 CreditsText_Pokemon:
-	db -3, "#MON@"
+	db -16, "#ימון@"
 CreditsText_Director:
-	db -3, "DIRECTOR@"
+	db -18, "במאי@"
 CreditsText_Programmers:
-	db -5, "PROGRAMMERS@"
+	db -16, "מתכנתים@"
 CreditsText_CharacterDesign:
-	db -7, "CHARACTER DESIGN@"
+	db -14, "עיצוב דמויות@"
 CreditsText_Music:
-	db -2, "MUSIC@"
+	db -17, "מוזיקה@"
 CreditsText_SoundEffects:
-	db -6, "SOUND EFFECTS@"
+	db -15, "פעלולי קול@"
 CreditsText_GameDesign:
-	db -5, "GAME DESIGN@"
+	db -15, "עיצוב משחק@"
 CreditsText_MonsterDesign:
-	db -6, "MONSTER DESIGN@"
+	db -14, "עיצוב יצורים@"
 CreditsText_GameScenario:
-	db -6, "GAME SCENARIO@"
+	db -15, "תרחיש משחק@"
 CreditsText_ParametricDesign:
-	db -7, "PARAMETRIC DESIGN@"
+	db -14, "עיצוב פרמטרי@"
 CreditsText_MapDesign:
-	db -4, "MAP DESIGN@"
+	db -15, "עיצוב מפות@"
 CreditsText_Testing:
-	db -6, "PRODUCT TESTING@"
+	db -15, "בדיקת מוצר@"
 CreditsText_SpecialThanks:
-	db -6, "SPECIAL THANKS@"
+	db -13, "תודות מיוחדות@"
 CreditsText_Producers:
-	db -4, "PRODUCERS@"
+	db -17, "מפיקים@"
 CreditsText_Producer:
-	db -3, "PRODUCER@"
+	db -13, "מפיק@"
 CreditsText_ExecutiveProducer:
-	db -8, "EXECUTIVE PRODUCER@"
+	db -15, "מפיק בפועל@"
 CreditsText_Tamada:
-	db -6, "SOUSUKE TAMADA@"
+	db -13, "ADAMAT EKUSUOS@"
 CreditsText_Oota2:
-	db -5, "SATOSHI OOTA@"
+	db -14, "ATOO IHSOTAS@"
 CreditsText_Yoshikawa:
-	db -6, "RENA YOSHIKAWA@"
+	db -13, "AWAKIHSOY ANER@"
 CreditsText_Oota23:
-	db -6, "TOMOMICHI OOTA@"
+	db -13, "ATOO IHCIMOMOT@"
 CreditsText_Matsumita:
-	db -8, "TOSHINOBU MATSUMIYA@"
+	db -10, "AYIMUSTAM UBONIHSOT@"
 CreditsText_Seya:
-	db -5, "NOBUHIRO SEYA@"
+	db -14, "AYES ORIHUBON@"
 CreditsText_Yoshida:
-	db -7, "HIRONOBU YOSHIDA@"
+	db -12, "ADIHSOY UBONORIH@"
 CreditsText_Sekine:
-	db -6, "KAZUHITO SEKINE@"
+	db -12, "ENIKES OTIHUZAK@"
 CreditsText_Shimamura:
-	db -7, "KAZUSHI SHIMAMURA@"
+	db -12, "ARUMAMIHS IHSUZAK@"
 CreditsText_Shimoyamada:
-	db -9, "TERUYUKI SHIMOYAMADA@"
+	db -10, "ADAMAYOMIHS IKUYURET@"
 CreditsText_SuperMarioClub:
-	db -9, "NCL SUPER MARIO CLUB@"
+	db -10, "BULC OIRAM REPUS LCN@"
 CreditsText_Izushi:
-	db -7, "TAKEHIRO IZUSHI@"
+	db -12, "IHSUZI ORIHEKAT@"
 CreditsText_Nomura:
-	db -5, "FUZIKO NOMURA@"
+	db -14, "ARUMON OKIZUF@"
 CreditsText_Harada:
-	db -6, "TAKAHIRO HARADA@"
+	db -13, "ADARAH ORIHAKAT@"
 CreditsText_Yamagami:
-	db -7, "HITOSHI YAMAGAMI@"
+	db -12, "IMAGAMAY IHSOTIH@"
 CreditsText_Nishimura:
-	db -8, "KENTAROU NISHIMURA@"
+	db -11, "ARUMIHSIN UORATNEK@"
 CreditsText_Saeki:
-	db -5, "NAOKO SAEKI@"
+	db -15, "IKEAS OKOAN@"
 CreditsText_Fuzii:
-	db -5, "TAKAYA FUZII@"
+	db -15, "IIZUF AYAKAT@"
 CreditsText_Shogakukan:
-	db -4, "SHOGAKUKAN"
-	next   "PRODUCTION@"
+	db -15, " NAKUKAGOHS"
+	next   "NOITCUDORP@"
 CreditsText_Ootani:
-	db -5, "IKUE OOTANI@"
+	db -15, "INATOO EUKI@"
 CreditsText_PikachuVoice:
-	db -6, "PIKACHU VOICE@"
+	db -14, "דיבוב צויצוץ@"
 
-	db -3, "××××××××@"
+	db -17, "××××××××@"
 CreditsText_USStaff:
-	db -7, "US VERSION STAFF@"
+	db -11, "צוות הגרסה האנגלית@"
 CreditsText_USCoord:
-	db -7, "US COORDINATION@"
+	db -10, "תיאום הגרסה האנגלית@"
 CreditsText_Tilden:
-	db -5, "GAIL TILDEN@"
+	db -15, "NEDLIT LIAG@"
 CreditsText_Kawakami:
-	db -6, "NAOKO KAWAKAMI@"
+	db -13, "IMAKAWAK OKOAN@"
 CreditsText_Nakamura2:
-	db -6, "HIRO NAKAMURA@"
+	db -13, "ARUMAKAN ORIH@"
 CreditsText_Shoemake:
-	db -6, "RANDY SHOEMAKE@"
+	db -13, "EKAMEOHS YDNAR@"
 CreditsText_Osborne:
-	db -5, "SARA OSBORNE@"
+	db -15, "ENROBSO ARAS@"
 CreditsText_Translation:
-	db -7, "TEXT TRANSLATION@"
+	db -14, "תרגום לאנגלית@"
 CreditsText_Ogasawara:
-	db -6, "NOB OGASAWARA@"
+	db -13, "ARAWASAGO BON@"
 CreditsText_Iwata:
-	db -5, "SATORU IWATA@"
+	db -14, "ATAWI UROTAS@"
 CreditsText_Izushi2:
-	db -7, "TAKEHIRO IZUSHI@"
+	db -12, "IHSUZI ORIHEKAT@"
 CreditsText_Harada2:
-	db -7, "TAKAHIRO HARADA@"
+	db -13, "ADARAH ORIHAKAT@"
 CreditsText_Murakawa:
-	db -7, "TERUKI MURAKAWA@"
+	db -12, "AWAKARUM IKURET@"
 CreditsText_Fukui:
-	db -5, "KOHTA FUKUI@"
+	db -15, "IUKUF ATHOK@"
 CreditsText_SuperMarioClub2:
-	db -9, "NCL SUPER MARIO CLUB@"
+	db -10, "BULC OIRAM REPUS LCN@"
 CreditsText_Paad:
-	db -5, "PAAD TESTING@"
+	db -14, "GNITSET DAAP@"
 CreditsText_Hosokawa:
-	db -8, "TAKEHIKO HOSOKAWA@"
+	db -11, "AWAKOSOH OKIHEKAT@"
 CreditsText_Okubo:
-	db -5, "KENJI OKUBO@"
+	db -15, "OBUKO IJNEK@"
 CreditsText_Nakamichi:
-	db -7, "KIMIKO NAKAMICHI@"
+	db -12, "IHCIMAKAN OKIMIK@"
 CreditsText_Yoshimura:
-	db -6, "KAMON YOSHIMURA@"
+	db -13, "ARUMIHSOY NOMAK@"
 CreditsText_Yamazaki:
-	db -6, "SAKAE YAMAZAKI@"
+	db -13, "IKAZAMAY EAKAS@"
+
+CredILStaff:
+	db -11, "צוות הגרסה העברית@"
+CredILProduction:
+	db -11, "הפקת הגרסה העברית@"
+CredILTrans:
+	db -14, "תרגום לעברית@"
+CredNoga:
+	db -16, "נגה שקד@"
+CregEyal:
+	db -12, "אייל ירדני זליג@"
+CredMaayan:
+	db -15, "מעיין בלסי@"
+CredSharon:
+	db -15, "שרון קורך@"
+CredNoam:
+	db -16, "נעם גלר@"
+CredElboim:
+	db -14, "מ. ש. אלבוים@"
+CredLiji:
+	db -14, "ליאור חלפון@"
+CredNitzan:
+	db -15, "ניצן שקד@"
+CredPret:
+	db -17, "TERP@"
+CredFindUsAt:
+	db -12, "ניתן למצוא אותנו@"
+CredFindUsAt2:
+	db -16, "בכתובת:@"
+CredGitHubLink:
+	db -13, "-GON/MOC.BUHTIG@"
+CredGitHubLink2:
+	db -14, "DEREKOP/GORF@"

@@ -145,7 +145,7 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld [wEvoNewSpecies], a
 	ld a, MONSTER_NAME
 	ld [wNameListType], a
-	ld a, BANK(MonsterNames) ; bank is not used for monster names
+	ld a, BANK(MonsterNamesPointers) ; bank is not used for monster names
 	ld [wPredefBank], a
 	call GetName
 	push hl

@@ -211,7 +211,7 @@ DisplayNamingScreen:
 	cp $5 ; "ED" row
 	jr nz, .didNotPressED
 	ld a, [wTopMenuItemX]
-	cp $12 ; "ED" column
+	cp $2 ; "ED" column
 	jr z, .pressedStart
 .didNotPressED
 	ld a, [wCurrentMenuItem]
@@ -231,13 +231,6 @@ DisplayNamingScreen:
 	ld a, [hl]
 	ld [wNamingScreenLetter], a
 	call CalcStringLength
-	ld a, [wNamingScreenLetter]
-	cp $e5
-	ld de, Dakutens
-	jr z, .dakutensAndHandakutens
-	cp $e4
-	ld de, Handakutens
-	jr z, .dakutensAndHandakutens
 	ld a, [wNamingScreenType]
 	cp NAME_MON_SCREEN
 	jr nc, .checkMonNameLength
@@ -251,12 +244,6 @@ DisplayNamingScreen:
 	jr c, .addLetter
 	ret
 
-.dakutensAndHandakutens
-	push hl
-	call DakutensAndHandakutens
-	pop hl
-	ret nc
-	dec hl
 .addLetter
 	ld a, [wNamingScreenLetter]
 	ld [hli], a
@@ -332,7 +319,7 @@ LoadEDTile:
 ; Because Yellow uses the MBC5, loading $0 into $2000 - $2fff range will load bank0 instead of bank1 and thus incorrectly load the tile
 ; Instead of defining the correct bank, GameFreak decided to simply copy the ED_Tile in the function during HBlank
 	ld de, ED_Tile
-	ld hl, vFont + $700
+	ld hl, vFont + $510
 	ld c, $4 ; number of copies needed
 .waitForHBlankLoop
 	ld a, [rSTAT]
@@ -359,22 +346,22 @@ PrintAlphabet:
 	ld [H_AUTOBGTRANSFERENABLED], a
 	ld a, [wAlphabetCase]
 	and a
-	ld de, EnglishKeyboard
+	ld de, EnglishAlphabet
 	jr nz, .lowercase
-	ld de, HebrewKeyboard
+	ld de, HebrewAlphabet
 .lowercase
-	coord hl, 1, 5
+	coord hl, 17, 5
 	lb bc, 5, 9 ; 5 rows, 9 columns
 .outerLoop
 	push bc
 .innerLoop
 	ld a, [de]
-	ld [hli], a
-	inc hl
+	ld [hld], a
+	dec hl
 	inc de
 	dec c
 	jr nz, .innerLoop
-	ld bc, SCREEN_WIDTH + 2
+	ld bc, (SCREEN_WIDTH * 3) - 2
 	add hl, bc
 	pop bc
 	dec b
@@ -385,11 +372,21 @@ PrintAlphabet:
 	ld [H_AUTOBGTRANSFERENABLED], a
 	jp Delay3
 
-HebrewKeyboard: ; 679e (1:679e)
-	db "קראטוןםפףשדגכעיחלךזסבהנמצתץז'ג'צ'ת'():;־ ?!♂♀/",$f2,",¥אנגלית@"
+HebrewAlphabet:
+	db "אבגדהוזחט"
+	db "יךכלםמןנס"
+	db "עףפץצקרשת"
+	db " ×():][<MN><PK>"
+	db "<DOT>-?!¥♂♀/<ED>"
+	db "HSILGNE@"
 
-EnglishKeyboard: ; 67d6 (1:67d6)
-	db "WERTYUIOPASDFGHJKLZXCVBNMQ ×():;[]",$e1,$e2,"-?!♂♀/",$f2,",¥עברית @"
+EnglishAlphabet:
+	db "IHGFEDCBA"
+	db "RQPONMLKJ"
+	db ";ZYXWVUTS"
+	db " ×():][<MN><PK>"
+	db "<DOT>-?!¥♂♀/<ED>"
+	db "עברית  @"
 
 PrintNicknameAndUnderscores:
 	call CalcStringLength
@@ -434,7 +431,7 @@ PrintNicknameAndUnderscores:
 	jr nz, .emptySpacesRemaining
 	; when all spaces are filled, force the cursor onto the ED tile
 	call EraseMenuCursor
-	ld a, $12 ; "ED" x coord
+	ld a, $2 ; "ED" x coord
 	ld [wTopMenuItemX], a
 	ld a, $5 ; "ED" y coord
 	ld [wCurrentMenuItem], a
@@ -465,37 +462,6 @@ PrintNicknameAndUnderscores:
 	add hl, bc
 	ld [hl], $77 ; raised underscore tile id
 	ret
-
-DakutensAndHandakutens:
-	push de
-	call CalcStringLength
-	dec hl
-	ld a, [hl]
-	pop hl
-	ld de, $2
-	call IsInArray
-	ret nc
-	inc hl
-	ld a, [hl]
-	ld [wNamingScreenLetter], a
-	ret
-
-Dakutens: ; 6885 (1:6885)
-; Commented out to save on space (Unused in English version)
-;	db "かが", "きぎ", "くぐ", "けげ", "こご"
-;	db "さざ", "しじ", "すず", "せぜ", "そぞ"
-;	db "ただ", "ちぢ", "つづ", "てで", "とど"
-;	db "はば", "ひび", "ふぶ", "へべ", "ほぼ"
-;	db "カガ", "キギ", "クグ", "ケゲ", "コゴ"
-;	db "サザ", "シジ", "スズ", "セゼ", "ソゾ"
-;	db "タダ", "チヂ", "ツヅ", "テデ", "トド"
-;	db "ハバ", "ヒビ", "フブ", "へべ", "ホボ"
-;	db $ff
-
-Handakutens: ; 68d6 (1:68d6)
-;	db "はぱ", "ひぴ", "ふぷ", "へぺ", "ほぽ"
-;	db "ハパ", "ヒピ", "フプ", "へぺ", "ホポ"
-	db $ff
 
 ; calculates the length of the string at wcf4b and stores it in c
 CalcStringLength:

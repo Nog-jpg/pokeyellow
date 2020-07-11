@@ -1,25 +1,25 @@
 _IndigoPlateauLobbyText2::
-	text "Yo! Champ in"
-	line "making!"
+	text "יו!"
+	line "אלופצ'יק!"
 
-	para "At #MON LEAGUE,"
-	line "you have to face"
-	cont "the ELITE FOUR in"
-	cont "succession."
+	para "בליגת ה#ימון"
+	line "תאלץ להילחם נגד"
+	cont "חברי הרביעיה"
+	cont "העילית אחד אחרי"
+	cont "השני."
 
-	para "If you lose, you"
-	line "have to start all"
-	cont "over again! This"
-	cont "is it! Go for it!"
+	para "אם תפסיד, תאלץ"
+	line "להתחיל הכל מחדש!"
+	cont "קדימה! אתה יכול!"
 	done
 
 _IndigoPlateauLobbyText3::
-	text "From here on, you"
-	line "face the ELITE"
-	cont "FOUR one by one!"
+	text "מרגע זה, תלחם"
+	line "נגד חברי הרביעיה"
+	cont "אחד-אחד ברצף!"
 
-	para "If you win, a"
-	line "door opens to the"
-	cont "next trainer!"
-	cont "Good luck!"
+	para "אם תביס את כולם!"
+	line "הדלת תיפתח"
+	cont "למאמן הבא!"
+	cont "בהצלחה!"
 	done

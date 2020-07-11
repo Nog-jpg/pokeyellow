@@ -1,2 +1,3 @@
 _MewtwoBattleText::
-	text "Mew!@@"
+	text "תש!@"
+	db "@"

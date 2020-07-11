@@ -1,134 +1,135 @@
 _CeruleanGymText_5c7be::
-	text "Hi, you're a new"
-	line "face!"
+	text "היי, אתה חדש פה!"
 
-	para "What's your policy"
-	line "on #MON? What"
-	cont "is your approach?"
+	para "מאמנים ששואפים"
+	line "להיות מקצוענים"
+	cont "צריכים שתהיה להם"
+	cont "גישה ל#ימונים!"
 
-	para "My policy is an"
-	line "all-out offensive"
-	cont "with water-type"
-	cont "#MON!"
+	para "מה הגישה שלך כלפי"
+	line "תפיסת #ימונים?"
 
-	para "MISTY, the world-"
-	line "famous beauty, is"
-	cont "your host!"
-
-	para "Are you ready,"
-	line "sweetie?"
+	para "הגישה שלי היא"
+	line "מתקפה בלתי פוסקת"
+	cont "עם #יומי מים!"
 	done
 
 _CeruleanGymText_5c7c3::
-	text "TM11 teaches"
-	line "BUBBLEBEAM!"
+	text "מ”מ11 מלמד את"
+	line "המהלך קרן בועות!"
 
-	para "Use it on an"
-	line "aquatic #MON!"
+	para "השתמש בו על"
+	line "#ימונים ימיים!"
 	done
 
 _CeruleanGymText_5c7c8::
-	text "The CASCADEBADGE"
-	line "makes all #MON"
-	cont "up to L30 obey!"
+	text "תג הזהב גורם"
+	line "ל#ימונים עד רמה"
+	cont "03 לציית לך!"
 
-	para "That includes"
-	line "even outsiders!"
+	para "זה כולל אפילו"
+	line "#ימונים שקיבלת"
+	cont "בהחלפה!"
 
-	para "There's more, you"
-	line "can now use CUT"
-	cont "anytime!"
+	para "ויש אפילו עוד,"
+	line "עכשיו אתה יכול"
+	cont "להשתמש במהלך"
+	cont "חיתוך גם מחוץ"
+	cont "לקרב!"
 
-	para "You can CUT down"
-	line "small bushes to"
-	cont "open new paths!"
+	para "אתה יכול לחתוך"
+	line "שיחים קטנים כדי"
+	cont "לגשת לשבילים"
+	cont "חדשים!"
 
-	para "You can also have"
-	line "my favorite TM!"
+	para "אתה יכול גם לקחת"
+	line "את המ”מ האהוב"
+	cont "עליי!"
 	done
 
 _ReceivedTM11Text::
-	text "<PLAYER> received"
-	line "TM11!@@"
+	text "<PLAYER> קיבל"
+	line "מ”מ11!@"
+	db "@"
 
 _CeruleanGymText_5c7d3::
-	text "You better make"
-	line "room for this!"
+	text "פנה מקום בתיק"
+	line "שלך!"
 	done
 
 _CeruleanGymText_5c7d8::
-	text "I can't"
-	line "believe I lost!"
+	text "וואו! אתה"
+	line "חזק!"
 
-	para "All right!"
+	para "אוקיי!"
 
-	para "You can have the"
-	line "CASCADEBADGE to"
-	cont "show you beat me!"
-	prompt
+	para "אתה יכול לקחת את"
+	line "תג הזהב שיוכיח"
+	cont "שניצחת אותי!@"
+	db "@"
 
 _CeruleanGymBattleText1::
-	text "I'm more than good"
-	line "enough for you!"
+	text "אני מאתגרת מספיק"
+	line "בשבילך!"
 
-	para "MISTY can wait!"
+	para "טל יכולה לחכות!"
 	done
 
 _CeruleanGymEndBattleText1::
-	text "You"
-	line "overwhelmed me!"
+	text "כיסחת אותי!"
 	prompt
 
 _CeruleanGymAfterBattleText1::
-	text "You have to face"
-	line "other trainers to"
-	cont "find out how good"
-	cont "you really are."
+	text "צריך להילחם נגד"
+	line "מאמנים אחרים כדי"
+	cont "לגלות עד כמה חזק"
+	cont "אתה באמת."
 	done
 
 _CeruleanGymBattleText2::
-	text "Splash!"
+	text "שפריץ!"
 
-	para "I'm first up!"
-	line "Let's do it!"
+	para "הקרב הראשון הוא"
+	line "נגדי! בוא נילחם!"
 	done
 
 _CeruleanGymEndBattleText2::
-	text "That"
-	line "can't be!"
+	text "אין מצב!"
 	prompt
 
 _CeruleanGymAfterBattleText2::
-	text "MISTY is going to"
-	line "keep improving!"
+	text "טל רק ממשיכה"
+	line "להשתפר!"
 
-	para "She won't lose to"
-	line "someone like you!"
+	para "היא לא תפסיד מול"
+	line "מישהו כמוך!"
 	done
 
 _CeruleanGymText_5c82a::
-	text "Yo! Champ in"
-	line "making!"
+	text "יו!"
+	line "אלופצ'יק!"
 
-	para "Here's my advice!"
+	para "שמע עצה!"
 
-	para "The LEADER, MISTY,"
-	line "is a pro who uses"
-	cont "water #MON!"
+	para "מנהיגת המכון טל,"
+	line "היא מקצוענית"
+	cont "שמשתמשת רק"
+	cont "ב#ימוני מים!"
 
-	para "You can drain all"
-	line "their water with"
-	cont "plant #MON!"
+	para "אתה יכול לשתות"
+	line "לה את כל המים עם"
+	cont "#ימוני צמח!"
 
-	para "Or, zap them with"
-	line "electricity!"
+	para "או שתהמם אותם עם"
+	line "חשמל!"
 	done
 
 _CeruleanGymText_5c82f::
-	text "You beat MISTY!"
-	line "What'd I tell ya?"
+	text "ניצחת את טל!"
+	line "בול כמו שאמרתי!"
 
-	para "You and me, kid,"
-	line "we make a pretty"
-	cont "darn good team!"
+	para "אחי, אתה ואני,"
+	line "אנחנו צוות די"
+	cont "מוצלח!"
 	done
+

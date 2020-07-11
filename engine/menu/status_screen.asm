@@ -112,7 +112,7 @@ StatusScreen:
 	add hl, de
 	ld [hl], "№"
 	dec hl
-	ld [hl], "⠄" ; . after No ("." is a different one)
+	ld [hl], "<DOT>" ; . after No ("." is a different one)
 	coord hl, 19, 9
 	lb bc, 8, 6
 	call DrawLineBox ; Draws the box around types, ID No. and OT
@@ -228,7 +228,7 @@ Type2Text:
 	db "סוג2/", $4e
 
 IDNoText:
-	db "№", $73, "/", $4e
+	db "№. זהות/", $4e
 
 OTText:
 	db   "מאמן/"
@@ -339,16 +339,18 @@ StatusScreen2:
 	ld c, a
 	ld a, $4
 	sub c
-	ld b, a ; Number of moves ?
+	push af
 	coord hl, 8, 10
 	ld de, SCREEN_WIDTH * 2
-	ld a, $72 ; special P tile id
+	ld a, "<BOLD_KAF>"
+	ld b, "<BOLD_NUN>"
 	call StatusScreen_PrintPP ; Print "PP"
-	ld a, b
+	pop af
 	and a
 	jr z, .InitPP
 	ld c, a
 	ld a, "-"
+	ld b, "-"
 	call StatusScreen_PrintPP ; Fill the rest with --
 .InitPP
 	ld hl, wLoadedMonMoves
@@ -488,7 +490,8 @@ StatusScreen_ClearName:
 StatusScreen_PrintPP:
 ; print PP or -- c times, going down two rows each time
 	ld [hli], a
-	ld [hld], a
+	ld [hl], b
+	dec hl
 	add hl, de
 	dec c
 	jr nz, StatusScreen_PrintPP

@@ -189,7 +189,7 @@ LoadTownMap_Fly:
 	ld c, 15
 	call DelayFrames
 	coord hl, 1, 0
-	ld [hl], "▶" ; TODO Shouldn't this be an up arrow? so confused. please test
+	ld [hl], "◀" ; TODO Shouldn't this be an up arrow? so confused. please test
 	coord hl, 2, 0
 	ld [hl], "▼"
 	pop hl

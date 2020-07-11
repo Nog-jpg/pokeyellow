@@ -1,16 +1,13 @@
 _ViridianForestEntranceText1::
-	text "Are you going to"
-	line "VIRIDIAN FOREST?"
-	cont "Be careful, it's"
-	cont "a natural maze!"
+	text "אתה הולך"
+	line "ליער ירוק-עד?"
+	cont "תיזהר, היער הזה"
+	cont "הוא ממש מבוך!"
 	done
 
 _ViridianForestEntranceText2::
-	text "You have to roam"
-	line "far to get new"
-	cont "kinds of #MON."
-
-	para "Look for other"
-	line "types outside of"
-	cont "VIRIDIAN FOREST."
+	text "עכברסס אולי"
+	line "קטן, אבל הנשיכה"
+	cont "שלו כל כך כואבת!"
+	cont "חטפת אחת?"
 	done

@@ -1,6 +1,9 @@
 _Route2HouseText1::
-	text "A fainted #MON"
-	line "can't fight. But, "
-	cont "it can still use "
-	cont "moves like CUT!"
+	text "#ימון שהתעלף"
+	line "לא יכול להמשיך"
+	cont "בקרב. אבל הוא"
+	cont "עדיין יכול להשתמש"
+	cont "במהלכים כמו"
+	cont "חיתוך!"
 	done
+

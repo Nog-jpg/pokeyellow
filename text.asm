@@ -225,7 +225,7 @@ INCLUDE "text/maps/AgathasRoom.asm"
 INCLUDE "text/maps/RockTunnelB1F.asm"
 INCLUDE "text/maps/SeafoamIslandsB4F.asm"
 
-_AIBattleWithdrawText::
+_MaleAIBattleWithdrawText::
 	TX_RAM wTrainerName
 	text " החזיר"
 	line "את @"
@@ -233,13 +233,33 @@ _AIBattleWithdrawText::
 	text "לכדור!"
 	prompt
 
-_AIBattleUseItemText::
+_FemaleAIBattleWithdrawText::
 	TX_RAM wTrainerName
-	text ""
+	text " החזירה"
+	line "את @"
+	TX_RAM wEnemyMonNick
+	text "לכדור!"
+	prompt
+
+_MaleAIBattleUseItemText::
+	TX_RAM wTrainerName
+	text "@"
 	line "השתמש"
 	cont "ב@"
 	TX_RAM wcd6d
-	text ""
+	text "@"
+	cont "על @"
+	TX_RAM wEnemyMonNick
+	text "!"
+	prompt
+
+_FemaleAIBattleUseItemText::
+	TX_RAM wTrainerName
+	text "@"
+	line "השתמשה"
+	cont "ב@"
+	TX_RAM wcd6d
+	text "@"
 	cont "על @"
 	TX_RAM wEnemyMonNick
 	text "!"
@@ -322,7 +342,7 @@ _OutOfCoinsSlotMachineText::
 	done
 
 _BetHowManySlotMachineText::
-	text "על כמה אסימונים"
+	text "כמה אסימונים"
 	line "תרצה להמר?"
 	done
 
@@ -399,7 +419,7 @@ _ViridianCityPokecenterGuyText::
 	done
 
 _PewterCityPokecenterGuyText::
-	text "פיהוק!"
+	text "פיהוווק!"
 
 	para "כשניענפוח שר,"
 	line "#ימונים מתחילים"
@@ -631,7 +651,7 @@ _CinnabarQuizQuestionsText5::
 	done
 
 _CinnabarQuizQuestionsText6::
-	text "82MT מכיל את המהלך"
+	text "מ”מ82 מכיל את המהלך"
 	line "קרן מוות?"
 	done
 
@@ -666,7 +686,7 @@ _BillsHouseInitiatedText::
 
 _BillsHousePokemonListText1::
 	text "רשימת ה#ימונים"
-	line "האהובה על הדר!"
+	line "האהובים על הדר!"
 	prompt
 
 _BillsHousePokemonListText2::
@@ -735,18 +755,21 @@ _JustAMomentText::
 
 TMNotebookText::
 	text "זה עלון מידע"
-	line "לגבי MTים."
+	line "לגבי מ”מ-ים."
 
 	para "..."
 
-	para "בסך-הכל, ישנם 50"
-	line "MTים."
+	para "בסך-הכל, ישנם 05"
+	line "מכשירי מהלכים, או"
+	cont "בקיצור - מ”מ."
 
-	para "קיימים גם 5 MHים"
-	line "שניתנים לשימוש"
+	para "קיימים גם 5"
+	line "מכשירים נסתברים,"
+	cont "או בקיצור מ”נ,"
+	cont "הניתנים לשימוש"
 	cont "חוזר."
 
-	para "סילף בע″מ.@@"
+	para "סילף בע”מ.@@"
 
 _TurnPageText::
 	text "לדפדף לעמוד הבא?"
@@ -882,7 +905,7 @@ _LinkCableHelpText1::
 	prompt
 
 _LinkCableHelpText2::
-	text "איזו כותרת תרצה"
+	text "איזה פרק תרצה"
 	line "לקרוא?"
 	done
 
@@ -914,7 +937,7 @@ _ViridianSchoolBlackboardText1::
 	prompt
 
 _ViridianSchoolBlackboardText2::
-	text "איזו כותרת תרצה"
+	text "איזה פרק תרצה"
 	line "לקרוא?"
 	done
 
@@ -1174,11 +1197,11 @@ _LinkBattleLostText::
 	text "!"
 	prompt
 
-_TrainerAboutToUseText::
+_MaleTrainerAboutToUseText::
 	TX_RAM wTrainerName
 	text " עומד"
 	line "לשלוח"
-	cont"@"
+	cont "@"
 	TX_RAM wEnemyMonNick
 	text "!"
 
@@ -1186,10 +1209,31 @@ _TrainerAboutToUseText::
 	line "יחליף #ימון?"
 	done
 
-_TrainerSentOutText::
+_FemaleTrainerAboutToUseText::
+	TX_RAM wTrainerName
+	text " עומדת"
+	line "לשלוח"
+	cont "@"
+	TX_RAM wEnemyMonNick
+	text "!"
+
+	para "האם <PLAYER>"
+	line "יחליף #ימון?"
+	done
+
+_MaleTrainerSentOutText::
 	text "@"
 	TX_RAM wTrainerName
 	text " שלח"
+	line "את @"
+	TX_RAM wEnemyMonNick
+	text "!"
+	done
+
+_FemaleTrainerSentOutText::
+	text "@"
+	TX_RAM wTrainerName
+	text " שלחה"
 	line "את @"
 	TX_RAM wEnemyMonNick
 	text "!"
@@ -1229,8 +1273,8 @@ _AlreadyOutText::
 	prompt
 
 _MoveNoPPText::
-	text "למהלך הזה נגמר"
-	line "הPP!"
+	text "למהלך הזה לא נותרו"
+	line "נקודות כוח!"
 	prompt
 
 _MoveDisabledText::
@@ -1294,8 +1338,9 @@ _MustRechargeText::
 	prompt
 
 _DisabledNoMoreText::
-	text "<USER> כבר"
-	line "לא מושבת!"
+	text "המהלך של"
+	line "<USER> כבר"
+	cont "לא מושבת!"
 	prompt
 
 _IsConfusedText::
@@ -1344,7 +1389,7 @@ _MoveIsDisabledText::
 	line "@"
 	TX_RAM wcd6d
 	text "של <USER>"
-	cont "הושבת!"
+	line "הושבת!"
 	prompt
 
 _MonName1Text::
@@ -1477,7 +1522,7 @@ _GainedText::
 
 _WithExpAllText::
 	text "בזכות שיתוף"
-	cont "PXE,"
+	cont "נ”נ,"
 	cont "@@"
 
 _BoostedText::
@@ -1487,7 +1532,7 @@ _BoostedText::
 _ExpPointsText::
 	TX_NUM wExpAmountGained, 2, 4
 	text " נקודות"
-	cont "PXE!"
+	cont "נסיון!"
 	prompt
 
 _GrewLevelText::
@@ -1635,7 +1680,7 @@ _PartyMenuBattleText::
 
 _PartyMenuUseTMText::
 	text "על איזה #ימון"
-	line "להשתמש בMT?"
+	line "להשתמש במ”מ?"
 	done
 
 _PartyMenuSwapMonText::
@@ -1648,7 +1693,7 @@ _PotionText::
 	text " נרפא"
 	line "ב@"
 	TX_NUM wHPBarHPDifference, 2, 3
-	text "נק' PH!"
+	text "נק' פגיעה!"
 	done
 
 _AntidoteText::
@@ -1815,12 +1860,12 @@ _SwitchOnText::
 	prompt
 
 _WhatText::
-	text "מה?"
+	text "מה לעשות?"
 	done
 
 _DepositWhichMonText::
 	text "איזה #ימון"
-	line "להכניס?"
+	line "לאחסן?"
 	done
 
 _MonWasStoredText::
@@ -1833,7 +1878,7 @@ _MonWasStoredText::
 
 _CantDepositLastMonText::
 	text "אתה לא יכול"
-	line "להכניס את!"
+	line "לאחסן את!"
 	cont "ה#ימון האחרון!"
 	prompt
 
@@ -1860,7 +1905,7 @@ _CantTakeMonText::
 	text "אתה לא יכול לקחת"
 	line "עוד #ימונים."
 
-	para "הכנס כמה"
+	para "אחסן כמה"
 	line "#ימונים כדי"
 	cont "לפנות מקום."
 	prompt
@@ -2071,7 +2116,7 @@ _ColosseumWeightText::
 	line "@"
 	TX_RAM wcd6d
 	text " עולה"
-	line "על 20 ק″ג!"
+	line "על 20 ק”ג!"
 	prompt
 
 _ColosseumEvolvedText::
@@ -2376,9 +2421,8 @@ _MoveWasDisabledText::
 	text "המהלך @"
 	TX_RAM wcd6d
 	text ""
-	line "@"
-	text "של <TARGET>"
-	line "הושבת!"
+	line "של <TARGET>"
+	cont "הושבת!"
 	prompt
 
 _NothingHappenedText::
@@ -2501,7 +2545,7 @@ _CoinsScatteredText::
 
 _SuckedHealthText::
 	text "<TARGET> איבד"
-	line "PH בגלל היניקה!"
+	line "נ”פ בגלל היניקה!"
 	prompt
 
 _DreamWasEatenText::
@@ -2566,13 +2610,13 @@ INCLUDE "text/maps/VermilionDock.asm"
 
 TeachingHMsText::
 	text "מהרגע ש#ימון"
-	line "לומד מהלך מMH, לא"
+	line "לומד מהלך מ”נ, לא"
 	cont "הוא לא יוכל לשכוח"
 	cont "אותו."
 
 	para "כדאי שתשקול"
 	line "בזהירות כל מהלך"
-	cont "MH שתרצה ללמד."
+	cont "מ”נ שתרצה ללמד."
 	done
 
 INCLUDE "text/maps/VermilionOldRodHouse.asm"
@@ -2780,7 +2824,7 @@ _ForgotAndText::
 
 _HMCantDeleteText::
 	text "לא ניתן לשכוח"
-	line "מהלכי MH!"
+	line "מהלכי מ”נ!"
 	prompt
 
 _PokemonCenterWelcomeText::
@@ -3100,17 +3144,17 @@ _ItemfinderFoundNothingText::
 	prompt
 
 _RaisePPWhichTechniqueText::
-	text "להגדיל PP של איזה"
-	line "מהלך?"
+	text "להוסיף נקודות כוח"
+	line "לאיזה מהלך?"
 	done
 
 _RestorePPWhichTechniqueText::
-	text "לשחזר PP של איזה"
-	line "מהלך?"
+	text "לשחזר נקודות כוח"
+	line "של איזה מהלך?"
 	done
 
 _PPMaxedOutText::
-	text "הPP של"
+	text "הנ”כ של"
 	line "@"
 	TX_RAM wcf4b
 	text " כבר"
@@ -3118,22 +3162,22 @@ _PPMaxedOutText::
 	prompt
 
 _PPIncreasedText::
-	text "הPP של המהלך"
+	text "נוספו נ”כ למהלך"
 	line "@"
 	TX_RAM wcf4b
-	text " גדל."
+	text "."
 	prompt
 
 _PPRestoredText::
-	text "PP שוחזר."
+	text "נקודות כוח שוחזרו."
 	prompt
 
 _BootedUpTMText::
-	text "הדלקת מכשיר MT!"
+	text "הדלקת מכשיר מ”מ!"
 	prompt
 
 _BootedUpHMText::
-	text "הדלקת מכשיר MH!"
+	text "הדלקת מכשיר מ”נ!"
 	prompt
 
 _TeachMachineMoveText::
@@ -3172,8 +3216,13 @@ _ItemUseNoEffectText::
 	text "זה לא ישפיע."
 	prompt
 
-_ThrowBallAtTrainerMonText1::
+_MaleThrowBallAtTrainerMonText1::
 	text "המאמן חסם את"
+	line "הכדור!"
+	prompt
+
+_FemaleThrowBallAtTrainerMonText1::
+	text "המאמנת חסמה את"
 	line "הכדור!"
 	prompt
 

@@ -1,13 +1,13 @@
 PikachuFanText::
-	text "Won't you admire"
-	line "my CLEFAIRY's"
-	cont "adorable tail?"
+	text "הבט בזנב המתוק"
+	line "של הצויצוץ שלי!"
+	cont "נכון שהוא מדהים?"
 	done
 
 PikachuFanBetterText::
-	text "Humph! My CLEFAIRY"
-	line "is twice as cute"
-	cont "as that one!"
+	text "חה! הצויצוץ שלי"
+	line "חמוד כפליים"
+	cont "מה#ימון ההוא!"
 	done
 
 PikachuFanPrintText::
@@ -21,18 +21,18 @@ PikachuFanPrintText::
 	done
 
 SeelFanText::
-	text "I just love my"
-	line "SEEL!"
+	text "אני פשוט מתה על"
+	line "הנבים שלי!"
 
-	para "It squeals when I"
-	line "hug it!"
+	para "הוא מצפצף כשאני"
+	line "מחבקת אותו!"
 	done
 
 SeelFanBetterText::
-	text "Oh dear!"
+	text "הו!"
 
-	para "My SEEL is far"
-	line "more attractive!"
+	para "הנבים שלי"
+	line "הרבה יותר חמוד!"
 	done
 
 SeelFanPrintText::
@@ -43,103 +43,108 @@ SeelFanPrintText::
 	done
 
 FanClubPikachuText::
-	text "CLEFAIRY: Pippii!"
+	text "צויצוץ: צוץ!"
+	line "צוי-צוץ!"
 	done
 
 FanClubSeelText::
-	text "SEEL: Kyuoo!"
+	text "נבים: קייוו!"
 	done
 
 FanClubMeetChairText::
-	text "I chair the"
-	line "#MON Fan Club!"
+	text "אני נשיא מועדון"
+	line "מעריצי #ימון!"
 
-	para "I have more than"
-	line "100 #MON. I"
-	cont "love them all!"
+	para "האוסף שלי מונה מעל"
+	line "001 #ימונים!"
 
-	para "I'm very fussy"
-	line "when it comes to"
-	cont "#MON!"
+	para "אני בררן מאוד"
+	line "כשזה מגיע"
+	cont "ל#ימונים!"
 
-	para "So..."
+	para "אז..."
 
-	para "Did you come to"
-	line "hear me brag"
-	cont "about my #MON?"
+	para "באת לבקר כדי"
+	line "לשמוע על"
+	cont "ה#ימונים שלי?"
 	done
 
 FanClubChairStoryText::
-	text "Good!"
-	line "Then listen up!"
+	text "נהדר!"
+	line "אז תקשיב טוב טוב!"
 
-	para "My favorite"
-	line "RAPIDASH..."
+	para "בבת עיני..."
+	line "סוסורף..."
 
-	para "It...cute..."
-	line "lovely...smart..."
-	cont "plus...amazing..."
-	cont "you think so?..."
-	cont "oh yes...it..."
-	cont "stunning..."
-	cont "kindly..."
-	cont "love it!"
+	para "הוא...חמוד..."
+	line "מקסים...חכם..."
+	cont "וגם...מדהים..."
+	cont "אתה מסכים?..."
+	cont "הו כן...הוא..."
+	cont "מהמם..."
+	cont "אדיב..."
+	cont "אין כמוהו!"
 
-	para "Hug it...when..."
-	line "sleeping...warm"
-	cont "and cuddly..."
-	cont "spectacular..."
-	cont "ravishing..."
-	cont "...Oops! Look at"
-	cont "the time! I kept"
-	cont "you too long!"
+	para "חיבוק...כש..."
+	line "נרדם...חמים"
+	cont "ונעים להחזיק..."
+	cont "מרהיב..."
+	cont "משובב נפש..."
+	cont "...אופס! תראה מה"
+	cont "השעה! אני מעכב"
+	cont "אותך!"
 
-	para "Thanks for hearing"
-	line "me out! I want"
-	cont "you to have this!"
+	para "תודה שהקשבת לי!"
+	line "אני רוצה לתת לך"
+	cont "את זה!"
 	prompt
 
 ReceivedBikeVoucherText::
-	text "<PLAYER> received"
-	line "a @"
+	text "<PLAYER> קיבל"
+	line "@"
 	TX_RAM wcf4b
-	text "!@@"
+	text "!@"
+	db "@"
 
 ExplainBikeVoucherText::
 	text ""
-	para "Exchange that for"
-	line "a BICYCLE!"
 
-	para "Don't worry, my"
-	line "FEAROW will FLY"
-	cont "me anywhere!"
+	para "ניתן להחליף את"
+	line "הקופון בעד"
+	cont "אופניים!"
 
-	para "So, I don't need a"
-	line "BICYCLE!"
+	para "אל תדאג לגבי,"
+	line "הפחדרור שלי ייקח"
+	cont "אותי בתעופה לאן"
+	cont "שארצה!"
 
-	para "I hope you like"
-	line "cycling!"
+	para "אז אין לי צורך"
+	line "באופניים!"
+
+	para "אני מקווה שאתה "
+	line "אוהב רכיבה!"
 	done
 
 FanClubNoStoryText::
-	text "Oh. Come back"
-	line "when you want to"
-	cont "hear my story!"
+	text "הו, חזור"
+	line "כשתרצה"
+	cont "לשמוע את הסיפור"
+	cont "שלי!"
 	done
 
 FanClubChairFinalText::
-	text "Hello, <PLAYER>!"
+	text "<PLAYER>, שלום!"
 
-	para "Did you come see"
-	line "me about my"
-	cont "#MON again?"
+	para "באת לשמוע על"
+	line "ה#ימונים שלי"
+	cont "שוב?"
 
-	para "No? Too bad!"
+	para "לא? חבל מאוד!"
 	done
 
 FanClubBagFullText::
-	text "Make room for"
-	line "this!"
+	text "פנה מקום בתיק"
+	line "בשביל זה!"
 	done
 
 FanClubChairPrintText1::
@@ -172,7 +177,7 @@ FanClubChairPrintText4::
 	done
 
 _FanClubText6::
-	text "Our CHAIRMAN is"
-	line "very vocal about"
-	cont "#MON."
+	text "נשיא המועדון שלנו"
+	line "אוהב לדבר על"
+	cont "#ימונים."
 	done

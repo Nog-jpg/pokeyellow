@@ -2618,7 +2618,13 @@ ThrowBallAtTrainerMon:
 	ld a, TOSS_ANIM
 	ld [wAnimationID], a
 	predef MoveAnimation ; do animation
-	ld hl, ThrowBallAtTrainerMonText1
+	; For gendered pronouns
+	ld a, [wPronounGender]
+	bit 4, a
+	ld hl, MaleThrowBallAtTrainerMonText1
+	jr nz, .male
+	ld hl, FemaleThrowBallAtTrainerMonText1
+.male
 	call PrintText
 	ld hl, ThrowBallAtTrainerMonText2
 	call PrintText
@@ -2652,8 +2658,12 @@ ItemUseNoEffectText:
 	TX_FAR _ItemUseNoEffectText
 	db "@"
 
-ThrowBallAtTrainerMonText1:
-	TX_FAR _ThrowBallAtTrainerMonText1
+MaleThrowBallAtTrainerMonText1:
+	TX_FAR _MaleThrowBallAtTrainerMonText1
+	db "@"
+
+FemaleThrowBallAtTrainerMonText1:
+	TX_FAR _FemaleThrowBallAtTrainerMonText1
 	db "@"
 
 ThrowBallAtTrainerMonText2:

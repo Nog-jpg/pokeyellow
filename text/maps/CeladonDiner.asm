@@ -1,59 +1,63 @@
 _CeladonDinerText1::
-	text "Hi!"
+	text "הי!"
 
-	para "We're taking a"
-	line "break now."
+	para "אנחנו בהפסקה"
+	line "כרגע."
 	done
 
 _CeladonDinerText2::
-	text "My #MON are"
-	line "weak, so I often"
-	cont "have to go to the"
-	cont "DRUG STORE."
+	text "הפוקימונים שלי"
+	line "חלשים אז אני"
+	cont "נאלץ לבקר במרכז"
+	cont "ה#ימון לעיתים"
+	cont "קרובות."
 	done
 
 _CeladonDinerText3::
-	text "Psst! There's a"
-	line "basement under"
-	cont "the GAME CORNER."
+	text "פססט! יש מרתף"
+	line "נסתר מתחת למשחקיית"
+	cont "רוקט..."
 	done
 
 _CeladonDinerText4::
-	text "Munch..."
+	text "לעיסה..."
 
-	para "The man at that"
-	line "table lost it all"
-	cont "at the slots."
+	para "האיש הזה שליד"
+	line "השולחן איבד את"
+	cont "כל מה שהיה לו"
+	cont "במכונות המזל."
 	done
 
 _CeladonDinerText_491a7::
-	text "Go ahead! Laugh!"
+	text "קדימה! צחק עלי!"
 
-	para "I'm flat out"
-	line "busted!"
+	para "הפסדתי כל מה"
+	line "שהיה לי!"
 
-	para "No more slots for"
-	line "me! I'm going"
-	cont "straight!"
+	para "סיימתי עם"
+	line "ההימורים. מהיום"
+	cont "אני הולך בדרך"
+	cont "הישר!"
 
-	para "Here! I won't be"
-	line "needing this any-"
-	cont "more!"
+	para "קח! אני לא"
+	line "צריך את זה יותר!"
 	prompt
 
 _ReceivedCoinCaseText::
-	text "<PLAYER> received"
-	line "a @"
+	text "<PLAYER> קיבל"
+	line "@"
 	TX_RAM wcf4b
-	text "!@@"
+	text "!@"
+	db "@"
 
 _CoinCaseNoRoomText::
-	text "Make room for"
-	line "this!"
+	text "פנה קצת מקום"
+	line "בתיק שלך!"
 	done
 
 _CeladonDinerText_491b7::
-	text "I always thought"
-	line "I was going to"
-	cont "win it back..."
+	text "תמיד חשבתי"
+	line "שאולי עוד אזכה"
+	cont "בכסף שלי חזרה..."
 	done
+

@@ -1,37 +1,35 @@
 _CinnabarIslandText8::
-	text "The door is"
-	line "locked..."
+	text "הדלת נעולה..."
 	done
 
 _CinnabarIslandText1::
-	text "CINNABAR GYM's"
-	line "BLAINE is an odd"
-	cont "man who has lived"
-	cont "here for decades."
+	text "להב ממכון"
+	line "הצנובר הוא אדם"
+	cont "משונה שחי באי"
+	cont "כבר עשרות שנים."
 	done
 
 _CinnabarIslandText2::
-	text "Scientists conduct"
-	line "experiments in"
-	cont "the burned-out"
-	cont "building."
+	text "מדענים עורכים"
+	line "ניסויים בבניין"
+	cont "השרוף."
 	done
 
 _CinnabarIslandText3::
-	text "CINNABAR ISLAND"
-	line "The Fiery Town of"
-	cont "Burning Desire"
+	text "אי הצנובר"
+	line "העיירה הבוערת של"
+	cont "תשוקה לוהטת"
 	done
 
 _CinnabarIslandText6::
-	text "#MON LAB"
+	text "מעבדת ה#ימון"
 	done
 
 _CinnabarIslandText7::
-	text "CINNABAR ISLAND"
-	line "#MON GYM"
-	cont "LEADER: BLAINE"
+	text "אי הצנובר"
+	line "מכון ה#ימון"
+	cont "מנהיג: להב"
 
-	para "The Hot-Headed"
-	line "Quiz Master!"
+	para "אלוף החידות"
+	line "חמום המח!"
 	done

@@ -1,96 +1,96 @@
 _DayCareIntroText::
-	text "I run a DAYCARE."
-	line "Would you like me"
-	cont "to raise one of"
-	cont "your #MON?"
+	text "אני מנהל מעון יום."
+	line "תרצה שאגדל את אחד"
+	cont "ה#ימונים שלך?"
 	done
 
 _DayCareWhichMonText::
-	text "Which #MON"
-	line "should I raise?"
+	text "איזה #ימון תרצה"
+	line "שאגדל?"
 	prompt
 
 _DayCareWillLookAfterMonText::
-	text "Fine, I'll look"
-	line "after @"
+	text "בסדר, אני אטפל"
+	line "ב@"
 	TX_RAM wcd6d
 	text ""
-	cont "for a while."
+	cont "לזמן מה."
 	prompt
 
 _DayCareComeSeeMeInAWhileText::
-	text "Come see me in"
-	line "a while."
+	text "בוא לראות אותי"
+	line "בעוד כמה זמן."
 	done
 
 _DayCareMonHasGrownText::
-	text "Your @"
+	text "@"
 	TX_RAM wcd6d
 	text ""
-	line "has grown a lot!"
+	line "שלך גדל בהרבה!"
 
-	para "By level, it's"
-	line "grown by @"
-	TX_NUM wDayCareNumLevelsGrown,$1,$3
-	text "!"
+	para "הוא עלה"
+	line "@"
+	TX_NUM wDayCareNumLevelsGrown, 1, 3
+	text " רמות!"
 
-	para "Aren't I great?"
+	para "אני מדהים, לא?"
 	prompt
 
 _DayCareOweMoneyText::
-	text "You owe me ¥@"
-	TX_BCD wDayCareTotalCost, $c2
-	text ""
-	line "for the return"
-	cont "of this #MON."
+	text "אתה חייב לי@"
+	TX_BCD wDayCareTotalCost, 2 | LEADING_ZEROES | LEFT_ALIGN
+	text "¥"
+	line "עבור החזרה של"
+	cont "ה#ימון הזה."
 	done
 
 _DayCareGotMonBackText::
-	text "<PLAYER> got"
+	text "<PLAYER> קיבל את"
 	line "@"
 	TX_RAM wDayCareMonName
-	text " back!"
+	text " בחזרה!"
 	done
 
 _DayCareMonNeedsMoreTimeText::
-	text "Back already?"
-	line "Your @"
+	text "כבר חזרת?"
+	line "ה@"
 	TX_RAM wcd6d
 	text ""
-	cont "needs some more"
-	cont "time with me."
+	cont "שלך זקוק לזמן"
+	cont "נוסף איתי."
 	prompt
 
 _DayCareAllRightThenText::
-	text "All right then,"
-	line "@@"
+	text "אז בסדר,"
+	line "@"
+	db "@"
 
 _DayCareComeAgainText::
-	text "Come again."
+	text "בוא שוב."
 	done
 
 _DayCareNoRoomForMonText::
-	text "You have no room"
-	line "for this #MON!"
+	text "אין לך מקום עבור"
+	line "ה#ימון הזה!"
 	done
 
 _DayCareOnlyHaveOneMonText::
-	text "You only have one"
-	line "#MON with you."
+	text "יש לך רק #ימון"
+	line "אחד איתך."
 	done
 
 _DayCareCantAcceptMonWithHMText::
-	text "I can't accept a"
-	line "#MON that"
-	cont "knows an HM move."
+	text "אני לא יכול לקבל"
+	line "#ימון שיודע"
+	cont "התקפת מ”נ."
 	done
 
 _DayCareHeresYourMonText::
-	text "Thank you! Here's"
-	line "your #MON!"
+	text "תודה! הנה"
+	line "ה#ימון שלך!"
 	prompt
 
 _DayCareNotEnoughMoneyText::
-	text "Hey, you don't"
-	line "have enough ¥!"
+	text "היי, אין לך מספיק"
+	line "¥!"
 	done

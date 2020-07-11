@@ -2142,7 +2142,8 @@ INCBIN "gfx/pikachu/unknown_e7d13.2bpp"
 
 SECTION "bank3A", ROMX
 
-INCLUDE "text/monster_names.asm"
+INCLUDE "text/monster_names_nikud.asm"
+INCLUDE "text/monster_names_pointers.asm"
 
 INCLUDE "engine/overworld/is_player_just_outside_map.asm"
 

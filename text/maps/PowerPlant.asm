@@ -1,6 +1,7 @@
 _VoltorbBattleText::
-	text "Bzzzt!"
+	text "בזזזט!"
 	done
 
 _ZapdosBattleText::
-	text "Gyaoo!@@"
+	text "גיאהוו!@"
+	db "@"

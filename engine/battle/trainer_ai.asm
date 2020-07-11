@@ -700,7 +700,13 @@ SwitchEnemyMon:
 	ld bc, 4
 	call CopyData
 
-	ld hl, AIBattleWithdrawText
+	; For gendered pronouns
+	ld a, [wPronounGender]
+	bit 4, a
+	ld hl, MaleAIBattleWithdrawText
+	jr nz, .male
+	ld hl, FemaleAIBattleWithdrawText
+.male
 	call PrintText
 
 	; This wFirstMonsNotOutYet variable is abused to prevent the player from
@@ -717,8 +723,12 @@ SwitchEnemyMon:
 	scf
 	ret
 
-AIBattleWithdrawText:
-	TX_FAR _AIBattleWithdrawText
+MaleAIBattleWithdrawText:
+	TX_FAR _MaleAIBattleWithdrawText
+	db "@"
+
+FemaleAIBattleWithdrawText:
+	TX_FAR _FemaleAIBattleWithdrawText
 	db "@"
 
 AIUseFullHeal:
@@ -839,9 +849,19 @@ AIPrintItemUse_:
 	ld a, [wAIItem]
 	ld [wd11e], a
 	call GetItemName
-	ld hl, AIBattleUseItemText
+	; For gendered pronouns
+	ld a, [wPronounGender]
+	bit 4, a
+	ld hl, MaleAIBattleUseItemText
+	jr nz, .male
+	ld hl, FemaleAIBattleUseItemText
+.male
 	jp PrintText
 
-AIBattleUseItemText:
-	TX_FAR _AIBattleUseItemText
+MaleAIBattleUseItemText:
+	TX_FAR _MaleAIBattleUseItemText
+	db "@"
+
+FemaleAIBattleUseItemText:
+	TX_FAR _FemaleAIBattleUseItemText
 	db "@"

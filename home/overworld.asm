@@ -1223,7 +1223,6 @@ CollisionCheckOnLand::
 	ld d, a
 	ld a, [wSpriteStateData1 + 12] ; the player sprite's collision data (bit field) (set in the sprite movement code)
 	and d ; check if a sprite is in the direction the player is trying to go
-	nop ; ??? why is this in the code
 	jr nz, .collision
 	xor a
 	ld [hSpriteIndexOrTextID], a
@@ -1822,8 +1821,6 @@ LoadMapHeader::
 	callba MarkTownVisitedAndLoadMissableObjects
 	jr asm_0dbd
 
-Func_0db5:: ; XXX
-	callba LoadUnusedBluesHouseMissableObjectData
 asm_0dbd
 	ld a, [wCurMapTileset]
 	ld [wUnusedD119], a

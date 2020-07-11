@@ -241,7 +241,7 @@ PlayerPCToss:
 
 PlayersPCMenuEntries:
 	db   "הוצא פריט"
-	next "הכנס פריט"
+	next "אחסן פריט"
 	next "זרוק פריט"
 	next "התנתק@"
 

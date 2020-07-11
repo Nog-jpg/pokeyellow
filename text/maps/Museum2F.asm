@@ -1,36 +1,47 @@
 _Museum2FText1::
-	text "MOON STONE?"
+	text "אבן ירח?"
 
-	para "What's so special"
-	line "about it?"
+	para "מה כל כך מיוחד בה?"
 	done
 
 _Museum2FText2::
-	text "July 20, 1969!"
+	text "ה-02 ליולי, 9691!"
 
-	para "The 1st lunar"
-	line "landing!"
+	para "הנחיתה הראשונה על"
+	line "הירח!"
 
-	para "I bought a color"
-	line "TV to watch it!"
+	para "קניתי טלוויזיה"
+	line "צבעונית כדי לצפות"
+	cont "בה!"
 	done
 
 _Museum2FText3::
-	text "We have a space"
-	line "exhibit now."
+	text "יש לנו תערוכת חלל"
+	line "עכשיו."
 	done
 
 _Museum2FText4::
-	text "I want a PIKACHU!"
-	line "It's so cute!"
+	text "אני רוצה צויצוץ!"
+	line "הוא כל כך מתוק!"
 
-	para "I asked my Daddy"
-	line "to catch me one!"
+	para "ביקשתי מאבא שלי"
+	line "לתפוס לי אחד!"
 	done
 
 _Museum2FText5::
-	text "Yeah, a PIKACHU"
-	line "soon, I promise!"
+	text "כן, צויצוץ"
+	line "בקרוב, אני מבטיח!"
+	done
+
+_Museum2FText6::
+	text "מעבורת החלל"
+	line "קולומביה"
+	done
+
+_Museum2FText7::
+	text "מטאוריט שנפל על"
+	line "הר הירח."
+	cont ")אבן ירח?("
 	done
 
 _Museum2FPikachuText1::
@@ -45,15 +56,4 @@ _Museum2FPikachuText2::
 	line "that PIKACHU off"
 	cont "you, but it's too"
 	cont "attached to you."
-	done
-
-_Museum2FText6::
-	text "SPACE SHUTTLE"
-	line "COLUMBIA"
-	done
-
-_Museum2FText7::
-	text "Meteorite that"
-	line "fell on MT.MOON."
-	cont "(MOON STONE?)"
 	done

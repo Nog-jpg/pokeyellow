@@ -1,107 +1,106 @@
 _SilphCo5Text_1a010::
-	text "TEAM ROCKET is"
-	line "in an uproar over"
-	cont "some intruder."
-	cont "That's you right?"
+	text "צוות רוקט"
+	line "נסערים בגלל איזה"
+	cont "פולש. זה אתה,"
+	cont "נכון?"
 	done
 
 _SilphCo5Text_1a015::
-	text "TEAM ROCKET took"
-	line "off! You're our"
-	cont "hero! Thank you!"
+	text "צוות רוקט"
+	line "הסתלקו! אתה"
+	cont "הגיבור שלנו!"
+	cont "תודה!"
 	done
 
 _SilphCo5BattleText2::
-	text "I heard a kid was"
-	line "wandering around."
+	text "שמעתי שיש ילד"
+	line "שמשוטט כאן."
 	done
 
 _SilphCo5EndBattleText2::
-	text "Boom!"
+	text "בום!"
 	prompt
 
 _SilphCo5AfterBattleText2::
-	text "It's not smart"
-	line "to pick a fight"
-	cont "with TEAM ROCKET!"
+	text "לריב עם צוות"
+	line "רוקט זה לא צעד"
+	cont "חכם!"
 	done
 
 _SilphCo5BattleText3::
-	text "We study #"
-	line "BALL technology"
-	cont "on this floor!"
+	text "בקומה הזו אנחנו"
+	line "חוקרים טכנולוגית"
+	cont "פוכדורים!"
 	done
 
 _SilphCo5EndBattleText3::
-	text "Dang!"
-	line "Blast it!"
+	text "אוף!"
+	line "יא אללה!"
 	prompt
 
 _SilphCo5AfterBattleText3::
-	text "We worked on the"
-	line "ultimate #"
-	cont "BALL which would"
-	cont "catch anything!"
+	text "אנחנו מפתחים את"
+	line "הפוכדור העליון"
+	cont "שיהיה מסוגל ללכוד"
+	cont "כל דבר!"
 	done
 
 _SilphCo5BattleText4::
-	text "Whaaat? There"
-	line "shouldn't be any"
-	cont "children here!"
+	text "מהההה? לא אמורים"
+	line "להיות כאן ילדים?"
 	done
 
 _SilphCo5EndBattleText4::
-	text "Oh"
-	line "goodness!"
+	text "או!"
+	line "אדוניי!"
 	prompt
 
 _SilphCo5AfterBattleText4::
-	text "You're only on 5F."
-	line "It's a long way"
-	cont "to my BOSS!"
+	text "אתה רק בקומה"
+	line "החמישית. הבוס שלי"
+	cont "עוד רחוק!"
 	done
 
 _SilphCo5BattleText5::
-	text "Show TEAM ROCKET"
-	line "a little respect!"
+	text "הפגן קצת כבוד"
+	line "כלפי צוות רוקט!"
 	done
 
 _SilphCo5EndBattleText5::
-	text "Cough..."
-	line "Cough..."
+	text "שיעול..."
+	line "שיעול..."
 	prompt
 
 _SilphCo5AfterBattleText5::
-	text "Which reminds me."
+	text "זה מזכיר לי."
 
-	para "KOFFING evolves"
-	line "into WEEZING!"
+	para "משתעשן מתפתח"
+	line "למשתעשניים!"
 	done
 
 _SilphCo5Text9::
-	text "It's a #MON"
-	line "REPORT!"
+	text "זה דוח #ימון!"
 
-	para "#MON LAB"
-	line "created PORYGON,"
-	cont "the first virtual"
-	cont "reality #MON."
+	para "מעבדת ה#ימון"
+	line "יצרנו את מצולען,"
+	cont "#ימון המציאות"
+	cont "המדומה הראשון."
 	done
 
 _SilphCo5Text10::
-	text "It's a #MON"
-	line "REPORT!"
+	text "זה דוח #ימון!"
 
-	para "Over 160 #MON"
-	line "techniques have"
-	cont "been confirmed."
+	para "אישרנו את קיומם"
+	line "של מעל 061 מהלכים"
+	cont "בהם #ימונים"
+	cont "משתמשים."
 	done
 
 _SilphCo5Text11::
-	text "It's a #MON"
-	line "REPORT!"
+	text "זה דוח #ימון!"
 
-	para "4 #MON evolve"
-	line "only when traded"
-	cont "by link-cable."
+	para "ישנם 4 #ימונים"
+	line "שמתפתחים רק כאשר"
+	cont "מחליפים אותם דרך"
+	cont "חיבור כבל."
 	done

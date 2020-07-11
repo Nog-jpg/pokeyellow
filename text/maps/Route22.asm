@@ -1,104 +1,104 @@
-_Route22RivalDefeatedText1::
-	text "Awww!"
-	line "You just lucked"
-	cont "out!"
-	prompt
-
-_Route22Text_511bc::
-	text "<RIVAL>: What?"
-	line "Why do I have 2"
-	cont "#MON?"
-
-	para "You should catch"
-	cont "some more too!"
-	prompt
-
-_Route22RivalDefeatedText2::
-	text "What!?"
-
-	para "I was just"
-	line "careless!"
-	prompt
-
-_Route22Text_511d0::
-	text "<RIVAL>: Hahaha!"
-	line "<PLAYER>! That's"
-	cont "your best? You're"
-	cont "nowhere near as"
-	cont "good as me, pal!"
-
-	para "Go train some"
-	line "more! You loser!"
-	prompt
-
 _Route22RivalBeforeBattleText1::
-	text "<RIVAL>: Hey!"
+	text "<RIVAL>: היי!"
 	line "<PLAYER>!"
 
-	para "You're going to"
-	line "#MON LEAGUE?"
+	para "אתה בדרך לליגת"
+	line "ה#ימון?"
 
-	para "Forget it! You"
-	line "probably don't"
-	cont "have any BADGEs!"
+	para "שכח מזה! אין מצב"
+	line "שיש לך מספיק"
+	cont "תגים!"
 
-	para "The guard won't"
-	line "let you through!"
+	para "השומר לא יתן"
+	line "לך להכנס!"
 
-	para "By the way, did"
-	line "your #MON"
-	cont "get any stronger?"
+	para "דרך אגב,"
+	line "ה#ימונים שלך"
+	cont "הספיקו להתחזק?"
 	done
 
 _Route22RivalAfterBattleText1::
-	text "I heard #MON"
-	line "LEAGUE has many"
-	cont "tough trainers!"
+	text "שמעתי שבליגת"
+	line "ה#ימון יש הרבה"
+	cont "מאמנים קשוחים!"
 
-	para "I have to figure"
-	line "out how to get"
-	cont "past them!"
+	para "אני חייב להבין איך"
+	line "לעבור אותם!"
 
-	para "You should quit"
-	line "dawdling and get"
-	cont "a move on!"
+	para "כדאי שגם אתה"
+	line "תפסיק להתמהמה"
+	cont "ותתחיל להתאמן!"
 	done
 
+_Route22RivalDefeatedText1::
+	text "אוף!"
+	line "סתם מזל של"
+	cont "מתחילים!"
+	prompt
+
+_Route22Text_511bc::
+	text "<RIVAL>: מה?"
+	line "איך זה שיש לי 2"
+	cont "#ימונים?"
+
+	para "כדאי גם לך לתפוס"
+	cont "עוד #ימונים!"
+	prompt
+
 _Route22RivalBeforeBattleText2::
-	text "<RIVAL>: What?"
-	line "<PLAYER>! What a"
-	cont "surprise to see"
-	cont "you here!"
+	text "<RIVAL>: מה?"
+	line "<PLAYER>! אתה"
+	cont "כאן, איזו הפתעה!"
 
-	para "So you're going to"
-	line "#MON LEAGUE?"
+	para "אתה בדרך לליגת"
+	line "ה#ימונים?"
 
-	para "You collected all"
-	line "the BADGEs too?"
-	cont "That's cool!"
+	para "ואפילו אספת את"
+	line "כל התגים? מדליק!"
 
-	para "Then I'll whip"
-	line "you, <PLAYER>, as"
-	cont "a warmup for"
-	cont "#MON LEAGUE!"
+	para "אני אכפכף אותך"
+	line "בקרב, <PLAYER>!"
+	cont "זה יהיה חימום טוב"
+	cont "לפני ליגת"
+	cont "ה#ימון!"
 
-	para "Come on!"
+	para "קדימה!"
 	done
 
 _Route22RivalAfterBattleText2::
-	text "That loosened me"
-	line "up! I'm ready for"
-	cont "#MON LEAGUE!"
+	text "זה היה חימום"
+	line "מעולה! אני מוכן"
+	cont "לליגת ה#ימון!"
 
-	para "<PLAYER>, you need"
-	line "more practice!"
+	para "<PLAYER>, אתה"
+	line "צריך להתאמן עוד"
+	cont "קצת!"
 
-	para "But hey, you know"
-	line "that! I'm out of"
-	cont "here. Smell ya!"
+	para "אבל אתה בטח כבר"
+	line "יודע את זה."
+	cont "יאללה, עפתי מפה."
+	cont "נתרחרח אחר-כך!"
 	done
 
+_Route22RivalDefeatedText2::
+	text "מה!?"
+
+	para "לא התרכזתי!"
+	prompt
+
+_Route22Text_511d0::
+	text "<RIVAL>: פחחה!"
+	line "<PLAYER>! זה"
+	cont "הכי טוב שיש לך?"
+	cont "אתה אפילו לא"
+	cont "מתקרב לרמה שלי,"
+	cont "חבר!"
+
+	para "לך להתאמן עוד!"
+	line "יא כלומניק!"
+	prompt
+
 _Route22FrontGateText::
-	text "#MON LEAGUE"
-	line "Front Gate"
+	text "ליגת ה#ימון"
+	line "שער ראשי"
 	done

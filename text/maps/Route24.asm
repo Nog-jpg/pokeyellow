@@ -1,158 +1,160 @@
 _Route24Text_51510::
-	text "Congratulations!"
-	line "You beat our 5"
-	cont "contest trainers!@@"
+	text "ברכותיי!"
+	line "הבסת את חמשת מאמני"
+	cont "התחרות שלנו!@"
+	db "@"
 
 _Route24Text_51515::
 	text ""
 
-	para "You just earned a"
-	line "fabulous prize!"
+	para "עכשיו הרווחת"
+	line "פרס נהדר!"
 	prompt
 
 _Route24Text_5151a::
-	text "<PLAYER> received"
-	line "a @"
+	text "<PLAYER> קיבל"
+	line " @"
 	TX_RAM wcf4b
-	text "!@@"
+	text "!@"
+	db "@"
 
 _Route24Text_51521::
-	text "You don't have"
-	line "any room!"
+	text "אין לך מספיק"
+	line "מקום בתיק!"
 	done
 
 _Route24Text_51526::
-	text "By the way, would"
-	line "you like to join"
-	cont "TEAM ROCKET?"
+	text "דרך אגב, האם"
+	line "תרצה להצטרף"
+	cont "לצוות רוקט?"
 
-	para "We're a group"
-	line "dedicated to evil"
-	cont "using #MON!"
+	para "אנחנו קבוצה"
+	line "שמקדישה עצמה לרשע"
+	cont "באמצעות #ימונים!"
 
-	para "Want to join?"
+	para "רוצה להצטרף?"
 
-	para "Are you sure?"
+	para "בטוח?"
 
-	para "Come on, join us!"
+	para "קדימה, הצטרף אלינו!"
 
-	para "I'm telling you"
-	line "to join!"
+	para "אני אומר לך"
+	line "להצטרף!"
 
-	para "OK, you need"
-	line "convincing!"
+	para "אוקיי, אתה זקוק"
+	line "לשכנוע!"
 
-	para "I'll make you an"
-	line "offer you can't"
-	cont "refuse!"
+	para "אני אציע לך"
+	line "הצעה שאי אפשר"
+	cont "לסרב לה!"
 	done
 
 _Route24Text_5152b::
-	text "Arrgh!"
-	line "You are good!"
+	text "אררג!"
+	line "אתה טוב!"
 	prompt
 
 _Route24Text_51530::
-	text "With your ability,"
-	line "you could become"
-	cont "a top leader in"
-	cont "TEAM ROCKET!"
+	text "עם היכולות שלך,"
+	line "אתה יכול להיות"
+	cont "מנהיג מצוין"
+	cont "בצוות רוקט!"
 	done
 
 _Route24BattleText1::
-	text "I saw your feat"
-	line "from the grass!"
+	text "ראיתי את הישגייך"
+	line "עם #ימוני בר!"
 	done
 
 _Route24EndBattleText1::
-	text "I"
-	line "thought not!"
+	text "חשבתי"
+	line "שלא!"
 	prompt
 
 _Route24AfterBattleText1::
-	text "I hid because the"
-	line "people on the"
-	cont "bridge scared me!"
+	text "התחבאתי כי"
+	line "פחדתי מהאנשים"
+	cont "על הגשר!"
 	done
 
 _Route24BattleText2::
-	text "OK! I'm No. 5!"
-	line "I'll stomp you!"
+	text "אוקיי! אני מספר"
+	line "5! אני ארמוס"
+	cont "אותך!"
 	done
 
 _Route24EndBattleText2::
-	text "Whoa!"
-	line "Too much!"
+	text "וואו!"
+	line "יותר מדי!"
 	prompt
 
 _Route24AfterBattleText2::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "עשיתי את המיטב,"
+	line "אני לא מתחרט!"
 	done
 
 _Route24BattleText3::
-	text "I'm No. 4!"
-	line "Getting tired?"
+	text "אני מספר 4!"
+	line "מתחיל להתעייף?"
 	done
 
 _Route24EndBattleText3::
-	text "I lost"
-	line "too!"
+	text "גם אני"
+	line "הפסדתי!"
 	prompt
 
 _Route24AfterBattleText3::
-	text "I did my best, so"
-	line "I've no regrets!"
+	text "עשיתי את המיטב,"
+	line "אני לא מתחרט!"
 	done
 
 _Route24BattleText4::
-	text "Here's No. 3!"
-	line "I won't be easy!"
+	text "הנה מספר 3!"
+	line "אני לא אהיה קל!"
 	done
 
 _Route24EndBattleText4::
-	text "Ow!"
-	line "Stomped flat!"
+	text "אוו!"
+	line "נפלתי חזק!"
 	prompt
 
 _Route24AfterBattleText4::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "עשיתי את המיטב,"
+	line "אני לא מתחרט!"
 	done
 
 _Route24BattleText5::
-	text "I'm second!"
-	line "Now it's serious!"
+	text "אני שני!"
+	line "עכשיו זה רציני!"
 	done
 
 _Route24EndBattleText5::
-	text "How could I"
-	line "lose?"
+	text "איך יכולתי"
+	line "להפסיד?"
 	prompt
 
 _Route24AfterBattleText5::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "עשיתי את המיטב,"
+	line "אני לא מתחרט!"
 	done
 
 _Route24BattleText6::
-	text "This is NUGGET"
-	line "BRIDGE! Beat us 5"
-	cont "trainers and win"
-	cont "a fabulous prize!"
+	text "זה גשר הזהב!"
+	line "הבס 5 מאמנים"
+	cont "וזכה בפרס נהדר!"
 
-	para "Think you got"
-	line "what it takes?"
+	para "חושב שיש לך"
+	line "את זה?"
 	done
 
 _Route24EndBattleText6::
-	text "Whoo!"
-	line "Good stuff!"
+	text "וואו!"
+	line "אחלה דבר!"
 	prompt
 
 _Route24AfterBattleText6::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "עשיתי את המיטב,"
+	line "אני לא מתחרט!"
 	done
 
 _Route24DamianText1::

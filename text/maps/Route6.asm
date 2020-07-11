@@ -1,29 +1,18 @@
 _Route6BattleText1::
-	text "I'm doing this"
-	line "out of love."
-	cont "Leave me alone!"
+	text "מי שם?"
+	line "בבקשה תפסיק"
+	cont "לצוטט לנו!"
 	done
 
 _Route6EndBattleText1::
-	text "No,"
-	line "this can't be..."
+	text "אני פשוט לא"
+	line "מצליח לנצח!"
 	prompt
 
 _Route6AfterBattleText1::
-	text "My love will leave"
-	line "me in disgust."
+	text "לחשושים.."
+	line "לחשושים..."
 	done
-
-_Route6BattleText2::
-	text "I'm training for"
-	line "my love. Don't"
-	cont "bother me!"
-	done
-
-_Route6EndBattleText2::
-	text "My"
-	line "textbook never..."
-	prompt
 
 _Route6AfterBattleText2::
 	text "Now I understand,"
@@ -32,73 +21,86 @@ _Route6AfterBattleText2::
 	cont "numbers."
 	done
 
+_Route6BattleText2::
+	text "סלח לי!"
+	line "זו שיחה פרטית!"
+	done
+
+_Route6EndBattleText2::
+	text "אוף!"
+	line "אני שונאת להפסיד!"
+	prompt
+
 _Route6BattleText3::
-	text "There aren't many"
-	line "bugs out here."
+	text "אין הרבה"
+	line "חרקים בסביבה."
 	done
 
 _Route6EndBattleText3::
-	text "No!"
-	line "You're kidding!"
+	text "לא!"
+	line "אתה צוחק עליי!"
 	prompt
 
 _Route6AfterBattleText3::
-	text "I like bugs, so"
-	line "I'm going back to"
-	cont "VIRIDIAN FOREST."
+	text "אני אוהב חרקים,"
+	line "אז אני מתכוון"
+	cont "לחזור ליער ירוק-"
+	cont "עד."
 	done
 
 _Route6BattleText4::
-	text "Huh? You want"
-	line "to talk to me?"
+	text "המ?"
+	line "רצית לדבר איתי?"
 	done
 
 _Route6EndBattleText4::
-	text "I"
-	line "didn't start it!"
+	text "אני"
+	line "לא התחלתי את זה!"
 	prompt
 
 _Route6AfterBattleText4::
-	text "I should carry"
-	line "more #MON with"
-	cont "me for safety."
+	text "אני צריך לשאת יותר"
+	line "#ימונים איתי"
+	cont "לבטחוני האישי."
 	done
 
 _Route6BattleText5::
-	text "Me? Well, OK."
-	line "I'll play!"
+	text "אני? בסדר, בסדר."
+	line "אני אשחק!"
 	done
 
 _Route6EndBattleText5::
-	text "Just"
-	line "didn't work!"
+	text "זה פשוט"
+	line "לא עבד!"
 	prompt
 
 _Route6AfterBattleText5::
-	text "I want to get"
-	line "stronger! What's"
-	cont "your secret?"
+	text "אני רוצה להיות"
+	line "חזקה יותר!"
+	cont "מה הסוד שלך?"
 	done
 
 _Route6BattleText6::
-	text "I've never seen"
-	line "you around!"
-	cont "Are you good?"
+	text "מעולם לא נתקלתי"
+	line "בך לפני כן!"
+	cont "כמה אתה מוצלח?"
 	done
 
 _Route6EndBattleText6::
-	text "You"
-	line "are too good!"
+	text "אתה"
+	line "יותר מדי מוצלח!"
 	prompt
 
 _Route6AfterBattleText6::
-	text "Are my #MON"
-	line "weak? Or, am I"
-	cont "just bad?"
+	text "אוף. האם"
+	line "ה#ימונים שלי"
+	cont "חלשים? או שאני"
+	cont "פשוט גרוע?"
 	done
 
 _Route6Text7::
-	text "UNDERGROUND PATH"
-	line "CERULEAN CITY -"
-	cont "VERMILION CITY"
+	text "מעבר תת קרקעי"
+	line "עיר הטורקיז -"
+	cont "עיר הארגמן"
 	done
+

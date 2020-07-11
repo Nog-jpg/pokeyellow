@@ -1,57 +1,57 @@
 _PokemonTower2Text_6062d::
-	text "<RIVAL>: Hey,"
-	line "<PLAYER>! What"
-	cont "brings you here?"
-	cont "Your #MON"
-	cont "don't look dead!"
+	text "<RIVAL>: היי,"
+	line "<PLAYER>! מה מביא"
+	cont "אותך לכאן?"
+	cont "ה#ימונים שלך לא"
+	cont "נראים מתים!"
 
-	para "I can at least"
-	line "make them faint!"
-	cont "Let's go, pal!"
+	para "אני יכול לגרום"
+	line "להם לפחות"
+	cont "להתמוטט! קדימה,"
+	cont "חבר!"
 	done
 
 _PokemonTower2Text_60632::
-	text "What?"
-	line "You stinker!"
+	text "מה?"
+	line "יא שטינקר!"
 
-	para "I took it easy on"
-	line "you too!"
+	para "ריחמתי עליך!"
 	prompt
 
 _PokemonTower2Text_60637::
-	text "<RIVAL>: Well,"
-	line "look at all your"
-	cont "wimpy #MON!"
+	text "<RIVAL>: פחח!"
+	line "כל ה#ימונים שלך"
+	cont "נמושות!"
 
-	para "Toughen them up a"
-	line "bit more!"
+	para "הם צריכים ללמוד"
+	line "להיות קשוחים!"
 	prompt
 
 _PokemonTower2Text_6063c::
-	text "How's your #DEX"
-	line "coming, pal?"
-	cont "I just caught a"
-	cont "CUBONE!"
+	text "איך ה#ידע"
+	line "שלך מתקדם, חבר?"
+	cont "בדיוק תפסתי רשרש!"
 
-	para "I can't find the"
-	line "grown-up MAROWAK"
-	cont "yet!"
+	para "עוד לא מצאתי"
+	line "קרקש בוגר!"
 
-	para "I doubt there are"
-	line "any left! Well, I"
-	cont "better get going!"
-	cont "I've got a lot to"
-	cont "accomplish, pal!"
+	para "אני בספק אם"
+	line "עוד יש כאלה!"
+	cont "טוב, אני חייב!"
+	cont "לעוף, יש לי"
+	cont "עוד הרבה דברים"
+	cont "להשיג, חבר!"
 
-	para "Smell ya later!"
+	para "נתרחרח אחר-כך!"
 	done
 
 _PokemonTower2Text2::
-	text "Even we could not"
-	line "identify the"
-	cont "wayward GHOSTs!"
+	text "אפילו אנחנו"
+	line "לא הצלחנו לזהות"
+	cont "את הרוחות"
+	cont "החמקמקות!"
 
-	para "A SILPH SCOPE"
-	line "might be able to"
-	cont "unmask them."
+	para "אולי נצליח לגלות"
+	line "את זהותן בעזרת"
+	cont "משקף סילף."
 	done

@@ -1,14 +1,15 @@
 _FuchsiaMartText2::
-	text "Do you have a"
-	line "SAFARI ZONE flag?"
+	text "יש לך דגל של"
+	line "איזור הספארי?"
 
-	para "What about cards"
-	line "or calendars?"
+	para "מה לגבי קלפים"
+	line "או לוחות שנה?"
 	done
 
 _FuchsiaMartText3::
-	text "Did you try X"
-	line "SPEED? It speeds"
-	cont "up a #MON in"
-	cont "battle!"
+	text "ניסית X מהירות?"
+	line "זה מגביר את"
+	cont "המהירות של"
+	cont "ה#ימון שלך"
+	cont "בקרב!"
 	done

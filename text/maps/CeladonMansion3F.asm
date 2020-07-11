@@ -1,22 +1,20 @@
 _ProgrammerText::
-	text "Me? I'm the"
-	line "programmer!"
+	text "אני?"
+	line "אני המתכנת!"
 	done
 
 _ProgrammerText2::
-	text "Me? I'm the"
-	line "programmer!"
+	text "אני?"
+	line "אני המתכנת!"
 
 	para "What a surprise!"
 	line "I never expected"
 	cont "anyone to fill a"
 	cont "#DEX."
-	done
 
 _GraphicArtistText::
-	text "I'm the graphic"
-	line "artist!"
-	cont "I drew you!"
+	text "אני המעצב"
+	line "אני ציירתי אותך!"
 	done
 
 _GraphicArtistText2::
@@ -46,14 +44,16 @@ _GraphicArtistText5::
 	done
 
 _WriterText::
-	text "I wrote the story!"
-	line "Isn't ERIKA cute?"
+	text "אני כתבתי את"
+	line "הסיפור! איריס"
+	cont "נהדרת, נכון?"
 
-	para "I like MISTY a"
-	line "lot too!"
+	para "אני גם אוהב את טל"
+	line "מאוד!"
 
-	para "Oh, and SABRINA,"
-	line "I like her!"
+	para "אה, וגם קסם,"
+	line "אני מחבב אותה"
+	cont "מאוד!"
 	done
 
 _WriterText2::
@@ -65,25 +65,25 @@ _WriterText2::
 	done
 
 _GameDesignerText::
-	text "Is that right?"
+	text "באמת?"
 
-	para "I'm the game"
-	line "designer!"
+	para "אני יוצר המשחק!"
 
-	para "Filling up your"
-	line "#DEX is tough,"
-	cont "but don't quit!"
+	para "השלמת ה#ידע"
+	line "היא משימה קשה,"
+	cont "אבל אל תתיאש!"
 
-	para "When you finish,"
-	line "come tell me!"
+	para "כשתסיים,"
+	line "חזור לספר לי!"
 	done
 
 _CompletedDexText::
-	text "Wow! Excellent!"
-	line "You completed"
-	cont "your #DEX!"
-	cont "Congratulations!"
-	cont "...@@"
+	text "ואו! מעולה!"
+	line "סיימת למלא את"
+	cont "ה#ידע שלך!"
+	cont "ברכותיי!"
+	cont "...@"
+	db "@"
 
 _CompletedDexText2::
 	text "Go show off your"
@@ -93,25 +93,26 @@ _CompletedDexText2::
 	done
 
 _CeladonMansion3Text5::
-	text "It's the game"
-	line "program! Messing"
-	cont "with it could bug"
-	cont "out the game!"
+	text "זו תוכנית המשחק!"
+	line "עדיף שלא לגעת בה"
+	cont "כדי לא לגרום"
+	cont "לתקלות במשחק!"
 	done
 
 _CeladonMansion3Text6::
-	text "Someone's playing"
-	line "a game instead of"
-	cont "working!"
+	text "מישהו כאן משחק"
+	line "במקום לעבוד!"
 	done
 
 _CeladonMansion3Text7::
-	text "It's the script!"
-	line "Better not look"
-	cont "at the ending!"
+	text "זה התסריט!"
+	line "אל תקרא! זה"
+	cont "יקלקל לך את"
+	cont "הסוף!"
 	done
 
 _CeladonMansion3Text8::
-	text "GAME FREAK"
-	line "Development Room"
+	text "גיים פריק"
+	line "חדר פיתוח"
 	done
+

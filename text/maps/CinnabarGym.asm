@@ -1,212 +1,217 @@
 _BlaineBattleText::
-	text "Hah!"
+	text "אה!"
 
-	para "I am BLAINE! I"
-	line "am the LEADER of"
-	cont "CINNABAR GYM!"
+	para "אני להב! אני"
+	line "המנהיג של"
+	cont "מכון הצנובר!"
 
-	para "My fiery #MON"
-	line "will incinerate"
-	cont "all challengers!"
+	para "ה#ימונים"
+	line "הלוהטים שלי"
+	cont "יבעירו כל אתגר"
+	cont "שיעמוד בפניהם!"
 
-	para "Hah! You better"
-	line "have BURN HEAL!"
+	para "חה! אני מקווה"
+	line "שהבאת רפא כויה!"
 	done
 
 _BlaineEndBattleText::
-	text "I have"
-	line "burnt out!"
+	text "אני..."
+	line "הפסדתי"
 
-	para "You have earned"
-	line "the VOLCANOBADGE!@@"
+	para "הרווחת ביושר את"
+	line "תג המגמה!@"
+	db "@"
 
 _BlaineFireBlastText::
-	text "FIRE BLAST is the"
-	line "ultimate fire"
-	cont "technique!"
+	text "אש מתפרצת היא"
+	line "מתקפת האש"
+	cont "האולטימטיבית!"
 
-	para "Don't waste it on"
-	line "water #MON!"
+	para "אל תבזבז אותה על"
+	line "#ימוני מים!"
 	done
 
 _BlaineBadgeText::
-	text "Hah!"
+	text "חה!"
 
-	para "The VOLCANOBADGE"
-	line "heightens the"
-	cont "SPECIAL abilities"
-	cont "of your #MON!"
+	para "תג המגמה"
+	line "מגביר את"
+	cont "היכולות המיוחדות"
+	cont "של ה#ימון שלך!"
 
-	para "Here, you can"
-	line "have this too!"
+	para "הנה"
+	line "תיקח גם את זה!"
 	done
 
 _ReceivedTM38Text::
-	text "<PLAYER> received"
+	text "<PLAYER> קיבל"
 	line "@"
 	TX_RAM wcf4b
-	text "!@@"
+	text "!@"
+	db "@"
 
 _TM38ExplanationText::
 	text ""
 
-	para "TM38 contains"
-	line "FIRE BLAST!"
+	para "מ”מ83 מכיל"
+	line "את המתקפה אש"
+	cont "מתפרצת!"
 
-	para "Teach it to fire-"
-	line "type #MON!"
+	para "למד #ימון אש"
+	line "את המתקפה הזו!"
 
-	para "CHARMELEON or"
-	line "PONYTA would be"
-	cont "good bets!"
+	para "היא תתאים נהדר"
+	line "לחזיזיקית או"
+	cont "לסיחום!"
 	done
 
 _TM38NoRoomText::
-	text "Make room for my"
-	line "gift!"
+	text "פנה מקום בשביל"
+	line "המתנה הזו!"
 	done
 
 _CinnabarGymText_7595f::
-	text "Do you know how"
-	line "hot #MON fire"
-	cont "breath can get?"
+	text "אתה יודע כמה"
+	line "נשימת #ימון אש"
+	cont "חמה?"
 	done
 
 _CinnabarGymText_75964::
-	text "Yow!"
-	line "Hot, hot, hot!"
+	text "יו!"
+	line "חם, חם, חם!"
 	prompt
 
 _CinnabarGymText_75969::
-	text "Fire, or to be"
-	line "more precise,"
-	cont "combustion..."
+	text "אש,"
+	line "או ליתר דיוק,"
+	cont "בעירה..."
 
-	para "Blah, blah, blah,"
-	line "blah..."
+	para "בלה, בלה, בלה,"
+	line "בלה..."
 	done
 
 _CinnabarGymText_75994::
-	text "I was a thief, but"
-	line "I became straight"
-	cont "as a trainer!"
+	text "הייתי גנב, אבל"
+	line "עברתי לדרך הישר"
+	cont "כמאמן!"
 	done
 
 _CinnabarGymText_75999::
-	text "I"
-	line "surrender!"
+	text "אני"
+	line "נכנע!"
 	prompt
 
 _CinnabarGymText_7599e::
-	text "I can't help"
-	line "stealing other"
-	cont "people's #MON!"
+	text "אני לא יכול"
+	line "להפסיק לגנוב"
+	cont "#ימונים של"
+	cont "אנשים אחרים!"
 	done
 
 _CinnabarGymText_759c9::
-	text "You can't win!"
-	line "I have studied"
-	cont "#MON totally!"
+	text "אתה לא תנצח!"
+	line "אני למדתי #ימון"
+	cont "אינספור שעות!"
 	done
 
 _CinnabarGymText_759ce::
-	text "Waah!"
-	line "My studies!"
+	text "ואא!"
+	line "המחקרים שלי!"
 	prompt
 
 _CinnabarGymText_759d3::
-	text "My theories are"
-	line "too complicated"
-	cont "for you!"
+	text "התיאוריות שלי"
+	line "מורכבות מידי"
+	cont "עבורך!"
 	done
 
 _CinnabarGymText_759fe::
-	text "I just like using"
-	line "fire #MON!"
+	text "אני פשוט נהנה"
+	line "להשתמש ב#ימוני"
+	cont "אש!"
 	done
 
 _CinnabarGymText_75a03::
-	text "Too hot"
-	line "to handle!"
+	text "אתה לוהט מדי!"
 	prompt
 
 _CinnabarGymText_75a08::
-	text "I wish there was"
-	line "a thief #MON!"
-	cont "I'd use that!"
+	text "הלוואי והיה"
+	line "#ימון גנב!"
+	cont "הייתי משתמש בו!"
 	done
 
 _CinnabarGymText_75a33::
-	text "I know why BLAINE"
-	line "became a trainer!"
+	text "אני יודע למה להב"
+	line "נהפך למאמן!"
 	done
 
 _CinnabarGymText_75a38::
-	text "Ow!"
+	text "או!"
 	prompt
 
 _CinnabarGymText_75a3d::
-	text "BLAINE was lost"
-	line "in the mountains"
-	cont "when a fiery bird"
-	cont "#MON appeared."
+	text "כשלהב היה אבוד"
+	line "בהרים, #ימון"
+	cont "ציפור אש נגלתה"
+	cont "בפניו."
 
-	para "Its light enabled"
-	line "BLAINE to find"
-	cont "his way down!"
+	para "האור שלה הראה"
+	line "ללהב את דרכו"
+	cont "החדשה!"
 	done
 
 _CinnabarGymText_75a68::
-	text "I've been to many"
-	line "GYMs, but this is"
-	cont "my favorite!"
+	text "הייתי בהרבה"
+	line "מכונים, אבל זה"
+	cont "המועדף עליי!"
 	done
 
 _CinnabarGymText_75a6d::
-	text "Yowza!"
-	line "Too hot!"
+	text "אווץ'!"
+	line "עשית לי כויה!"
 	prompt
 
 _CinnabarGymText_75a72::
-	text "Us fire #MON"
-	line "fans like PONYTA"
-	cont "and NINETALES!"
+	text "מעריצי #ימוני אש"
+	line "כמונו אוהבים את"
+	cont "סיחום ותשעלים!"
 	done
 
 _CinnabarGymText_75a9d::
-	text "Fire is weak"
-	line "against H2O!"
+	text "אש לא אפקטיבית"
+	line "מול H2O!"
 	done
 
 _CinnabarGymText_75aa2::
-	text "Oh!"
-	line "Snuffed out!"
+	text "הו!"
+	line "חוסלתי!"
 	prompt
 
 _CinnabarGymText_75aa7::
-	text "Water beats fire!"
-	line "But, fire melts"
-	cont "ice #MON!"
+	text "מים מנצח אש!"
+	line "אבל אש ממיס"
+	cont "#ימוני קרח!"
 	done
 
 _CinnabarGymText_75ac2::
-	text "Yo! Champ in"
-	line "making!"
+	text "יו! "
+	line "אלופצ'יק!"
 
-	para "The hot-headed"
-	line "BLAINE is a fire"
-	cont "#MON pro!"
+	para "להב חמום המוח"
+	line "מומחה ב#ימוני"
+	cont "אש!"
 
-	para "Douse his spirits"
-	line "with water!"
+	para "חסל אותו"
+	line "עם סוגי מים!"
 
-	para "You better take"
-	line "some BURN HEALs!"
+	para "וכדאי שתיקח איתך"
+	line "כמה רפא כויה!"
 	done
 
 _CinnabarGymText_75ac7::
-	text "<PLAYER>! You beat"
-	line "that fire brand!"
+	text "<PLAYER>! ניצחת"
+	line "את מומחה האש!"
 	done
 
 _CinnabarGymText_1::

@@ -85,6 +85,22 @@
 	const CRED_NAKAMICHI             ; 53
 	const CRED_YOSHIMURA             ; 54
 	const CRED_YAMAZAKI              ; 55
+	const CRED_IL_STAFF              ; 56
+	const CRED_IL_PRODUCTION         ; 57
+	const CRED_IL_TRANS              ; 58
+	const CRED_NOGA                  ; 59
+	const CRED_EYAL                  ; 5a
+	const CRED_MAAYAN                ; 5b
+	const CRED_SHARON                ; 5c
+	const CRED_NOAM                  ; 5d
+	const CRED_ELBOIM                ; 5e
+	const CRED_LIJI                  ; 5f
+	const CRED_NITZAN                ; 60
+	const CRED_PRET                  ; 61
+	const CRED_FIND_US_AT            ; 62
+	const CRED_FIND_US_AT_2          ; 63
+	const CRED_GITHUB_LINK           ; 64
+	const CRED_GITHUB_LINK_2         ; 65
 
 const_value SET $fa
 	const CRED_THE_END

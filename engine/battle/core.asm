@@ -1188,8 +1188,8 @@ DoUseNextMonDialogue:
 	ld hl, UseNextMonText
 	call PrintText
 .displayYesNoBox
-	coord hl, 13, 9
-	lb bc, 10, 14
+	coord hl, 0, 7
+	lb bc, 8, 4
 	ld a, TWO_OPTION_MENU
 	ld [wTextBoxID], a
 	call DisplayTextBoxID
@@ -1503,7 +1503,13 @@ EnemySendOutFirstMon:
 	ld a, [wOptions]
 	bit 6, a
 	jr nz, .next4
-	ld hl, TrainerAboutToUseText
+	; For gendered pronouns
+	ld a, [wPronounGender]
+	bit 4, a
+	ld hl, MaleTrainerAboutToUseText
+	jr nz, .male
+	ld hl, FemaleTrainerAboutToUseText
+.male
 	call PrintText
 	coord hl, 0, 7
 	lb bc, 8, 4
@@ -1546,7 +1552,13 @@ EnemySendOutFirstMon:
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
 	call GBPalNormal
-	ld hl, TrainerSentOutText
+	; For gendered pronouns
+	ld a, [wPronounGender]
+	bit 4, a
+	ld hl, MaleTrainerSentOutText
+	jr nz, .male2
+	ld hl, FemaleTrainerSentOutText
+.male2
 	call PrintText
 	ld a, [wEnemyMonSpecies2]
 	ld [wcf91], a
@@ -1570,12 +1582,20 @@ EnemySendOutFirstMon:
 	call SaveScreenTilesToBuffer1
 	jp SwitchPlayerMon
 
-TrainerAboutToUseText:
-	TX_FAR _TrainerAboutToUseText
+MaleTrainerAboutToUseText:
+	TX_FAR _MaleTrainerAboutToUseText
 	db "@"
 
-TrainerSentOutText:
-	TX_FAR _TrainerSentOutText
+FemaleTrainerAboutToUseText:
+	TX_FAR _FemaleTrainerAboutToUseText
+	db "@"
+
+MaleTrainerSentOutText:
+	TX_FAR _MaleTrainerSentOutText
+	db "@"
+
+FemaleTrainerSentOutText:
+	TX_FAR _FemaleTrainerSentOutText
 	db "@"
 
 ; tests if the player has any pokemon that are not fainted
@@ -1986,7 +2006,6 @@ DrawPlayerHUDAndHPBar:
 	ld [hl], $73
 	ld de, wBattleMonNick
 	coord hl, 18, 7
-	call CenterMonName
 	call PlaceString
 	ld hl, wBattleMonSpecies
 	ld de, wLoadedMon
@@ -2045,7 +2064,6 @@ DrawEnemyHUDAndHPBar:
 	callab PlaceEnemyHUDTiles
 	ld de, wEnemyMonNick
 	coord hl, 9, 0
-	call CenterMonName
 	call PlaceString
 	coord hl, 6, 1
 	push hl
@@ -2135,32 +2153,6 @@ GetBattleHealthBarColor:
 	ld b, SET_PAL_BATTLE
 	jp RunPaletteCommand
 
-; center's mon's name on the battle screen
-; if the name is 1 or 2 letters long, it is printed 2 spaces more to the left than usual
-; (i.e. for names longer than 4 letters)
-; if the name is 3 or 4 letters long, it is printed 1 space more to the left than usual
-; (i.e. for names longer than 4 letters)
-CenterMonName:
-	push de
-	dec hl
-	dec hl
-	ld b, $2
-.loop
-	inc de
-	ld a, [de]
-	cp "@"
-	jr z, .done
-	inc de
-	ld a, [de]
-	cp "@"
-	jr z, .done
-	inc hl
-	dec b
-	jr nz, .loop
-.done
-	pop de
-	ret
-
 DisplayBattleMenu:
 	call LoadScreenTilesFromBuffer1 ; restore saved screen
 	ld a, [wBattleType]
@@ -2207,15 +2199,15 @@ DisplayBattleMenu:
 	call CopyData
 ; the following simulates the keystrokes by drawing menus on screen
 	coord hl, 10, 14
-	ld [hl], "▶"
+	ld [hl], "◀"
 	ld c, 20
 	call DelayFrames
 	ld [hl], " "
 	coord hl, 10, 16
-	ld [hl], "▶"
+	ld [hl], "◀"
 	ld c, 20
 	call DelayFrames
-	ld [hl], "▷"
+	ld [hl], "◁"
 	ld a, $2 ; select the "ITEM" menu
 	jp .upperRightMenuItemWasNotSelected
 .oldManName
@@ -2783,11 +2775,11 @@ SelectMenuItem:
 	ld a, [wMenuItemToSwap]
 	and a
 	jr z, .select
-	coord hl, 5, 13
+	coord hl, 14, 13
 	dec a
 	ld bc, SCREEN_WIDTH
 	call AddNTimes
-	ld [hl], "▷"
+	ld [hl], "◁"
 .select
 	ld hl, hFlags_0xFFFA
 	set 1, [hl]
@@ -3087,7 +3079,7 @@ PrintMenuItem:
 	ld a, [wCurrentMenuItem]
 	cp b
 	jr nz, .notDisabled
-	coord hl, 1, 10
+	coord hl, 9, 10
 	ld de, DisabledText
 	call PlaceString
 	jr .moveDisabled
@@ -6495,7 +6487,7 @@ LoadEnemyMonData:
 	ld [de], a
 	ld a, [wEnemyMonSpecies2]
 	ld [wd11e], a
-	call GetMonName
+	call GetMonName ; Never read? XXX de gets overwritten 2 lines down
 	ld hl, wcd6d
 	ld de, wEnemyMonNick
 	ld bc, NAME_LENGTH

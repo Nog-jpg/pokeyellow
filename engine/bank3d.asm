@@ -267,12 +267,12 @@ Bank3D_CopyBox:
 
 TitleScreenPokemonLogoTilemap:
 ; 16x7 (xy)
-	db $f4, $f4, $f4, $f4, $f4, $f4, $49, $f4, $72, $30, $f4, $f4, $f4, $f4, $f4, $f4
-	db $fd, $01, $02, $03, $04, $05, $06, $07, $08, $09, $0a, $0b, $f4, $0d, $0e, $0f
-	db $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $1a, $1b, $1c, $1d, $1e, $1f
+	db $f4, $f4, $02, $03, $04, $05, $06, $f4, $08, $09, $0a, $0b, $0c, $0d, $f4, $f4
+	db $f4, $11, $12, $13, $14, $15, $16, $17, $18, $19, $1a, $1b, $1c, $1d, $1e, $1f
 	db $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $2a, $2b, $2c, $2d, $2e, $2f
-	db $f4, $31, $32, $33, $34, $35, $36, $37, $38, $39, $3a, $3b, $3c, $3d, $3e, $3f
-	db $f4, $41, $42, $43, $44, $45, $46, $47, $48, $f4, $4a, $4b, $4c, $4d, $4e, $4f
+	db $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $3a, $3b, $3c, $3d, $3e, $3f
+	db $f4, $41, $42, $43, $44, $45, $46, $47, $48, $49, $4a, $4b, $4c, $4d, $4e, $4f
+	db $f4, $0f, $40, $07, $f4, $f4, $f4, $f4, $f4, $f4, $f4, $f4, $f4, $0e, $10, $f4
 	db $f4, $6a, $6b, $6c, $6d, $f4, $f4, $f4, $f4, $f4, $f4, $6e, $6f, $70, $71, $f4
 
 Pointer_f4669:
@@ -281,7 +281,7 @@ Pointer_f4669:
 
 TitleScreenPikaBubbleTilemap:
 ; 7x4 (xy)
-	db $24, $25, $66, $67, $68, $69, $2a
+	db $34, $35, $66, $67, $68, $69, $3a
 	db $50, $51, $52, $53, $54, $55, $56
 	db $57, $58, $59, $5a, $5b, $5c, $5d
 	db $6d, $5e, $5f, $60, $61, $62, $63
@@ -405,7 +405,7 @@ HandleMenuInputPokemonSelectionDouble:
 	jr nz, .loop2
 .asm_f5ad5
 	ld a, [hl]
-	cp "▶"
+	cp "◀"
 	jr nz, .asm_f5ade
 	ld a, [wTileBehindCursor]
 	ld [hl], a
@@ -421,11 +421,11 @@ HandleMenuInputPokemonSelectionDouble:
 	jr nz, .loop3
 .asm_f5aec
 	ld a, [hl]
-	cp "▶"
+	cp "◀"
 	jr z, .asm_f5af4
 	ld [wTileBehindCursor], a
 .asm_f5af4
-	ld a, "▶"
+	ld a, "◀"
 	ld [hl], a
 	ld a, l
 	ld [wMenuCursorLocation], a

@@ -1,107 +1,101 @@
 _SilphCo6Text_1a24a::
-	text "The ROCKETs came"
-	line "and took over the"
-	cont "building!"
+	text "בריוני רוקט הגיעו"
+	line "והשתלטו על כל"
+	cont "הבניין!"
 	done
 
 _SilphCo6Text_1a24f::
-	text "Well, better get"
-	line "back to work!"
+	text "טוב, כדאי שאחזור"
+	line "לעבודה!"
 	done
 
 _SilphCo6Text_1a261::
-	text "Oh dear, oh dear."
-	line "Help me please!"
+	text "אוי לי. אוי לי!"
+	line "בבקשה, עזור לי!"
 	done
 
 _SilphCo6Text_1a266::
-	text "We got engaged!"
-	line "Heheh!"
+	text "אנחנו מאורסים!"
+	line "היהיהי!"
 	done
 
 _SilphCo6Text_1a278::
-	text "Look at him! He's"
-	line "such a coward!"
+	text "תראה אותו! הוא"
+	line "כזה פחדן!"
 	done
 
 _SilphCo6Text_1a27d::
-	text "I feel so sorry"
-	line "for him, I have"
-	cont "to marry him!"
+	text "אני מרחמת עליו כל"
+	line "כך, אז אני נאלצת"
+	cont "להינשא לו!"
 	done
 
 _SilphCo6Text_1a28f::
-	text "TEAM ROCKET is"
-	line "trying to conquer"
-	cont "the world with"
-	cont "#MON!"
+	text "צוות רוקט מנסים"
+	line "להשתלט על העולם"
+	cont "!בעזרת #ימונים"
 	done
 
 _SilphCo6Text_1a294::
-	text "TEAM ROCKET ran"
-	line "because of you!"
+	text "צוות רוקט נסוגו"
+	line "בזכותך!"
 	done
 
 _SilphCo6Text_1a2a6::
-	text "They must have"
-	line "targeted SILPH"
-	cont "for our #MON"
-	cont "products."
+	text "הם וודאי הגיעו"
+	line  "לסילף כדי לקחת"
+	cont  "!את ה#ימון שלנו"
 	done
 
 _SilphCo6Text_1a2ab::
-	text "Come work for"
-	line "SILPH when you"
-	cont "get older!"
+	text "בוא לעבוד בסילף"
+	line ".כשתגדל"
 	done
 
 _SilphCo6BattleText2::
-	text "I am one of the 4"
-	line "ROCKET BROTHERS!"
+	text "אני אחד מארבעת"
+	line "אחי צוות רוקט!"
 	done
 
 _SilphCo6EndBattleText2::
-	text "Flame"
-	line "out!"
+	text "הלהבה"
+	line "שלי כבתה!"
 	prompt
 
 _SilphCo6AfterBattleText2::
-	text "No matter!"
-	line "My brothers will"
-	cont "avenge me!"
+	text "!לא חשוב"
+	line "!אחיי ינקמו בשמי"
 	done
 
 _SilphCo6BattleText3::
-	text "That rotten"
-	line "PRESIDENT!"
+	text "הנשיא המטונף"
+	line "הזה!"
 
-	para "He shouldn't have"
-	line "sent me to the"
-	cont "TIKSI BRANCH!"
+	para "חבל שהוא שלח אותי"
+	line "לעבוד בסניף"
+	cont "בטיקסי!"
 	done
 
 _SilphCo6EndBattleText3::
-	text "Shoot!"
+	text "!אוף"
 	prompt
 
 _SilphCo6AfterBattleText3::
-	text "TIKSI BRANCH?"
-	line "It's in Russian"
-	cont "no man's land!"
+	text "הסניף בטיקסי?"
+	line "זה באמצע שום מקום"
+	cont "ברוסיה!"
 	done
 
 _SilphCo6BattleText4::
-	text "You dare betray"
-	line "TEAM ROCKET?"
+	text "איך אתה מעז לבגוד"
+	line "בצוות רוקט?"
 	done
 
 _SilphCo6EndBattleText4::
-	text "You"
-	line "traitor!"
+	text "בוגד!"
 	prompt
 
 _SilphCo6AfterBattleText4::
-	text "If you stand for"
-	line "justice, you"
-	cont "betray evil!"
+	text "אם אתה בעד צדק,"
+	line "אתה בוגד ברוע!"
 	done

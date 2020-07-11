@@ -1393,9 +1393,17 @@ wPayoutCoins:: ; cd4a
 wTradedPlayerMonOTID:: ; cd4c
 
 wSlotMachineFlags:: ; cd4c
-; These flags are set randomly and control when the wheels stop.
-; bit 6: allow the player to win in general
-; bit 7: allow the player to win with 7 or bar (plus the effect of bit 6)
+wReverseNumberFlags::
+; Passed to the number reverse printing functions, to indicate whether the number is binary-coded or decimal.
+; bit 3: if set, treat as binary-coded. If unset, treat as decimal.
+wNikudFlag::
+; This flag controls the type of mon name GetMonName returns.
+; bit 5: if set, return mon name with nikud.
+wPronounGender::
+; This flag is set when text containing gendered pronouns is loaded.
+; It is used to obtain the correct gendered pronoun.
+; This is necessary because Hebrew is very grammatical gender-heavy, and lacks gender neutral verbs.
+; Bit 4: if set, return male pronoun. If unset, return female pronoun.
 	ds 1
 
 wSlotMachineWheel1SlipCounter:: ; cd4d
@@ -3589,9 +3597,9 @@ wBoxMonOT::    ds NAME_LENGTH * MONS_PER_BOX ; dd29
 wBoxMonNicks:: ds NAME_LENGTH * MONS_PER_BOX ; de05
 wBoxMonNicksEnd:: ; dee1
 
-wReversedText:: ds 16
-wReversedTextEnd:: ds 1
-wBCDReverseTemp:: ds 16
+wReversedNumber:: ds 16
+wReversedNumberEnd:: ds 1
+wReversedNumberTempBuffer:: ds 16
 
 wBoxDataEnd::
 

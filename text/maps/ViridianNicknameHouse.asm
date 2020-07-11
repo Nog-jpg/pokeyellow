@@ -1,23 +1,22 @@
 _ViridianHouseText1::
-	text "Coming up with"
-	line "nicknames is fun,"
-	cont "but hard."
+	text "להמציא כינויים"
+	line "זה כיף,"
+	cont "אבל לא פשוט."
 
-	para "Simple names are"
-	line "the easiest to"
-	cont "remember."
+	para "הכי קל לזכור"
+	line "שמות רגילים."
 	done
 
 _ViridianHouseText2::
-	text "My Daddy loves"
-	line "#MON too."
+	text "אבא שלי"
+	line "אוהב #ימונים."
 	done
 
 _ViridianHouseText_1d5b1::
-	text "SPEARY: Tetweet!"
+	text "כידי: טטוויט!"
 	done
 
 _ViridianHouseText4::
-	text "SPEAROW"
-	line "Name: SPEARY"
+	text "כידרור"
+	line "כינוי: כידי"
 	done

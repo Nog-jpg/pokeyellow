@@ -222,10 +222,10 @@ ViridianSchoolBlackboard:
 	coord hl, 0, 0
 	lb bc, 6, 10
 	call TextBoxBorder
-	coord hl, 10, 2
+	coord hl, 5, 2
 	ld de, StatusAilmentText1
 	call PlaceString
-	coord hl, 6, 2
+	coord hl, 10, 2
 	ld de, StatusAilmentText2
 	call PlaceString
 	ld hl, ViridianSchoolBlackboardText2
@@ -253,7 +253,7 @@ ViridianSchoolBlackboard:
 	ld [wMaxMenuItem], a
 	ld a, 2
 	ld [wTopMenuItemY], a
-	ld a, 6
+	ld a, 5
 	ld [wTopMenuItemX], a
 	ld a, 3 ; in the the left column, use an offset to prevent overlap
 	ld [wMenuItemOffset], a
@@ -294,14 +294,14 @@ ViridianSchoolBlackboardText2:
 	db "@"
 
 StatusAilmentText1:
+	db   " כוה"
+	next " קפא"
+	next " סיום@@"
+
+StatusAilmentText2:
 	db   " ישן"
 	next " רעל"
 	next " שתק@"
-
-StatusAilmentText2:
-	db   " כוה"
-	next " קפא"
-	next " ביטול@@"
 
 ViridianBlackboardStatusPointers:
 	dw ViridianBlackboardSleepText

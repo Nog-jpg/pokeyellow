@@ -1,33 +1,33 @@
 _SafariZoneNorthText3::
-	text "REST HOUSE"
+	text "ביתן למנוחה"
 	done
 
 _SafariZoneNorthText4::
-	text "TRAINER TIPS"
+	text "טיפים למאמנים"
 
-	para "The SECRET HOUSE"
-	line "is still ahead!"
+	para "הבית הסודי"
+	line "עדיין מקדימה!"
 	done
 
 _SafariZoneNorthText5::
-	text "AREA 2"
+	text "אזור 2"
 	done
 
 _SafariZoneNorthText6::
-	text "TRAINER TIPS"
+	text "טיפים למאמנים"
 
-	para "#MON hide in"
-	line "tall grass!"
+	para "#ימונים מתחבאים"
+	line "בדשא גבוה!"
 
-	para "Zigzag through"
-	line "grassy areas to"
-	cont "flush them out."
+	para "נוע בזיגזג"
+	line "באזורי דשא כדי"
+	cont "לחמוק מהם."
 	done
 
 _SafariZoneNorthText7::
-	text "TRAINER TIPS"
+	text "טיפים למאמנים"
 
-	para "Win a free HM for"
-	line "finding the"
-	cont "SECRET HOUSE!"
+	para "הפרס עבור מציאת"
+	line "הביתן הסודי הוא"
+	cont "מ”נ!"
 	done

@@ -1,104 +1,106 @@
 _SSAnne8Text8::
-	text "WIGGLYTUFF: Puup"
-	line "pupuu!@@"
+	text "כישקשוח: פאף"
+	line "פאפוו!@"
+	db "@"
 
 _SSAnne8BattleText1::
-	text "I travel alone"
-	line "on my journeys!"
+	text "אני מטייל לבד"
+	line "במסעותיי!"
 
-	para "My #MON are my"
-	line "only friends!"
+	para "ה#ימונים שלי הם"
+	line "חבריי היחידים!"
 	done
 
 _SSAnne8EndBattleText1::
-	text "My, my"
-	line "friends..."
+	text "חבריי, חבריי..."
 	prompt
 
 _SSAnne8AfterBattleText1::
-	text "You should be"
-	line "nice to friends!"
+	text "אתה צריך להיות"
+	line "נחמד לחברים!"
 	done
 
 _SSAnne8BattleText2::
-	text "You pup! How dare"
-	line "you barge in!"
+	text "יא גור! איך אתה"
+	line "מעיז להתפרץ לפה!"
 	done
 
 _SSAnne8EndBattleText2::
-	text "Humph!"
-	line "You rude child!"
+	text "האמפ!"
+	line "אתה ילד חצוף!"
 	prompt
 
 _SSAnne8AfterBattleText2::
-	text "I wish to be left"
-	line "alone! Get out!"
+	text "אני רוצה להישאר"
+	line "לבד! עזוב אותי!"
 	done
 
 _SSAnne8BattleText3::
-	text "I love #MON!"
-	line "Do you?"
+	text "אני אוהב #ימונים!"
+	line "ואתה?"
 	done
 
 _SSAnne8EndBattleText3::
-	text "Wow! "
-	line "You're great!"
+	text "וואו! "
+	line "אתה גדול!"
 	prompt
 
 _SSAnne8AfterBattleText3::
-	text "Let me be your"
-	line "friend, OK?"
+	text "בוא נהיה חברים,"
+	line "אוקיי?"
 
-	para "Then we can trade"
-	line "#MON!"
+	para "ככה נוכל להחליף"
+	line "#ימונים!"
 	done
 
 _SSAnne8BattleText4::
-	text "I collected these"
-	line "#MON from all"
-	cont "around the world!"
+	text "אספתי את"
+	line "ה#ימונים האלה"
+	cont "מכל רחבי העולם!"
 	done
 
 _SSAnne8EndBattleText4::
-	text "Oh no!"
-	line "I went around the"
-	cont "world for these!"
+	text "הו לא!"
+	line "הסתובבתי מסביב"
+	cont "לעולם בשביל אלה!"
 	prompt
 
 _SSAnne8AfterBattleText4::
-	text "You hurt my poor"
-	line "worldly #MON!"
+	text "פגעת ב#ימון"
+	line "הארצי שלי!"
 
-	para "I demand that you"
-	line "heal them at a"
-	cont "#MON CENTER!"
+	para "אני דורש שתרפא"
+	line "אותם"
+	cont "במרכז #ימון!"
 	done
 
 _SSAnne8Text5::
-	text "Waiter, I would"
-	line "like a cherry pie"
-	cont "please!"
+	text "מלצר, אני רוצה"
+	line "בבקשה להזמין"
+	cont "תמליא דובדבנים!"
 	done
 
 _SSAnne8Text6::
-	text "A cruise is so"
-	line "elegant yet cozy!"
+	text "שיט תענוגות הוא"
+	line "גם אלגנטית וגם"
+	cont "ביתית!"
 	done
 
 _SSAnne8Text7::
-	text "I always travel"
-	line "with WIGGLYTUFF!"
+	text "אני וניענפוח תמיד"
+	line "מטיילים כצמד!"
 	done
 
 _SSAnne8Text9::
-	text "We are cruising"
-	line "around the world."
+	text "אנחנו מפליגים"
+	line "מסביב לעולם."
 	done
 
 _SSAnne8Text11::
-	text "Ssh! I'm a GLOBAL"
-	line "POLICE agent!"
+	text "ששש! אני שוטר"
+	line "חשאי מהמשטרה"
+	cont "העולמית!"
 
-	para "I'm on the trail"
-	line "of TEAM ROCKET!"
+	para "אני מנסה לתפוס את"
+	line "צוות רוקט!"
 	done

@@ -1,89 +1,88 @@
 _VermilionCityText1::
-	text "We're careful"
-	line "about pollution!"
+	text "אנחנו נזהרים"
+	line "מזיהום אוויר!"
 
-	para "We've heard GRIMER"
-	line "multiplies in"
-	cont "toxic sludge!"
+	para "שמענו שטנפאי מתרבה"
+	line "כשהוא בא במגע עם"
+	cont "רפש מזוהם!"
 	done
 
 _VermilionCityTextDidYouSee::
-	text "Did you see S.S."
-	line "ANNE moored in"
-	cont "the harbor?"
+	text "ראית שהספינה אנה"
+	line "עגנה בנמל?"
 	done
 
 _VermilionCityTextSSAnneDeparted::
-	text "So, S.S.ANNE has"
-	line "departed!"
+	text "אז, הספינה אנה"
+	line "הפליגה!"
 
-	para "She'll be back in"
-	line "about a year."
+	para "היא תחזור בעוד"
+	line "כשנה."
 	done
 
 _SSAnneWelcomeText4::
-	text "Welcome to S.S."
-	line "ANNE!"
+	text "ברוך הבא לספינה"
+	line "אנה!"
 	done
 
 _SSAnneWelcomeText9::
-	text "Welcome to S.S."
-	line "ANNE!"
+	text "ברוך הבא לספינה"
+	line "אנה!"
 
-	para "Excuse me, do you"
-	line "have a ticket?"
+	para "סלח לי, יש לך"
+	line "כרטיס?"
 	prompt
 
 _SSAnneFlashedTicketText::
-	text "<PLAYER> flashed"
-	line "the S.S.TICKET!"
-
-	para "Great! Welcome to"
-	line "S.S.ANNE!"
+	text "<PLAYER> הציג את"
+	line "הכרטיס לשיט!"
+	
+	para "נהדר! ברוך הבא"
+	line "לספינה אנה!"
 	done
 
 _SSAnneNoTicketText::
-	text "<PLAYER> doesn't"
-	line "have the needed"
-	cont "S.S.TICKET."
+	text "ל<PLAYER> אין את"
+	line "הכרטיס לשיט"
+	cont "הדרוש."
 
-	para "Sorry!"
+	para "מצטער!"
 
-	para "You need a ticket"
-	line "to get aboard."
+	para "אתה צריך כרטיס"
+	line "כדי לעלות לספינה."
 	done
 
 _SSAnneNotHereText::
-	text "The ship set sail."
+	text "הספינה הפליגה."
 	done
 
 _VermilionCityText4::
-	text "I'm putting up a"
-	line "building on this"
-	cont "plot of land."
+	text "אני מתכנן להקים"
+	line "בניין בחלקה הזאת."
 
-	para "My #MON is"
-	line "tamping the land."
+	para "ה#ימון שלי"
+	line "מהדק את האדמה."
 	done
 
 _VermilionCityText5::
-	text "MACHOP: Guoh!"
-	line "Gogogoh!@@"
+	text "גברכה: גואו!"
+	line "גוגוגו!@"
+	db "@"
 
 _VermilionCityText15::
 	text ""
-	para "A MACHOP is"
-	line "stomping the land"
-	cont "flat."
+	para "גברכה רוקע את"
+	line "האדמה ברגליו כדי"
+	cont "לשטח אותה."
 	done
 
 _VermilionCityText6::
-	text "S.S.ANNE is a"
-	line "famous luxury"
-	cont "cruise ship."
+	text "הספינה אנה היא"
+	line "ספינת תענוגות"
+	cont "יוקרתית ידועה."
 
-	para "We visit VERMILION"
-	line "once a year."
+	para "אנחנו מבקרים בעיר"
+	line "הארגמן פעם בשנה."
 	done
 
 _OfficerJennyText1::
@@ -128,40 +127,41 @@ _OfficerJennyText5::
 	done
 
 _VermilionCityText8::
-	text "VERMILION CITY"
-	line "The Port of"
-	cont "Exquisite Sunsets"
+	text "עיר הארגמן"
+	line "עיר הנמל הצבועה"
+	cont "בצבעי השקיעה"
 	done
 
 _VermilionCityText9::
-	text "NOTICE!"
+	text "שימו לב!"
 
-	para "ROUTE 12 may be"
-	line "blocked off by a"
-	cont "sleeping #MON."
+	para "דרך 21 חסומה עקב"
+	line "#ימון שנרדם על"
+	cont "השביל."
 
-	para "Detour through"
-	line "ROCK TUNNEL to"
-	cont "LAVENDER TOWN."
+	para "כדי להגיע לעיר"
+	line "הלבנדר, השתמשו"
+	cont "במסלול החלופי דרך"
+	cont "מנהרת הסלע."
 
-	para "VERMILION POLICE"
+	para "משטרת עיר הארגמן"
 	done
 
 _VermilionCityText12::
-	text "#MON FAN CLUB"
-	line "All #MON fans"
-	cont "welcome!"
+	text "מועדון מעריצי"
+	line "#ימון"
+	cont "כל חובבי #ימון"
+	cont "יתקבלו בברכה!"
 	done
 
 _VermilionCityText13::
-	text "VERMILION CITY"
-	line "#MON GYM"
-	cont "LEADER: LT.SURGE"
+	text "עיר הארגמן"
+	line "מכון ה#ימון"
+	cont "מנהיג: סרן ברק"
 
-	para "The Lightning "
-	line "American!"
+	para "האמריקאי המחשמל!"
 	done
 
 _VermilionCityText14::
-	text "VERMILION HARBOR"
+	text "נמל הארגמן"
 	done

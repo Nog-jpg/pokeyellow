@@ -1,25 +1,29 @@
 _CeladonMansion1Text1::
-	text "MEOWTH: Meow!@@"
-
-_CeladonMansion1Text3::
-	text "CLEFAIRY: Pi"
-	line "pippippi!@@"
-
-_CeladonMansion1Text4::
-	text "NIDORAN: Kya"
-	line "kyaoo!@@"
-
-_CeladonMansion1Text5::
-	text "CELADON MANSION"
-	line "Manager's Suite"
-	done
+	text "מיצי: מיאו!@"
+	db "@"
 
 _CeladonMansion1Text2::
-	text "My dear #MON"
-	line "keep me company."
+	text "ה#ימונים"
+	line "האהובים שלי"
+	cont "מארחים לי חברה."
 
-	para "MEOWTH even brings"
-	line "money home!"
+	para "מיצי אפילו מביא"
+	line "הביתה כסף!"
+	done
+
+_CeladonMansion1Text3::
+	text "חמשדון: פיפ"
+	line "פיפיפ פיפ!@"
+	db "@"
+
+_CeladonMansion1Text4::
+	text "מחטן: קיה"
+	line "קיה-הו!@"
+	db "@"
+
+_CeladonMansion1Text5::
+	text "אחוזת האביב"
+	line "סוויטת המנהל"
 	done
 
 _CeladonMansion1Text6::
@@ -31,7 +35,6 @@ _CeladonMansion1Text7::
 	text "It seems like it"
 	line "hasn't been tamed"
 	cont "at all."
-	done
 
 _CeladonMansion1Text8::
 	text "Why don't you"

@@ -1,7 +1,15 @@
 _SchoolText1::
-	text "Whew! I'm trying"
-	line "to memorize all"
-	cont "my notes."
+	text "פיו! אני מנסה"
+	line "לשנן את הסיכומים"
+	cont "שלי."
+	done
+
+_SchoolText2::
+	text "אוקיי!"
+
+	para "השתדל לקרוא"
+	line "בקפידה את מה"
+	cont "שכתוב על הלוח!"
 	done
 
 _SchoolText3::
@@ -9,12 +17,4 @@ _SchoolText3::
 	line "will become tame"
 	cont "if you treat them"
 	cont "nicely."
-	done
-
-_SchoolText2::
-	text "Okay!"
-
-	para "Be sure to read"
-	line "the blackboard"
-	cont "carefully!"
 	done

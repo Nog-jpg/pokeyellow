@@ -1,4 +1,4 @@
-StartMenu_Pokedex:
+StartMenu_Pokedex::
 	predef ShowPokedexMenu
 	call LoadScreenTilesFromBuffer2 ; restore saved screen
 	call Delay3
@@ -6,7 +6,7 @@ StartMenu_Pokedex:
 	call UpdateSprites
 	jp RedisplayStartMenu
 
-StartMenu_Pokemon:
+StartMenu_Pokemon::
 	ld a, [wPartyCount]
 	and a
 	jp z, RedisplayStartMenu
@@ -144,14 +144,11 @@ StartMenu_Pokemon:
 	call ChooseFlyDestination
 	ld a, [wd732]
 	bit 3, a ; did the player decide to fly?
-	jr nz, .asm_5d4c
+	jp nz, .goBackToMap
 	call LoadFontTilePatterns
 	ld hl, wd72e
 	set 1, [hl]
 	jp StartMenu_Pokemon
-.asm_5d4c
-	call Func_1510
-	jp .goBackToMap
 .cut
 	bit 1, a ; does the player have the Cascade Badge?
 	jp z, .newBadgeRequired
@@ -168,28 +165,15 @@ StartMenu_Pokemon:
 	bit 1, [hl]
 	res 1, [hl]
 	jp z, .loop
-	ld a, [wcf91]
-	cp PIKACHU ; is this surfing pikachu?
-	jr z, .surfingPikachu
-	ld a, $1
-	jr .continue
-.surfingPikachu
-	ld a, $2
-.continue
-	ld [wd473], a
-	ld a,SURFBOARD
+	ld a, SURFBOARD
 	ld [wcf91], a
 	ld [wPseudoItemID], a
 	call UseItem
 	ld a, [wActionResultOrTookBattleTurn]
 	and a
-	jr z, .reloadNormalSprite
+	jp z, .loop
 	call GBPalWhiteOutWithDelay3
 	jp .goBackToMap
-.reloadNormalSprite
-	xor a
-	ld [wd473], a
-	jp .loop
 .strength
 	bit 3, a ; does the player have the Rainbow Badge?
 	jp z, .newBadgeRequired
@@ -233,7 +217,6 @@ StartMenu_Pokemon:
 	ld hl, wd732
 	set 3, [hl]
 	set 6, [hl]
-	call Func_1510
 	ld hl, wd72e
 	set 1, [hl]
 	res 4, [hl]
@@ -248,7 +231,6 @@ StartMenu_Pokemon:
 	TX_FAR _CannotUseTeleportNowText
 	db "@"
 .cannotFlyHereText
-	TX_FAR _CannotFlyHereText
 	db "@"
 .softboiled
 	ld hl, wPartyMon1MaxHP
@@ -302,7 +284,7 @@ StartMenu_Pokemon:
 
 ; writes a blank tile to all possible menu cursor positions on the party menu
 ErasePartyMenuCursors:
-	coord hl, 19, 1
+	coord hl, 19, 0
 	ld bc, 2 * 20 ; menu cursor positions are 2 rows apart
 	ld a, 6 ; 6 menu cursor positions
 .loop
@@ -563,7 +545,7 @@ DrawTrainerInfo:
 	call TrainerInfo_FarCopyData
 	pop bc
 	ld hl, BadgeNumbersTileGraphics  ; badge number tile patterns
-	ld de, vChars1 + $200
+	ld de, vChars1 + $510
 	call TrainerInfo_FarCopyData
 	ld hl, GymLeaderFaceAndBadgeTileGraphics  ; gym leader face and badge tile patterns
 	ld de, vChars2 + $200
@@ -573,14 +555,14 @@ DrawTrainerInfo:
 	ld hl, TextBoxGraphics
 	ld de, $00d0
 	add hl, de ; hl = colon tile pattern
-	ld de, vChars1 + $280
-	ld bc, $0010
+	ld de, vChars1 + $590
+	ld bc, $10
 	ld a, $04
 	push bc
 	call FarCopyData
 	pop bc
 	ld hl, TrainerInfoTextBoxTileGraphics + $80  ; background tile pattern
-	ld de, vChars1 + $290
+	ld de, vChars1 + $500
 	call TrainerInfo_FarCopyData
 	call EnableLCD
 	ld hl, wTrainerInfoTextBoxWidthPlus1
@@ -600,7 +582,7 @@ DrawTrainerInfo:
 	coord hl, 1, 10
 	call TrainerInfo_DrawTextBox
 	coord hl, 0, 10
-	ld a, $a9
+	ld a, $D0 ; Background pattern tile
 	call TrainerInfo_DrawVerticalLine
 	coord hl, 19, 10
 	call TrainerInfo_DrawVerticalLine
@@ -622,7 +604,7 @@ DrawTrainerInfo:
 	lb bc, 1, 3
 	call PrintNumber
 	coord hl, 7, 6
-	ld [hl], $a8 ; colon tile ID
+	ld [hl], $D9 ; colon tile ID
 	coord hl, 8, 6
 	ld de, wPlayTimeMinutes ; minutes
 	lb bc, LEADING_ZEROES | 1, 2

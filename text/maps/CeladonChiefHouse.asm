@@ -1,22 +1,25 @@
 _CeladonHouseText1::
-	text "Hehehe! The slots"
-	line "just reel in the"
-	cont "dough, big time!"
+	text "חה חה! מכונות"
+	line "המזל מרוויחות"
+	cont "לנו בוכטות!"
 	done
 
 _CeladonHouseText2::
-	text "CHIEF!"
+	text "המפקד!"
 
-	para "We just shipped"
-	line "2000 #MON as"
-	cont "slot prizes!"
+	para "בדיוק העברנו"
+	line "0002 #ימונים"
+	cont "כפרסים במשחקי"
+	cont "המזל!"
 	done
 
 _CeladonHouseText3::
-	text "Don't touch the"
-	line "poster at the"
-	cont "GAME CORNER!"
+	text "אל תיגע"
+	line "בפוסטר שנמצא"
+	cont "במשחקיית רוקט!"
 
-	para "There's no secret"
-	line "switch behind it!"
+	para "זה לא שמתחבא"
+	line "מאחוריו איזה מתג"
+	cont "סודי!"
 	done
+

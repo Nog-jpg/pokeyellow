@@ -1,117 +1,121 @@
 _DexCompletionText::
-	text "#DEX comp-"
-	line "letion is:"
+	text "מצב ה#ידע:"
 
 	para "@"
-	TX_NUM hDexRatingNumMonsSeen, 1, 3
-	text " #MON seen"
-	line "@"
-	TX_NUM hDexRatingNumMonsOwned, 1, 3
-	text " #MON owned"
+	TX_NUM wDexRatingNumMonsSeen, 1, 3
+	text " #ימונים"
+	line "נראו"
+	
+	para "@"
+	TX_NUM wDexRatingNumMonsOwned, 1, 3
+	text " #ימונים"
+	line "נתפסו"
 
-	para "PROF.OAK's"
-	line "Rating:"
+	para "פרופ' אלון"
+	line "אומר:"
 	prompt
 
 _DexRatingText_Own0To9::
-	text "You still have"
-	line "lots to do."
-	cont "Look for #MON"
-	cont "in grassy areas!"
+	text "עוד יש לך הרבה"
+	line "עבודה לפניך."
+	cont "חפש #ימונים"
+	cont "באיזורים עם"
+	cont "דשא!"
 	done
 
 _DexRatingText_Own10To19::
-	text "You're on the"
-	line "right track! "
-	cont "Get a FLASH HM"
-	cont "from my AIDE!"
+	text "אתה בכיוון הנכון!"
+	line "קבל מ”נ הבזק"
+	cont "מהעוזר שלי!"
 	done
 
 _DexRatingText_Own20To29::
-	text "You still need"
-	line "more #MON!"
-	cont "Try to catch"
-	cont "other species!"
+	text "עדיין חסרים לך"
+	line "#ימונים! נסה"
+	cont "לתפוס זנים"
+	cont "שונים!"
 	done
 
 _DexRatingText_Own30To39::
-	text "Good, you're"
-	line "trying hard!"
-	cont "Get an ITEMFINDER"
-	cont "from my AIDE!"
+	text "יופי, התקדמת"
+	line "הרבה! קבל"
+	cont "מאתר חפצים"
+	cont "מהעוזר שלי!"
 	done
 
 _DexRatingText_Own40To49::
-	text "Looking good!"
-	line "Go find my AIDE"
-	cont "when you get 50!"
+	text "נראה טוב!"
+	line "כשתגיע ל-05,"
+	cont "חפש את העוזר שלי!"
 	done
 
 _DexRatingText_Own50To59::
-	text "You finally got at"
-	line "least 50 species!"
-	cont "Be sure to get"
-	cont "EXP.ALL from my"
-	cont "AIDE!"
+	text "השגת לפחות 05"
+	line "זנים! ברכותיי!"
+	cont "קבל שיתוף נ”נ"
+	cont "מהעוזר שלי!"
 	done
 
 _DexRatingText_Own60To69::
-	text "Oh! This is get-"
-	line "ting even better!"
+	text "הו! זה הולך"
+	line "ומשתפר!"
 	done
 
 _DexRatingText_Own70To79::
-	text "Very good!"
-	line "Go fish for some"
-	cont "marine #MON!"
+	text "טוב מאוד!"
+	line "לך לדוג, אולי"
+	cont "תמצא #ימוני מים"
+	cont "חדשים!"
 	done
 
 _DexRatingText_Own80To89::
-	text "Wonderful!"
-	line "Do you like to"
-	cont "collect things?"
+	text "נפלא!"
+	line "אתה אוהב"
+	cont "אוספים?"
 	done
 
 _DexRatingText_Own90To99::
-	text "I'm impressed!"
-	line "It must have been"
-	cont "difficult to do!"
+	text "מרשים!"
+	line "בטח נדרש מאמץ"
+	cont "רב כדי להגיע לשלב"
+	cont "הזה!"
 	done
 
 _DexRatingText_Own100To109::
-	text "You finally got at"
-	line "least 100 species!"
-	cont "I can't believe"
-	cont "how good you are!"
+	text "תפסת לפחות 001"
+	line "זנים שונים! אתה"
+	cont "כל כך טוב, אני"
+	cont "כמעט לא מאמין!"
 	done
 
 _DexRatingText_Own110To119::
-	text "You even have the"
-	line "evolved forms of"
-	cont "#MON! Super!"
+	text "תיעדת אפילו את"
+	line "הצורות המפותחות"
+	cont "של #ימונים!"
+	cont "מצוין!"
 	done
 
 _DexRatingText_Own120To129::
-	text "Excellent! Trade"
-	line "with friends to"
-	cont "get some more!"
+	text "נהדר! הצע לחברים"
+	line "להחליף כדי להשיג"
+	cont "עוד #ימונים!"
 	done
 
 _DexRatingText_Own130To139::
-	text "Outstanding!"
-	line "You've become a"
-	cont "real pro at this!"
+	text "יוצא מן הכלל!"
+	line "הפכת למקצוען של"
+	cont "ממש!"
 	done
 
 _DexRatingText_Own140To149::
-	text "I have nothing"
-	line "left to say!"
-	cont "You're the"
-	cont "authority now!"
+	text "אין מילים בפי!"
+	line "התלמיד התעלה"
+	cont "על רבו!"
 	done
 
 _DexRatingText_Own150To151::
-	text "Your #DEX is"
-	line "fully complete!"
-	cont "Congratulations!"
+	text "ה#ידע שלך מלא"
+	line "לגמרי! תפסת את כל"
+	cont "ה#ימונים שיש"
+	cont "לתפוס!"
 	done
